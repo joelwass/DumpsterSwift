@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        println("*bloop bleep bloop bleep* *sound effects* Dumpster with Swift is now booting up *more sound effects*")
         return true
     }
 

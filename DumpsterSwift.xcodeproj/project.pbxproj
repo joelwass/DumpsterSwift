@@ -13,6 +13,8 @@
 		EEC045051A93C74300D90ECA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEC045041A93C74300D90ECA /* Images.xcassets */; };
 		EEC045081A93C74300D90ECA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC045061A93C74300D90ECA /* LaunchScreen.xib */; };
 		EEC045141A93C74300D90ECA /* DumpsterSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC045131A93C74300D90ECA /* DumpsterSwiftTests.swift */; };
+		EEC045201A93DA4E00D90ECA /* DumpLoopTrans2.gif in Resources */ = {isa = PBXBuildFile; fileRef = EEC0451F1A93DA4E00D90ECA /* DumpLoopTrans2.gif */; };
+		EEC045221A942AB000D90ECA /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC045211A942AB000D90ECA /* QuestionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		EEC0450D1A93C74300D90ECA /* DumpsterSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DumpsterSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEC045121A93C74300D90ECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEC045131A93C74300D90ECA /* DumpsterSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DumpsterSwiftTests.swift; sourceTree = "<group>"; };
+		EEC0451F1A93DA4E00D90ECA /* DumpLoopTrans2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = DumpLoopTrans2.gif; sourceTree = "<group>"; };
+		EEC045211A942AB000D90ECA /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 			children = (
 				EEC044FD1A93C74200D90ECA /* AppDelegate.swift */,
 				EEC044FF1A93C74200D90ECA /* ViewController.swift */,
+				EEC045211A942AB000D90ECA /* QuestionViewController.swift */,
 				EEC045011A93C74300D90ECA /* Main.storyboard */,
 				EEC045041A93C74300D90ECA /* Images.xcassets */,
 				EEC045061A93C74300D90ECA /* LaunchScreen.xib */,
@@ -91,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				EEC044FC1A93C74200D90ECA /* Info.plist */,
+				EEC0451F1A93DA4E00D90ECA /* DumpLoopTrans2.gif */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -192,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEC045201A93DA4E00D90ECA /* DumpLoopTrans2.gif in Resources */,
 				EEC045031A93C74300D90ECA /* Main.storyboard in Resources */,
 				EEC045081A93C74300D90ECA /* LaunchScreen.xib in Resources */,
 				EEC045051A93C74300D90ECA /* Images.xcassets in Resources */,
@@ -214,6 +221,7 @@
 			files = (
 				EEC045001A93C74300D90ECA /* ViewController.swift in Sources */,
 				EEC044FE1A93C74200D90ECA /* AppDelegate.swift in Sources */,
+				EEC045221A942AB000D90ECA /* QuestionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
