@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
         Parse.setApplicationId("BPYhaQES2x2riyAwbcmZVxtygMcefbVK3KjxSvzV", clientKey: "gsmozRPrRfbs35YwKkKCVUv7uhuRbeS95kB6Z3Qi")
         var object = PFObject(className: "testDataClass")
+        
         object.addObject("iOSBlog", forKey: "websiteUrl")
         object.addObject("Five", forKey: "websiteRating")
         object.save()

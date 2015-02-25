@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var homeLabel: UILabel!
     @IBOutlet weak var gifView: UIWebView!
     @IBOutlet weak var startButton: UIButton!
-    
+    var questionArray: NSMutableArray!
     
 
   
@@ -47,6 +47,21 @@ class ViewController: UIViewController {
     
     @IBAction func buttonPressed(sender : AnyObject) {
         println("start button pressed")
+    }
+    
+    func makeQuestions(skipNum: Int) {
+        var PFQuery = PFQuery(classname:"Questions")
+        PFQuery.setLimit(5)
+        PFQuery.setSkip(skipNum)
+        PFQuery.getObjectInBackgroundWithBlock(objects: PFObject!, error: NSError!) {
+            if !error {
+                println("make Questions succesfully pressed and grabbing")
+                questionArray = objects.mutableCopy
+                
+            } else {
+                println("we got an error within our make questions PFQuery")
+            }
+        }
     }
     
 
