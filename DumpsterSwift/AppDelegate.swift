@@ -14,9 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
+    
+        Parse.setApplicationId("BPYhaQES2x2riyAwbcmZVxtygMcefbVK3KjxSvzV", clientKey: "gsmozRPrRfbs35YwKkKCVUv7uhuRbeS95kB6Z3Qi")
+        var object = PFObject(className: "testDataClass")
+        object.addObject("iOSBlog", forKey: "websiteUrl")
+        object.addObject("Five", forKey: "websiteRating")
+        object.save()
         // Override point for customization after application launch.
-        println("*bloop bleep bloop bleep* *sound effects* Dumpster with Swift is now booting up *more sound effects*")
         return true
     }
 
