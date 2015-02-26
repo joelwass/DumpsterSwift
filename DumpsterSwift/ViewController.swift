@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var homeLabel: UILabel!
@@ -53,6 +54,14 @@ class ViewController: UIViewController {
         buildQuestions()
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == "showQuestionSegue" {
+//            var questionVC = segue.destinationViewController as QuestionViewController
+//            questionVC.questionArray = questionArray
+//            questionVC.answerArray = answerArray
+//        }
+    }
+    
 
     func buildQuestions() {
         
@@ -93,5 +102,6 @@ class ViewController: UIViewController {
                 }
             }
         }
+        NSLog("Succesfully built Questions")
     }
 }

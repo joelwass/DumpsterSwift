@@ -42,7 +42,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="buttonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rRg-2u-riV"/>
-                                    <segue destination="qhF-oe-6qn" kind="show" id="hTo-Ez-xpa"/>
+                                    <segue destination="qhF-oe-6qn" kind="show" identifier="showQuestionSegue" id="hTo-Ez-xpa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -73,7 +73,7 @@
         <!--DUMPSTER-->
         <scene sceneID="kqN-Jb-nT0">
             <objects>
-                <viewController id="ybq-7H-9Sl" sceneMemberID="viewController">
+                <viewController id="ybq-7H-9Sl" customClass="QuestionViewController" customModule="DumpsterSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zjo-wz-8lm"/>
                         <viewControllerLayoutGuide type="bottom" id="MUM-3T-Q6I"/>
@@ -88,7 +88,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="171" y="203" width="30" height="30"/>
+                                    <rect key="frame" x="104" y="197" width="120" height="30"/>
                                 </variation>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZ6-0O-lYk">
@@ -97,7 +97,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="171" y="294" width="53" height="30"/>
+                                    <rect key="frame" x="81" y="286" width="151" height="30"/>
                                 </variation>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51I-EY-hie">
@@ -106,7 +106,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="171" y="375" width="35" height="30"/>
+                                    <rect key="frame" x="89" y="357" width="151" height="30"/>
                                 </variation>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9E1-H7-PaE">
@@ -115,7 +115,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="171" y="471" width="45" height="30"/>
+                                    <rect key="frame" x="63" y="418" width="203" height="30"/>
                                 </variation>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Questions....." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mi8-Kg-OX5">
@@ -124,9 +124,27 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="101" y="95" width="185" height="73"/>
+                                    <rect key="frame" x="63" y="84" width="228" height="100"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvY-Q5-42B">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="SKIP">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="196" y="475" width="95" height="30"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2av-XR-Poo">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="NEXT">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="33" y="469" width="74" height="36"/>
+                                </variation>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -136,6 +154,8 @@
                                 <exclude reference="51I-EY-hie"/>
                                 <exclude reference="9E1-H7-PaE"/>
                                 <exclude reference="Mi8-Kg-OX5"/>
+                                <exclude reference="fvY-Q5-42B"/>
+                                <exclude reference="2av-XR-Poo"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -145,16 +165,25 @@
                                 <include reference="51I-EY-hie"/>
                                 <include reference="9E1-H7-PaE"/>
                                 <include reference="Mi8-Kg-OX5"/>
+                                <include reference="fvY-Q5-42B"/>
+                                <include reference="2av-XR-Poo"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="DUMPSTER" id="Yv2-ae-DpV">
                         <barButtonItem key="backBarButtonItem" title="Back" id="VLq-Qb-1Mw"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="answer1" destination="XRK-w6-asw" id="yLk-wD-2cF"/>
+                        <outlet property="answer2" destination="NZ6-0O-lYk" id="XUj-HI-SXC"/>
+                        <outlet property="answer3" destination="51I-EY-hie" id="yzp-6R-PmK"/>
+                        <outlet property="answer4" destination="9E1-H7-PaE" id="lbj-5N-pCN"/>
+                        <outlet property="questionLabel" destination="Mi8-Kg-OX5" id="h61-38-MVQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ghg-Fq-lCI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1412" y="37.5"/>
+            <point key="canvasLocation" x="1412" y="33"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="grk-jH-4AQ">

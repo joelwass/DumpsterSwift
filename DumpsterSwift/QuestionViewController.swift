@@ -10,6 +10,15 @@ import UIKit
 
 class QuestionViewController: UIViewController {
 
+    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var answer1: UIButton!
+    @IBOutlet weak var answer2: UIButton!
+    @IBOutlet weak var answer3: UIButton!
+    @IBOutlet weak var answer4: UIButton!
+    var questionArray:NSMutableArray = NSMutableArray()
+    var answerArray:NSMutableArray = NSMutableArray()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
