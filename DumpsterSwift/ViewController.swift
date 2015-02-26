@@ -52,11 +52,14 @@ class ViewController: UIViewController {
 
     func makeQuestions() {
         
+        let skipNum = Int(arc4random_uniform(200))
         //remove all questions from the array each time.
         questionArray.removeAllObjects()
         
+
         var findQuestions:PFQuery = PFQuery(className: "Questions")
-        
+        findQuestions.limit = 5
+        findQuestions.skip = skipNum
         findQuestions.findObjectsInBackgroundWithBlock{
             (objects:[AnyObject]!, error:NSError!)->Void in
             if (error != nil) {
@@ -65,6 +68,10 @@ class ViewController: UIViewController {
                         self.questionArray.addObject(object)
                     }
                 }
+            }
+            else {
+                // Log details of the failure
+                NSLog("Error: %@ %@", error, error.userInfo!)
             }
         }
     }
