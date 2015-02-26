@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var gifView: UIWebView!
     @IBOutlet weak var startButton: UIButton!
     var questionArray:NSMutableArray = NSMutableArray()
+    var answerArray:NSMutableArray = NSMutableArray()
     
 
   
@@ -47,14 +48,17 @@ class ViewController: UIViewController {
     
     @IBAction func buttonPressed(sender : AnyObject) {
         println("start button pressed")
+        
+        //call make questions to populate questionArray
+        buildQuestions()
     }
     
 
-    func makeQuestions() {
+    func buildQuestions() {
         
         let skipNum = Int(arc4random_uniform(200))
         //remove all questions from the array each time.
-        questionArray.removeAllObjects()
+        //questionArray.removeAllObjects()
         
 
         var findQuestions:PFQuery = PFQuery(className: "Questions")
@@ -62,7 +66,7 @@ class ViewController: UIViewController {
         findQuestions.skip = skipNum
         findQuestions.findObjectsInBackgroundWithBlock{
             (objects:[AnyObject]!, error:NSError!)->Void in
-            if (error != nil) {
+            if (error == nil) {
                 if let questions = objects as? [PFObject!] {
                     for object:PFObject! in questions {
                         self.questionArray.addObject(object)
@@ -72,6 +76,21 @@ class ViewController: UIViewController {
             else {
                 // Log details of the failure
                 NSLog("Error: %@ %@", error, error.userInfo!)
+            }
+        }
+        
+        
+        var findAnswers:PFQuery = PFQuery(className: "Answers")
+        findAnswers.limit = 5
+        findAnswers.skip = skipNum
+        findAnswers.findObjectsInBackgroundWithBlock{
+            (objects:[AnyObject]!, error:NSError!)->Void in
+            if (error == nil) {
+                if let answers = objects as? [PFObject!] {
+                    for object:PFObject! in answers {
+                        self.answerArray.addObject(object)
+                    }
+                }
             }
         }
     }
