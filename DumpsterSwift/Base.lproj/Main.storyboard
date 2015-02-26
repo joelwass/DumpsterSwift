@@ -79,6 +79,7 @@
                         <viewControllerLayoutGuide type="bottom" id="MUM-3T-Q6I"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="DOH-Jp-8UA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRK-w6-asw">

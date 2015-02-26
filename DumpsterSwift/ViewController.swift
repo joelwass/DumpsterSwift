@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var homeLabel: UILabel!
     @IBOutlet weak var gifView: UIWebView!
     @IBOutlet weak var startButton: UIButton!
-    
+    var questionArray:NSMutableArray = NSMutableArray()
     
 
   
@@ -50,5 +50,29 @@ class ViewController: UIViewController {
     }
     
 
-}
+    func makeQuestions() {
+        
+        let skipNum = Int(arc4random_uniform(200))
+        //remove all questions from the array each time.
+        questionArray.removeAllObjects()
+        
 
+        var findQuestions:PFQuery = PFQuery(className: "Questions")
+        findQuestions.limit = 5
+        findQuestions.skip = skipNum
+        findQuestions.findObjectsInBackgroundWithBlock{
+            (objects:[AnyObject]!, error:NSError!)->Void in
+            if (error != nil) {
+                if let questions = objects as? [PFObject!] {
+                    for object:PFObject! in questions {
+                        self.questionArray.addObject(object)
+                    }
+                }
+            }
+            else {
+                // Log details of the failure
+                NSLog("Error: %@ %@", error, error.userInfo!)
+            }
+        }
+    }
+}
