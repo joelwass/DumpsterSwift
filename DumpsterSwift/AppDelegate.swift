@@ -17,11 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
     
         Parse.setApplicationId("BPYhaQES2x2riyAwbcmZVxtygMcefbVK3KjxSvzV", clientKey: "gsmozRPrRfbs35YwKkKCVUv7uhuRbeS95kB6Z3Qi")
-        var object = PFObject(className: "testDataClass")
-        
-        object.addObject("iOSBlog", forKey: "websiteUrl")
-        object.addObject("Five", forKey: "websiteRating")
-        object.save()
+//        var object = PFObject(className: "testDataClass")
+//        
+//        object.addObject("iOSBlog", forKey: "websiteUrl")
+//        object.addObject("Five", forKey: "websiteRating")
+//        object.save()
         // Override point for customization after application launch.
         return true
     }
