@@ -55,11 +55,12 @@ class ViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "showQuestionSegue" {
-//            var questionVC = segue.destinationViewController as QuestionViewController
-//            questionVC.questionArray = questionArray
-//            questionVC.answerArray = answerArray
-//        }
+        if segue.identifier == "showQuestionSegue" {
+            if let questionVC = segue.destinationViewController as? QuestionViewController {
+                questionVC.questionArray = questionArray
+                questionVC.answerArray = answerArray
+            }
+        }
     }
     
 

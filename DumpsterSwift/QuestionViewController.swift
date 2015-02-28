@@ -15,8 +15,9 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var answer2: UIButton!
     @IBOutlet weak var answer3: UIButton!
     @IBOutlet weak var answer4: UIButton!
-    var questionArray:NSMutableArray = NSMutableArray()
-    var answerArray:NSMutableArray = NSMutableArray()
+    var questionArray:NSMutableArray!
+    var answerArray:NSMutableArray!
+    var correctAnswer:NSString!
     
     
     override func viewDidLoad() {
@@ -30,7 +31,15 @@ class QuestionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func populateQuestions() {
+        var randomKey = Int(arc4random_uniform(5))
+        
+        var buttonArray = [answer1, answer2, answer3, answer4, nil]
+        let answerLabelArray = [answerArray[randomKey].valueForKey("Answer"), answerArray[randomKey].valueForKey("IncAnswer2"), answerArray[randomKey].valueForKey("IncAnswer3"), answerArray[randomKey].valueForKey("IncAnswer1"), nil]
+        
+        questionLabel.text = questionArray[randomKey].valueForKey("Question") as NSString
+        self.correctAnswer = answerArray[randomKey].valueForKey("Answer") as NSString
+    }
     /*
     // MARK: - Navigation
 
