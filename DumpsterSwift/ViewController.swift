@@ -14,8 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var homeLabel: UILabel!
     @IBOutlet weak var gifView: UIWebView!
     @IBOutlet weak var startButton: UIButton!
-    var questionArray:NSMutableArray = NSMutableArray()
-    var answerArray:NSMutableArray = NSMutableArray()
+    var questionArrayFirst:NSMutableArray = NSMutableArray()
+    var answerArrayFirst:NSMutableArray = NSMutableArray()
     
 
   
@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
+        //buildQuestions()
         
         homeLabel.font = UIFont(name: "Chalkduster", size:18)
         startButton.titleLabel!.font = UIFont(name: "Chalkduster", size: 18)
@@ -51,14 +52,15 @@ class ViewController: UIViewController {
         println("start button pressed")
         
         //call make questions to populate questionArray
-        buildQuestions()
+
+
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showQuestionSegue" {
             if let questionVC = segue.destinationViewController as? QuestionViewController {
-                questionVC.questionArray = questionArray
-                questionVC.answerArray = answerArray
+                questionVC.questionArray = self.questionArrayFirst
+                questionVC.answerArray = self.answerArrayFirst
             }
         }
     }
@@ -82,11 +84,11 @@ class ViewController: UIViewController {
                     
                 if let objects = objects as? [PFObject!] {
                     
-                    self.questionArray.addObjectsFromArray(objects)
-                    
-                    for element in self.questionArray {
-                        println(element)
-                    }
+                    self.questionArrayFirst.addObjectsFromArray(objects)
+                    println(self.questionArrayFirst[3].valueForKey("Question"))
+//                    for element in self.questionArray {
+//                        println(element)
+//                    }
 
                 }
             }
@@ -105,13 +107,15 @@ class ViewController: UIViewController {
             if (error == nil && objects != nil) {
                 
                  println("Succesfully retreived \(objects.count) objects")
+
                 
                 if let objects = objects as? [PFObject!] {
-                    self.answerArray.addObjectsFromArray(objects)
+                    self.answerArrayFirst.addObjectsFromArray(objects)
                     
-                    for element in self.answerArray {
-                        println(element)
-                    }
+           
+//                    for element in self.answerArray {
+//                        println(element)
+//                    }
                     
                 }
             }
@@ -121,7 +125,8 @@ class ViewController: UIViewController {
         }
 
         NSLog("Succesfully built Questions")
-        println(answerArray.count)
-        println(questionArray.count)
+//        for element in self.questionArray {
+//            println(element)
+//        }
     }
 }
