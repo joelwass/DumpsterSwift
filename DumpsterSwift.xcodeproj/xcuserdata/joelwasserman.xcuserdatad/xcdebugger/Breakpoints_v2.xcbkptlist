@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DumpsterSwift/ViewController.swift"
-            timestampString = "446660883.201424"
+            timestampString = "447355935.584722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DumpsterSwift/ViewController.swift"
-            timestampString = "446660883.201424"
+            timestampString = "447355935.584722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -58,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DumpsterSwift/ViewController.swift"
-            timestampString = "446660883.201424"
+            timestampString = "447352548.883129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "makeQuestions()"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "buildQuestions()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DumpsterSwift/ViewController.swift"
-            timestampString = "446660819.801258"
+            timestampString = "447355935.584722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -90,12 +90,122 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DumpsterSwift/ViewController.swift"
-            timestampString = "446662059.925173"
+            timestampString = "447352548.883129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "makeQuestions()"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "buildQuestions()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DumpsterSwift/ViewController.swift"
+            timestampString = "447355935.584722"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "buildQuestions()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DumpsterSwift.ViewController.(buildQuestions (DumpsterSwift.ViewController) -&gt; () -&gt; ()).(closure #2)"
+                  moduleName = "DumpsterSwift"
+                  urlString = "file:///Users/joelwasserman/Documents/Programming/xCode/DumpsterSwift/DumpsterSwift/ViewController.swift"
+                  timestampString = "446663649.21412"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "2520">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DumpsterSwift.ViewController.(buildQuestions (DumpsterSwift.ViewController) -&gt; () -&gt; ()).(closure #2)"
+                  moduleName = "DumpsterSwift"
+                  urlString = "file:///Users/joelwasserman/Documents/Programming/xCode/DumpsterSwift/DumpsterSwift/ViewController.swift"
+                  timestampString = "446663649.214634"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "2573">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DumpsterSwift/QuestionViewController.swift"
+            timestampString = "447352287.094209"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "populateQuestions()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DumpsterSwift/QuestionViewController.swift"
+            timestampString = "447352287.094209"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "populateQuestions()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DumpsterSwift/QuestionViewController.swift"
+            timestampString = "447352756.92578"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "populateQuestions()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DumpsterSwift/ViewController.swift"
+            timestampString = "447355935.584722"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "makeButtonVisible()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -8,12 +8,14 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var homeLabel: UILabel!
     @IBOutlet weak var gifView: UIWebView!
     @IBOutlet weak var startButton: UIButton!
-    var questionArray:NSMutableArray = NSMutableArray()
+    var questionArrayFirst:NSMutableArray = NSMutableArray()
+    var answerArrayFirst:NSMutableArray = NSMutableArray()
     
 
   
@@ -21,7 +23,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+        startButton.hidden = true
+        buildQuestions()
         
         homeLabel.font = UIFont(name: "Chalkduster", size:18)
         startButton.titleLabel!.font = UIFont(name: "Chalkduster", size: 18)
@@ -47,26 +50,52 @@ class ViewController: UIViewController {
     
     @IBAction func buttonPressed(sender : AnyObject) {
         println("start button pressed")
+        
+        //call make questions to populate questionArray
+
+
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showQuestionSegue" {
+            
+            let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("qVC") as QuestionViewController
+            viewController.questionArray = self.questionArrayFirst
+            viewController.answerArray = self.answerArrayFirst
+            
+            self.presentViewController(viewController, animated: true, completion: nil)
+//            if let questionVC = segue.destinationViewController as? QuestionViewController {
+//                questionVC.questionArray = self.questionArrayFirst
+//                questionVC.answerArray = self.answerArrayFirst
+//            }
+        }
     }
     
 
-    func makeQuestions() {
+    func buildQuestions() {
         
         let skipNum = Int(arc4random_uniform(200))
         //remove all questions from the array each time.
-        questionArray.removeAllObjects()
+        //questionArray.removeAllObjects()
         
 
-        var findQuestions:PFQuery = PFQuery(className: "Questions")
+        var findQuestions = PFQuery(className: "Questions")
         findQuestions.limit = 5
         findQuestions.skip = skipNum
         findQuestions.findObjectsInBackgroundWithBlock{
             (objects:[AnyObject]!, error:NSError!)->Void in
-            if (error != nil) {
-                if let questions = objects as? [PFObject!] {
-                    for object:PFObject! in questions {
-                        self.questionArray.addObject(object)
-                    }
+            if (error == nil) {
+                
+                println("Succesfully retreived \(objects.count) objects")
+                    
+                if let objects = objects as? [PFObject!] {
+                    
+                    self.questionArrayFirst.addObjectsFromArray(objects)
+                    println(self.questionArrayFirst[3].valueForKey("Question"))
+//                    for element in self.questionArray {
+//                        println(element)
+//                    }
+
                 }
             }
             else {
@@ -74,5 +103,41 @@ class ViewController: UIViewController {
                 NSLog("Error: %@ %@", error, error.userInfo!)
             }
         }
+        
+        
+        var findAnswers = PFQuery(className: "Answers")
+        findAnswers.limit = 5
+        findAnswers.skip = skipNum
+        findAnswers.findObjectsInBackgroundWithBlock{
+            (objects:[AnyObject]!, error:NSError!)->Void in
+            if (error == nil && objects != nil) {
+                
+                 println("Succesfully retreived \(objects.count) objects")
+
+                
+                if let objects = objects as? [PFObject!] {
+                    self.answerArrayFirst.addObjectsFromArray(objects)
+                    
+                    println("answers done")
+                    self.makeButtonVisible()
+//                    for element in self.answerArray {
+//                        println(element)
+//                    }
+                    
+                }
+            }
+            else {
+                NSLog("error")
+            }
+        }
+
+        NSLog("Succesfully built Questions")
+//        for element in self.questionArray {
+//            println(element)
+//        }
+    }
+    
+    func makeButtonVisible() {
+        startButton.hidden = false
     }
 }
