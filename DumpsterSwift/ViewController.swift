@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
-        //buildQuestions()
+        buildQuestions()
         
         homeLabel.font = UIFont(name: "Chalkduster", size:18)
         startButton.titleLabel!.font = UIFont(name: "Chalkduster", size: 18)
@@ -58,10 +58,16 @@ class ViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showQuestionSegue" {
-            if let questionVC = segue.destinationViewController as? QuestionViewController {
-                questionVC.questionArray = self.questionArrayFirst
-                questionVC.answerArray = self.answerArrayFirst
-            }
+            
+            let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("qVC") as QuestionViewController
+            viewController.questionArray = self.questionArrayFirst
+            viewController.answerArray = self.answerArrayFirst
+            
+            self.presentViewController(viewController, animated: true, completion: nil)
+//            if let questionVC = segue.destinationViewController as? QuestionViewController {
+//                questionVC.questionArray = self.questionArrayFirst
+//                questionVC.answerArray = self.answerArrayFirst
+//            }
         }
     }
     
@@ -112,7 +118,7 @@ class ViewController: UIViewController {
                 if let objects = objects as? [PFObject!] {
                     self.answerArrayFirst.addObjectsFromArray(objects)
                     
-           
+                    println("answers done")
 //                    for element in self.answerArray {
 //                        println(element)
 //                    }

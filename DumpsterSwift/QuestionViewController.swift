@@ -27,14 +27,17 @@ class QuestionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.buildQuestions({ (result) -> Void in
-            if (result == true) {
-                println("Working")
-                self.populateQuestions()
-            } else {
-                println("not working")
-            }
-        })
+        sleep(2)
+        self.populateQuestions()
+        
+//        self.buildQuestions({ (result) -> Void in
+//            if (result == true) {
+//                println("Working")
+//                self.populateQuestions()
+//            } else {
+//                println("not working")
+//            }
+//        })
        
         
         
@@ -62,10 +65,11 @@ class QuestionViewController: UIViewController {
         self.correctAnswer = answerArray[randomKey].valueForKey("Answer") as NSString
         
         println("stuff4")
-        for (var i = 0; i < 4; i++) {
+        for (var i = 0; i < 1; i++) {
             var randomLabel = Int(arc4random() % UInt32(answerLabelArray.count))
             println(answerLabelArray.count)
             println(randomLabel)
+            println(answerLabelArray[randomLabel])
             
             
             
@@ -160,8 +164,9 @@ class QuestionViewController: UIViewController {
                     if (self.answerArray[2].valueForKey("Answer") != nil) {
                         println("not answers")
                     }
+                    sleep(2)
                     if (self.questionArray[1].valueForKey("Question") != nil) {
-                        println("not question")
+                        println("not questions")
                         completion(result: true)
                     }
                     
