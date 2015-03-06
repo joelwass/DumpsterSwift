@@ -56,7 +56,7 @@ class QuestionViewController: UIViewController {
         println(randomKey)
         var buttonArray = [answer1, answer2, answer3, answer4]
         
-        
+
         println("Stuff2")
         var answerLabelArray = [answerArray[randomKey].valueForKey("Answer"), answerArray[randomKey].valueForKey("IncAnswer2"), answerArray[randomKey].valueForKey("IncAnswer3"), answerArray[randomKey].valueForKey("IncAnswer1")]
         
