@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+        startButton.hidden = true
         buildQuestions()
         
         homeLabel.font = UIFont(name: "Chalkduster", size:18)
@@ -119,6 +119,7 @@ class ViewController: UIViewController {
                     self.answerArrayFirst.addObjectsFromArray(objects)
                     
                     println("answers done")
+                    self.makeButtonVisible()
 //                    for element in self.answerArray {
 //                        println(element)
 //                    }
@@ -134,5 +135,9 @@ class ViewController: UIViewController {
 //        for element in self.questionArray {
 //            println(element)
 //        }
+    }
+    
+    func makeButtonVisible() {
+        startButton.hidden = false
     }
 }
