@@ -71,16 +71,23 @@ class ViewController: UIViewController {
         //questionArray.removeAllObjects()
         
 
-        var findQuestions:PFQuery = PFQuery(className: "Questions")
+        var findQuestions = PFQuery(className: "Questions")
         findQuestions.limit = 5
         findQuestions.skip = skipNum
         findQuestions.findObjectsInBackgroundWithBlock{
             (objects:[AnyObject]!, error:NSError!)->Void in
             if (error == nil) {
-                if let questions = objects as? [PFObject!] {
-                    for object:PFObject! in questions {
-                        self.questionArray.addObject(object)
+                
+                println("Succesfully retreived \(objects.count) objects")
+                    
+                if let objects = objects as? [PFObject!] {
+                    
+                    self.questionArray.addObjectsFromArray(objects)
+                    
+                    for element in self.questionArray {
+                        println(element)
                     }
+
                 }
             }
             else {
@@ -90,19 +97,31 @@ class ViewController: UIViewController {
         }
         
         
-        var findAnswers:PFQuery = PFQuery(className: "Answers")
+        var findAnswers = PFQuery(className: "Answers")
         findAnswers.limit = 5
         findAnswers.skip = skipNum
         findAnswers.findObjectsInBackgroundWithBlock{
             (objects:[AnyObject]!, error:NSError!)->Void in
-            if (error == nil) {
-                if let answers = objects as? [PFObject!] {
-                    for object:PFObject! in answers {
-                        self.answerArray.addObject(object)
+            if (error == nil && objects != nil) {
+                
+                 println("Succesfully retreived \(objects.count) objects")
+                
+                if let objects = objects as? [PFObject!] {
+                    self.answerArray.addObjectsFromArray(objects)
+                    
+                    for element in self.answerArray {
+                        println(element)
                     }
+                    
                 }
             }
+            else {
+                NSLog("error")
+            }
         }
+
         NSLog("Succesfully built Questions")
+        println(answerArray.count)
+        println(questionArray.count)
     }
 }

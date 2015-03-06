@@ -22,7 +22,9 @@ class QuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //self.populateQuestions()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -34,11 +36,25 @@ class QuestionViewController: UIViewController {
     func populateQuestions() {
         var randomKey = Int(arc4random_uniform(5))
         
-        var buttonArray = [answer1, answer2, answer3, answer4, nil]
-        let answerLabelArray = [answerArray[randomKey].valueForKey("Answer"), answerArray[randomKey].valueForKey("IncAnswer2"), answerArray[randomKey].valueForKey("IncAnswer3"), answerArray[randomKey].valueForKey("IncAnswer1"), nil]
+        var buttonArray = [answer1, answer2, answer3, answer4]
+        var answerLabelArray = [answerArray[randomKey].valueForKey("Answer"), answerArray[randomKey].valueForKey("IncAnswer2"), answerArray[randomKey].valueForKey("IncAnswer3"), answerArray[randomKey].valueForKey("IncAnswer1")]
         
         questionLabel.text = questionArray[randomKey].valueForKey("Question") as NSString
         self.correctAnswer = answerArray[randomKey].valueForKey("Answer") as NSString
+        
+        for (var i = 0; i < 4; i++) {
+            var randomLabel = Int(arc4random_uniform(4))
+            buttonArray[i].setTitle(answerLabelArray[randomLabel] as NSString, forState:UIControlState())
+            
+            answerLabelArray.removeAtIndex(randomLabel)
+            
+            
+            
+        }
+        
+        answerArray.removeObjectAtIndex(randomKey)
+        questionArray.removeObjectAtIndex(randomKey)
+        
     }
     /*
     // MARK: - Navigation
