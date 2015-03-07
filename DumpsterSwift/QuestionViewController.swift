@@ -30,6 +30,7 @@ class QuestionViewController: UIViewController {
         super.viewDidLoad()
         
         sleep(1)
+        self.updateScore()
         self.populateQuestions()
     }
 
@@ -144,8 +145,15 @@ class QuestionViewController: UIViewController {
         if (sender.currentTitle == self.correctAnswer) {
             score += 2
             self.updateScore()
-       
+            
         } else {
+            UIView.animateWithDuration(0.2, delay: 0.0, options: nil, animations: {
+                sender.backgroundColor = UIColor.redColor()
+                }, completion: { finished in
+                    UIView .animateWithDuration(0.2, animations: {
+                    sender.backgroundColor = UIColor.whiteColor()
+                })
+            })
             score -= 1
             self.updateScore()
             
