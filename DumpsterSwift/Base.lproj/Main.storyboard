@@ -90,6 +90,9 @@
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="104" y="197" width="120" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="guessPressed:" destination="ybq-7H-9Sl" eventType="touchUpInside" id="Fru-hC-MFg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZ6-0O-lYk">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -99,6 +102,9 @@
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="81" y="286" width="151" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="guessPressed:" destination="ybq-7H-9Sl" eventType="touchUpInside" id="MlZ-fr-Qqh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51I-EY-hie">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -108,15 +114,9 @@
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="89" y="357" width="151" height="30"/>
                                 </variation>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9E1-H7-PaE">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Fourth">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="63" y="418" width="203" height="30"/>
-                                </variation>
+                                <connections>
+                                    <action selector="guessPressed:" destination="ybq-7H-9Sl" eventType="touchUpInside" id="5Js-Hy-UP3"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Questions....." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mi8-Kg-OX5">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -139,6 +139,27 @@
                                     <action selector="skipPressed" destination="ybq-7H-9Sl" eventType="touchUpInside" id="kkh-xo-ldl"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCORE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bs-nF-1UC">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="42" y="482" width="59" height="21"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9E1-H7-PaE">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Fourth">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="63" y="418" width="203" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="guessPressed:" destination="ybq-7H-9Sl" eventType="touchUpInside" id="Hbz-tj-XSt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -146,9 +167,10 @@
                                 <exclude reference="XRK-w6-asw"/>
                                 <exclude reference="NZ6-0O-lYk"/>
                                 <exclude reference="51I-EY-hie"/>
-                                <exclude reference="9E1-H7-PaE"/>
                                 <exclude reference="Mi8-Kg-OX5"/>
                                 <exclude reference="fvY-Q5-42B"/>
+                                <exclude reference="2bs-nF-1UC"/>
+                                <exclude reference="9E1-H7-PaE"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -156,9 +178,10 @@
                                 <include reference="XRK-w6-asw"/>
                                 <include reference="NZ6-0O-lYk"/>
                                 <include reference="51I-EY-hie"/>
-                                <include reference="9E1-H7-PaE"/>
                                 <include reference="Mi8-Kg-OX5"/>
                                 <include reference="fvY-Q5-42B"/>
+                                <include reference="2bs-nF-1UC"/>
+                                <include reference="9E1-H7-PaE"/>
                             </mask>
                         </variation>
                     </view>
@@ -171,6 +194,7 @@
                         <outlet property="answer3" destination="51I-EY-hie" id="yzp-6R-PmK"/>
                         <outlet property="answer4" destination="9E1-H7-PaE" id="lbj-5N-pCN"/>
                         <outlet property="questionLabel" destination="Mi8-Kg-OX5" id="h61-38-MVQ"/>
+                        <outlet property="scoreLabel" destination="2bs-nF-1UC" id="VtG-gx-5om"/>
                         <outlet property="skipButton" destination="fvY-Q5-42B" id="EWr-JF-kDC"/>
                     </connections>
                 </viewController>

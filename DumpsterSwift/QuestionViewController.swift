@@ -17,12 +17,13 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var answer3: UIButton!
     @IBOutlet weak var answer4: UIButton!
     @IBOutlet weak var skipButton: UIButton!
+    @IBOutlet weak var scoreLabel: UILabel!
     var questionArray:NSMutableArray = NSMutableArray()
     var answerArray:NSMutableArray = NSMutableArray()
     var correctAnswer:NSString!
     var answerLabelArray:NSMutableArray = NSMutableArray()
     var buttonArray:NSMutableArray = NSMutableArray()
-    
+    var score:Int = 0
     
     
     override func viewDidLoad() {
@@ -30,11 +31,7 @@ class QuestionViewController: UIViewController {
         
         sleep(1)
         self.populateQuestions()
-       
-
     }
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -88,7 +85,6 @@ class QuestionViewController: UIViewController {
         questionArray.removeObjectAtIndex(randomKey)
     }
     
-    
     func buildQuestions() {
         
         let skipNum = Int(arc4random_uniform(200))
@@ -139,6 +135,21 @@ class QuestionViewController: UIViewController {
         
         NSLog("Succesfully built Questions")
     }
-
+    
+    func updateScore() {
+        scoreLabel.text = NSString(format: "%d", score)
+    }
+    
+    @IBAction func guessPressed(sender: UIButton) {
+        if (sender.currentTitle == self.correctAnswer) {
+            score += 2
+            self.updateScore()
+       
+        } else {
+            score -= 1
+            self.updateScore()
+            
+        }
+    }
 
 }

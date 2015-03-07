@@ -58,14 +58,10 @@ class ViewController: UIViewController {
             self.presentViewController(viewController, animated: true, completion: nil)
         }
     }
-    
 
     func buildQuestions() {
         
         let skipNum = Int(arc4random_uniform(200))
-        //remove all questions from the array each time.
-        //questionArray.removeAllObjects()
-        
 
         var findQuestions = PFQuery(className: "Questions")
         findQuestions.limit = 5
@@ -79,10 +75,6 @@ class ViewController: UIViewController {
                 if let objects = objects as? [PFObject!] {
                     
                     self.questionArrayFirst.addObjectsFromArray(objects)
-                    println(self.questionArrayFirst[3].valueForKey("Question"))
-//                    for element in self.questionArray {
-//                        println(element)
-//                    }
 
                 }
             }
@@ -106,11 +98,7 @@ class ViewController: UIViewController {
                 if let objects = objects as? [PFObject!] {
                     self.answerArrayFirst.addObjectsFromArray(objects)
                     
-                    println("answers done")
                     self.makeButtonVisible()
-//                    for element in self.answerArray {
-//                        println(element)
-//                    }
                     
                 }
             }
@@ -120,9 +108,6 @@ class ViewController: UIViewController {
         }
 
         NSLog("Succesfully built Questions")
-//        for element in self.questionArray {
-//            println(element)
-//        }
     }
     
     func makeButtonVisible() {
