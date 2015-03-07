@@ -16,6 +16,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var answer2: UIButton!
     @IBOutlet weak var answer3: UIButton!
     @IBOutlet weak var answer4: UIButton!
+    @IBOutlet weak var skipButton: UIButton!
     var questionArray:NSMutableArray = NSMutableArray()
     var answerArray:NSMutableArray = NSMutableArray()
     var correctAnswer:NSString!
@@ -27,26 +28,22 @@ class QuestionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sleep(2)
+        sleep(1)
         self.populateQuestions()
-        
-//        self.buildQuestions({ (result) -> Void in
-//            if (result == true) {
-//                println("Working")
-//                self.populateQuestions()
-//            } else {
-//                println("not working")
-//            }
-//        })
        
-        
-        
-        // Do any additional setup after loading the view.
+
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func skipPressed() {
+        self.buildQuestions()
+        self.populateQuestions()
     }
     
     func populateQuestions() {
@@ -90,25 +87,11 @@ class QuestionViewController: UIViewController {
         answerArray.removeObjectAtIndex(randomKey)
         questionArray.removeObjectAtIndex(randomKey)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     
-    
-    
-    func buildQuestions(completion: (result: Bool) -> Void) {
+    func buildQuestions() {
         
         let skipNum = Int(arc4random_uniform(200))
-        //remove all questions from the array each time.
-        self.questionArray.removeAllObjects()
-        self.answerArray.removeAllObjects()
         
         
         var findQuestions = PFQuery(className: "Questions")
@@ -118,15 +101,9 @@ class QuestionViewController: UIViewController {
             (objects:[AnyObject]!, error:NSError!)->Void in
             if (error == nil) {
                 
-                
-                
                 if let objects = objects as? [PFObject!] {
                     
                     self.questionArray.addObjectsFromArray(objects)
-                    println("Succesfully retreived \(objects.count) Questions")
-                                        for element in self.questionArray {
-                                            println(element)
-                                        }
                     
                 }
             }
@@ -144,26 +121,15 @@ class QuestionViewController: UIViewController {
             (objects:[AnyObject]!, error:NSError!)->Void in
             if (error == nil && objects != nil) {
                 
-                
-                
+     
                 if let objects = objects as? [PFObject!] {
                     self.answerArray.addObjectsFromArray(objects)
                     
                     
-                    println("Succesfully retreived \(objects.count) answerSets")
-                                        for element in self.answerArray {
-                                            println(element)
-                                        }
-                    
-                    if (self.answerArray[2].valueForKey("Answer") != nil) {
-                        println("not answers")
+                    for element in self.answerArray {
+                        println(element)
                     }
-                    sleep(2)
-                    if (self.questionArray[1].valueForKey("Question") != nil) {
-                        println("not questions")
-                        completion(result: true)
-                    }
-                    
+
                 }
             }
             else {
@@ -172,11 +138,6 @@ class QuestionViewController: UIViewController {
         }
         
         NSLog("Succesfully built Questions")
-
-
-        //        for element in self.questionArray {
-        //            println(element)
-        //        }
     }
 
 
