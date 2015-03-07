@@ -35,11 +35,7 @@ class ViewController: UIViewController {
         gifView .loadData(gif, MIMEType:"image/gif", textEncodingName: nil, baseURL: nil)
         gifView.userInteractionEnabled = false;
         [self.view .addSubview(gifView)]
-        
-        
-        
-        
-        
+            
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -50,10 +46,6 @@ class ViewController: UIViewController {
     
     @IBAction func buttonPressed(sender : AnyObject) {
         println("start button pressed")
-        
-        //call make questions to populate questionArray
-
-
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -64,10 +56,6 @@ class ViewController: UIViewController {
             viewController.answerArray = self.answerArrayFirst
             
             self.presentViewController(viewController, animated: true, completion: nil)
-//            if let questionVC = segue.destinationViewController as? QuestionViewController {
-//                questionVC.questionArray = self.questionArrayFirst
-//                questionVC.answerArray = self.answerArrayFirst
-//            }
         }
     }
     
