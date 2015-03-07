@@ -56,52 +56,15 @@ class QuestionViewController: UIViewController {
         println(randomKey)
         var buttonArray = [answer1, answer2, answer3, answer4]
         
-
-        println("Stuff2")
-        var answerLabelArray = [answerArray[randomKey].valueForKey("Answer"), answerArray[randomKey].valueForKey("IncAnswer2"), answerArray[randomKey].valueForKey("IncAnswer3"), answerArray[randomKey].valueForKey("IncAnswer1")]
+        var answerLabelArray = [answerArray[randomKey].valueForKey("Answer"), answerArray[randomKey].valueForKey("IncAnswer2"), answerArray[randomKey].valueForKey("IncAnswer3"), answerArray[randomKey].valueForKey("incAnswer1"), nil]
         
-        println("Stuff3")
         questionLabel.text = questionArray[randomKey].valueForKey("Question") as NSString
         self.correctAnswer = answerArray[randomKey].valueForKey("Answer") as NSString
-        
-        println("stuff4")
-//        for (var i = 0; i < 4; i++) {
-//            var randomLabel = Int(arc4random() % UInt32(answerLabelArray.count))
-//            println("answerLabelArrayCount")
-//            println(answerLabelArray.count)
-//            println(randomLabel)
-//            println("answerLabelArray at randomLabel")
-//            println(answerLabelArray[randomLabel])
-//    
-//            
-//            /* problem right now being that it's running into nil because the answer label at given randomLabel value is being removed.
-//            so if a randomLabel repeats itself then it runs into nil and crashes
-//            */
-//    
-//            
-//            buttonArray[i].setTitle(answerLabelArray[randomLabel] as NSString, forState:UIControlState())
-//            
-//            answerLabelArray.removeAtIndex(randomLabel)
-//            
-//            for (var j = randomLabel; j < (answerLabelArray.count-1); j++) {
-//                println(j)
-//                answerLabelArray[j] = answerLabelArray[j+1]
-//            }
-//            
-//        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
+  
         var answerCount = 3
         var k = 0
         var tmp = [21, 22, 23, 24]
-        while (k < (answerCount)) {
+        while (k < (answerCount+1)) {
             var randomNumber = Int(arc4random() % UInt32(answerCount+1))
             if (randomNumber == tmp[0] || randomNumber == tmp[1] || randomNumber == tmp[2] || randomNumber == tmp[3]) {
                 continue
@@ -119,16 +82,6 @@ class QuestionViewController: UIViewController {
                     continue
                 }
             }
-//            if (answerLabelArray[randomNumber] == nil) {
-//                println("hit nil")
-//                continue
-//            } else {
-//                
-//               // println("answerCount \(answerCount)")
-//                buttonArray[k].setTitle(answerLabelArray[randomNumber] as NSString, forState:UIControlState())
-//                answerLabelArray.removeAtIndex(randomNumber)
-//                k++
-//            }
         }
         
         k=0
