@@ -70,6 +70,95 @@
             </objects>
             <point key="canvasLocation" x="9" y="76.5"/>
         </scene>
+        <!--statsVC-->
+        <scene sceneID="k8q-Pc-QbC">
+            <objects>
+                <viewController storyboardIdentifier="statsVC" title="statsVC" id="Cla-px-2W9" customClass="StatsViewController" customModule="DumpsterSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6uv-CU-hLT"/>
+                        <viewControllerLayoutGuide type="bottom" id="jJ7-5O-ld6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Apt-Vt-SdQ">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acw-Ab-IhA">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="68" y="89" width="192" height="29"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOc-X6-Ecq">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="59" y="198" width="211" height="37"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YM4-3w-eXA">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="62" y="251" width="205" height="32"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XzG-vu-zGp">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="59" y="296" width="211" height="37"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qed-8Z-Gx3">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="68" y="146" width="193" height="32"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="acw-Ab-IhA"/>
+                                <exclude reference="OOc-X6-Ecq"/>
+                                <exclude reference="YM4-3w-eXA"/>
+                                <exclude reference="XzG-vu-zGp"/>
+                                <exclude reference="qed-8Z-Gx3"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="acw-Ab-IhA"/>
+                                <include reference="OOc-X6-Ecq"/>
+                                <include reference="YM4-3w-eXA"/>
+                                <include reference="XzG-vu-zGp"/>
+                                <include reference="qed-8Z-Gx3"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="labelFive" destination="XzG-vu-zGp" id="Vf3-Fh-uV9"/>
+                        <outlet property="labelFour" destination="YM4-3w-eXA" id="xjM-N4-HGA"/>
+                        <outlet property="labelOne" destination="acw-Ab-IhA" id="bzS-pl-dc4"/>
+                        <outlet property="labelThree" destination="OOc-X6-Ecq" id="2hr-Bm-k1o"/>
+                        <outlet property="labelTwo" destination="qed-8Z-Gx3" id="ReH-ej-XyY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MED-mV-U1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1390" y="-649.5"/>
+        </scene>
         <!--qVC-->
         <scene sceneID="kqN-Jb-nT0">
             <objects>
@@ -148,6 +237,18 @@
                                     <rect key="frame" x="42" y="482" width="59" height="21"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7c1-lP-g8d">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Stats">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="260" y="84" width="36" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="Cla-px-2W9" kind="show" identifier="showStats" id="83n-Mg-rJX"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9E1-H7-PaE">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Fourth">
@@ -170,6 +271,7 @@
                                 <exclude reference="Mi8-Kg-OX5"/>
                                 <exclude reference="fvY-Q5-42B"/>
                                 <exclude reference="2bs-nF-1UC"/>
+                                <exclude reference="7c1-lP-g8d"/>
                                 <exclude reference="9E1-H7-PaE"/>
                             </mask>
                         </variation>
@@ -181,6 +283,7 @@
                                 <include reference="Mi8-Kg-OX5"/>
                                 <include reference="fvY-Q5-42B"/>
                                 <include reference="2bs-nF-1UC"/>
+                                <include reference="7c1-lP-g8d"/>
                                 <include reference="9E1-H7-PaE"/>
                             </mask>
                         </variation>
