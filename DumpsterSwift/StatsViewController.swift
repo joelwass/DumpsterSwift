@@ -22,13 +22,20 @@ class StatsViewController: UIViewController {
     @IBOutlet weak var labelFive: UILabel!
     
     override func viewDidLoad() {
+        
+        var nav = self.navigationController?.navigationBar
+
+        nav?.barStyle = UIBarStyle.Black
+        nav?.tintColor = UIColor.yellowColor()
+        
+        
         super.viewDidLoad()
        
         labelOne.text = NSString(format: "Score: %d", score)
         labelTwo.text = NSString(format: "Skip Count: %d", skipCount)
         labelThree.text = NSString(format: "Question Count: %d", questionCount)
-        labelFour.text = NSString(format: "Incorrect Answer Count: %d", incorrectAnswerCount)
-        labelFive.text = NSString(format: "Correct Answer Count: %d", correctAnswerCount)
+        labelFour.text = NSString(format: "Incorrect Tries: %d", incorrectAnswerCount)
+        labelFive.text = NSString(format: "Correct Tries: %d", correctAnswerCount)
 
     }
     
