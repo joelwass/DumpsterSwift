@@ -149,7 +149,7 @@ class QuestionViewController: UIViewController {
     }
     
     func updateScore() {
-        scoreLabel.text = NSString(format: "%d", score)
+        scoreLabel.text = NSString(format: "Score: %d", score)
     }
     
     @IBAction func guessPressed(sender: UIButton) {
