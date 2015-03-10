@@ -24,12 +24,17 @@ class QuestionViewController: UIViewController {
     var answerLabelArray:NSMutableArray = NSMutableArray()
     var buttonArray:NSMutableArray = NSMutableArray()
     var score:Int = 0
+    var skipCount:Int = 0
+    var questionCount:Int = 0
+    var incorrectAnswerCount:Int = 0
+    var correctAnswerCount:Int = 0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         sleep(1)
+        self.updateScore()
         self.populateQuestions()
     }
 
@@ -38,7 +43,22 @@ class QuestionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showStats" {
+            
+            let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("statsVC") as StatsViewController
+            viewController.score = score
+            viewController.skipCount = skipCount
+            viewController.questionCount = questionCount
+            viewController.incorrectAnswerCount = incorrectAnswerCount
+            viewController.correctAnswerCount = correctAnswerCount
+            
+            self.presentViewController(viewController, animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func skipPressed() {
+        skipCount += 1
         self.buildQuestions()
         self.populateQuestions()
     }
@@ -47,7 +67,6 @@ class QuestionViewController: UIViewController {
         
         var randomKey = Int(arc4random_uniform(UInt32(questionArray.count)))
     
-        println(randomKey)
         var buttonArray = [answer1, answer2, answer3, answer4]
         
         var answerLabelArray = [answerArray[randomKey].valueForKey("Answer"), answerArray[randomKey].valueForKey("IncAnswer2"), answerArray[randomKey].valueForKey("IncAnswer3"), answerArray[randomKey].valueForKey("incAnswer1"), nil]
@@ -64,15 +83,13 @@ class QuestionViewController: UIViewController {
                 continue
             } else {
                 tmp[k] = randomNumber
-                println("randomNumber \(randomNumber) \(answerLabelArray[randomNumber])")
-                println(tmp)
+
                 if let answerTemp = answerLabelArray[randomNumber] as? NSString {
                     buttonArray[k].setTitle(answerTemp, forState:UIControlState())
-                    //answerLabelArray.removeAtIndex(randomNumber)
+
                     k++
                 }
                 else {
-                    println("hit nil")
                     continue
                 }
             }
@@ -120,11 +137,6 @@ class QuestionViewController: UIViewController {
      
                 if let objects = objects as? [PFObject!] {
                     self.answerArray.addObjectsFromArray(objects)
-                    
-                    
-                    for element in self.answerArray {
-                        println(element)
-                    }
 
                 }
             }
@@ -137,15 +149,45 @@ class QuestionViewController: UIViewController {
     }
     
     func updateScore() {
-        scoreLabel.text = NSString(format: "%d", score)
+        scoreLabel.text = NSString(format: "Score: %d", score)
     }
     
     @IBAction func guessPressed(sender: UIButton) {
+        questionCount += 1
         if (sender.currentTitle == self.correctAnswer) {
+            correctAnswerCount += 1
             score += 2
             self.updateScore()
-       
+            var alert = UIAlertController(title: "Nice!", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            //following will be used to present learn more view controller
+         //   alert.addAction(UIAlertAction(title: "Learn More", style: UIAlertActionStyle.Default, handler: nil))
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+            alert.addAction(UIAlertAction(title: "Next", style: .Default, handler: { action in
+                switch action.style{
+                case .Default:
+                    println("next")
+                    self.buildQuestions()
+                    self.populateQuestions()
+               
+                 //   for learn more view controller
+                case .Cancel:
+                    println("learn more")
+                   
+                case .Destructive:
+                    println("destructive")
+                }
+            }))
         } else {
+            UIView.animateWithDuration(0.2, delay: 0.0, options: nil, animations: {
+                sender.backgroundColor = UIColor.redColor()
+                }, completion: { finished in
+                    UIView .animateWithDuration(0.2, animations: {
+                    sender.backgroundColor = UIColor.whiteColor()
+                })
+            })
+            incorrectAnswerCount += 1
             score -= 1
             self.updateScore()
             

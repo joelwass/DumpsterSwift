@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EEB09F261AACB6320070BA38 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB09F251AACB6320070BA38 /* StatsViewController.swift */; };
 		EEC044FE1A93C74200D90ECA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC044FD1A93C74200D90ECA /* AppDelegate.swift */; };
 		EEC045001A93C74300D90ECA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC044FF1A93C74200D90ECA /* ViewController.swift */; };
 		EEC045031A93C74300D90ECA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEC045011A93C74300D90ECA /* Main.storyboard */; };
@@ -45,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EE3DF2FD1AAEA23C00F994FF /* tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tests.swift; sourceTree = "<group>"; };
+		EEB09F251AACB6320070BA38 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		EEC044F81A93C74200D90ECA /* DumpsterSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DumpsterSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEC044FC1A93C74200D90ECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEC044FD1A93C74200D90ECA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,12 +150,14 @@
 				EEC044FD1A93C74200D90ECA /* AppDelegate.swift */,
 				EEC044FF1A93C74200D90ECA /* ViewController.swift */,
 				EEC045211A942AB000D90ECA /* QuestionViewController.swift */,
+				EEB09F251AACB6320070BA38 /* StatsViewController.swift */,
 				EEC045011A93C74300D90ECA /* Main.storyboard */,
 				EEC045041A93C74300D90ECA /* Images.xcassets */,
 				EEC045061A93C74300D90ECA /* LaunchScreen.xib */,
 				EEC044FB1A93C74200D90ECA /* Supporting Files */,
 				EEDAA1D21A9E5A3D00C5142B /* Bridging.m */,
 				EEDAA1D11A9E5A3C00C5142B /* DumpsterSwift-Bridging-Header.h */,
+				EE3DF2FD1AAEA23C00F994FF /* tests.swift */,
 			);
 			path = DumpsterSwift;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 				EEC045001A93C74300D90ECA /* ViewController.swift in Sources */,
 				EEC044FE1A93C74200D90ECA /* AppDelegate.swift in Sources */,
 				EEC045221A942AB000D90ECA /* QuestionViewController.swift in Sources */,
+				EEB09F261AACB6320070BA38 /* StatsViewController.swift in Sources */,
 				EEDAA1D31A9E5A3D00C5142B /* Bridging.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
