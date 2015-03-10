@@ -46,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EE3DF2FD1AAEA23C00F994FF /* tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tests.swift; sourceTree = "<group>"; };
 		EEB09F251AACB6320070BA38 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		EEC044F81A93C74200D90ECA /* DumpsterSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DumpsterSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEC044FC1A93C74200D90ECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -156,6 +157,7 @@
 				EEC044FB1A93C74200D90ECA /* Supporting Files */,
 				EEDAA1D21A9E5A3D00C5142B /* Bridging.m */,
 				EEDAA1D11A9E5A3C00C5142B /* DumpsterSwift-Bridging-Header.h */,
+				EE3DF2FD1AAEA23C00F994FF /* tests.swift */,
 			);
 			path = DumpsterSwift;
 			sourceTree = "<group>";
