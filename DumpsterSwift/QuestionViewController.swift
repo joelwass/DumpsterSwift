@@ -46,14 +46,14 @@ class QuestionViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showStats" {
             
-            let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("statsVC") as StatsViewController
+            var viewController = self.storyboard?.instantiateViewControllerWithIdentifier("statsVC") as StatsViewController
             viewController.score = score
             viewController.skipCount = skipCount
             viewController.questionCount = questionCount
             viewController.incorrectAnswerCount = incorrectAnswerCount
             viewController.correctAnswerCount = correctAnswerCount
             
-            self.presentViewController(viewController, animated: true, completion: nil)
+            self.navigationController?.pushViewController(viewController, animated: true)
         }
     }
     
