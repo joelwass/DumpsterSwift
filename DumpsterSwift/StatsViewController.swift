@@ -17,6 +17,7 @@ class StatsViewController: UIViewController {
     
     @IBOutlet weak var labelOne: UILabel!
     @IBOutlet weak var labelTwo: UILabel!
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var labelThree: UILabel!
     @IBOutlet weak var labelFour: UILabel!
     @IBOutlet weak var labelFive: UILabel!
@@ -37,6 +38,12 @@ class StatsViewController: UIViewController {
         labelFour.text = NSString(format: "Incorrect Tries: %d", incorrectAnswerCount)
         labelFive.text = NSString(format: "Correct Tries: %d", correctAnswerCount)
 
+    }
+    
+    @IBAction func goBack() {
+        if let navController = self.navigationController {
+            navController.popViewControllerAnimated(true)
+        }
     }
     
     override func didReceiveMemoryWarning() {
