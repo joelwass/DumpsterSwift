@@ -26,7 +26,7 @@ class QuestionViewController: UIViewController {
     var score:Int = 0
     var skipCount:Int = 0
     var questionCount:Int = 0
-    var incorrectAnswerCount:Int = 0
+    var attemptCount:Int = 0
     var correctAnswerCount:Int = 0
     
     
@@ -46,14 +46,13 @@ class QuestionViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showStats" {
             
-            let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("statsVC") as StatsViewController
+            var viewController = self.storyboard?.instantiateViewControllerWithIdentifier("statsVC") as StatsViewController
             viewController.score = score
             viewController.skipCount = skipCount
             viewController.questionCount = questionCount
-            viewController.incorrectAnswerCount = incorrectAnswerCount
-            viewController.correctAnswerCount = correctAnswerCount
+            viewController.attemptCount = attemptCount
             
-            self.presentViewController(viewController, animated: true, completion: nil)
+            self.navigationController?.pushViewController(viewController, animated: true)
         }
     }
     
@@ -155,7 +154,7 @@ class QuestionViewController: UIViewController {
     @IBAction func guessPressed(sender: UIButton) {
         questionCount += 1
         if (sender.currentTitle == self.correctAnswer) {
-            correctAnswerCount += 1
+            attemptCount += 1
             score += 2
             self.updateScore()
             var alert = UIAlertController(title: "Nice!", message: "", preferredStyle: UIAlertControllerStyle.Alert)
@@ -187,7 +186,7 @@ class QuestionViewController: UIViewController {
                     sender.backgroundColor = UIColor.whiteColor()
                 })
             })
-            incorrectAnswerCount += 1
+            attemptCount += 1
             score -= 1
             self.updateScore()
             

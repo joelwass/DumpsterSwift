@@ -51,11 +51,20 @@ class ViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showQuestionSegue" {
             
-            let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("qVC") as QuestionViewController
+            var viewController = self.storyboard?.instantiateViewControllerWithIdentifier("qVC") as QuestionViewController
+            let navController = UINavigationController(rootViewController: viewController)
             viewController.questionArray = self.questionArrayFirst
             viewController.answerArray = self.answerArrayFirst
             
-            self.presentViewController(viewController, animated: true, completion: nil)
+            self.presentViewController(navController, animated: true, completion: nil)
+        /*
+            var VC1 = self.storyboard.instantiateViewControllerWithIdentifier("MyViewController") as ViewController
+            let navController = UINavigationController(rootViewController: VC1) // Creating a navigation controller with VC1 at the root of the navigation stack.
+            self.presentViewController(navController, animated:true, completion: nil)
+            
+        */
+            
+//            self.navigationController.pushViewController(viewController, animated: true)
         }
     }
 
