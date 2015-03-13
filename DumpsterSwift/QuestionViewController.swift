@@ -31,11 +31,21 @@ class QuestionViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        
+        var nav = self.navigationController?.navigationBar
+        
+        nav?.barStyle = UIBarStyle.Black
+        nav?.tintColor = UIColor.orangeColor()
+        
         super.viewDidLoad()
         
         sleep(1)
         self.updateScore()
         self.populateQuestions()
+    }
+    
+    @IBAction func statsPressed(sender: AnyObject) {
+        
     }
 
     override func didReceiveMemoryWarning() {
