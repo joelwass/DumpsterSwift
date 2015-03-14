@@ -47,7 +47,7 @@
                                     </mask>
                                 </variation>
                             </webView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7l9-EK-euV">
+                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7l9-EK-euV">
                                 <rect key="frame" x="252" y="502" width="97" height="39"/>
                                 <color key="backgroundColor" red="1" green="0.6462757898" blue="0.55135613130000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -58,8 +58,13 @@
                                 <state key="normal" title="START">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="150" y="499" width="100" height="39"/>
+                                    <rect key="frame" x="125" y="499" width="150" height="45"/>
                                     <mask key="constraints">
                                         <exclude reference="aSJ-0C-Tzp"/>
                                         <exclude reference="iZq-j6-Qfz"/>
@@ -250,6 +255,11 @@
                                 <state key="normal" title="First">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="5QB-38-SdU"/>
@@ -276,6 +286,11 @@
                                 <state key="normal" title="Second">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="e6X-3V-DLH"/>
@@ -302,6 +317,11 @@
                                 <state key="normal" title="Third">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="bMK-3e-hOG"/>
@@ -328,6 +348,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="5EV-E2-AnY"/>
@@ -360,6 +385,11 @@
                                 <state key="normal" title="Fourth">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="GcR-Mw-aBL"/>
@@ -383,6 +413,11 @@
                                 <state key="normal" title="SKIP">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="245" y="530" width="150" height="50"/>
                                 </variation>
@@ -395,11 +430,16 @@
                                 <state key="normal" title="Stats">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="309" y="72" width="75" height="40"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="Cla-px-2W9" kind="show" id="8DL-Rs-NzY"/>
+                                    <action selector="statsPressed:" destination="ybq-7H-9Sl" eventType="touchUpInside" id="Io3-rd-nc0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -474,6 +514,7 @@
                         <outlet property="questionLabel" destination="Mi8-Kg-OX5" id="h61-38-MVQ"/>
                         <outlet property="scoreLabel" destination="2bs-nF-1UC" id="VtG-gx-5om"/>
                         <outlet property="skipButton" destination="fvY-Q5-42B" id="EWr-JF-kDC"/>
+                        <segue destination="Cla-px-2W9" kind="show" identifier="showStats" id="nr7-9R-sY3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ghg-Fq-lCI" userLabel="First Responder" sceneMemberID="firstResponder"/>
