@@ -28,6 +28,7 @@ class QuestionViewController: UIViewController {
     var questionCount:Int = 0
     var attemptCount:Int = 0
     var correctAnswerCount:Int = 0
+    var incorrectAnswerCount:Int = 0
     
     
     override func viewDidLoad() {
@@ -49,10 +50,10 @@ class QuestionViewController: UIViewController {
         viewController.score = score
         viewController.skipCount = skipCount
         viewController.questionCount = questionCount
-        viewController.attemptCount = attemptCount
+        viewController.correctAnswerCount = correctAnswerCount
+        viewController.incorrectAnswerCount = incorrectAnswerCount
         
         self.navigationController?.pushViewController(viewController, animated: true)
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -158,7 +159,7 @@ class QuestionViewController: UIViewController {
     @IBAction func guessPressed(sender: UIButton) {
         questionCount += 1
         if (sender.currentTitle == self.correctAnswer) {
-            attemptCount += 1
+            correctAnswerCount += 1
             score += 2
             self.updateScore()
             var alert = UIAlertController(title: "Nice!", message: "", preferredStyle: UIAlertControllerStyle.Alert)
@@ -190,7 +191,7 @@ class QuestionViewController: UIViewController {
                     sender.backgroundColor = UIColor.whiteColor()
                 })
             })
-            attemptCount += 1
+            incorrectAnswerCount += 1
             score -= 1
             self.updateScore()
             
