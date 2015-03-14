@@ -10,7 +10,9 @@ import UIKit
 
 
 class LearnMoreViewController: UIViewController {
-
+    
+    var correctAnswer:NSString!
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()

@@ -234,10 +234,10 @@
             </objects>
             <point key="canvasLocation" x="2091" y="-280"/>
         </scene>
-        <!--View Controller-->
+        <!--learnMore-->
         <scene sceneID="qq1-57-tjF">
             <objects>
-                <viewController storyboardIdentifier="learnMore" id="AeP-5t-Kbx" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="learnMore" title="learnMore" id="AeP-5t-Kbx" customClass="LearnMoreViewController" customModule="DumpsterSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5dt-W7-8hK"/>
                         <viewControllerLayoutGuide type="bottom" id="cIe-kJ-uUR"/>
@@ -532,6 +532,7 @@
                         <outlet property="scoreLabel" destination="2bs-nF-1UC" id="VtG-gx-5om"/>
                         <outlet property="skipButton" destination="fvY-Q5-42B" id="EWr-JF-kDC"/>
                         <segue destination="Cla-px-2W9" kind="show" identifier="showStats" id="nr7-9R-sY3"/>
+                        <segue destination="AeP-5t-Kbx" kind="show" identifier="showLearnMore" id="6hh-vH-4xc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ghg-Fq-lCI" userLabel="First Responder" sceneMemberID="firstResponder"/>
