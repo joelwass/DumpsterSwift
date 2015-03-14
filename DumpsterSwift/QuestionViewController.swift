@@ -45,25 +45,19 @@ class QuestionViewController: UIViewController {
     }
     
     @IBAction func statsPressed(sender: AnyObject) {
+        var viewController = self.storyboard?.instantiateViewControllerWithIdentifier("statsVC") as StatsViewController
+        viewController.score = score
+        viewController.skipCount = skipCount
+        viewController.questionCount = questionCount
+        viewController.attemptCount = attemptCount
         
+        self.navigationController?.pushViewController(viewController, animated: true)
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showStats" {
-            
-            var viewController = self.storyboard?.instantiateViewControllerWithIdentifier("statsVC") as StatsViewController
-            viewController.score = score
-            viewController.skipCount = skipCount
-            viewController.questionCount = questionCount
-            viewController.attemptCount = attemptCount
-            
-            self.navigationController?.pushViewController(viewController, animated: true)
-        }
     }
     
     @IBAction func skipPressed() {
