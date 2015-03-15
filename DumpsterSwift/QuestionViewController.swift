@@ -162,12 +162,24 @@ class QuestionViewController: UIViewController {
             correctAnswerCount += 1
             score += 2
             self.updateScore()
-            var alert = UIAlertController(title: "Nice!", message: "", preferredStyle: UIAlertControllerStyle.Alert)
             
-            //following will be used to present learn more view controller
-         //   alert.addAction(UIAlertAction(title: "Learn More", style: UIAlertActionStyle.Default, handler: nil))
+            var alert = UIAlertController(title: "Nice!", message: "Click Learn More to learn about the answer!", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Learn More", style: UIAlertActionStyle.Default, handler: { action in
+                switch action.style{
+                case .Default:
+                    println("learn more")
+                    self.learnMore()
+                    
+                case .Cancel:
+                    println("cancel")
+                
+                case .Destructive:
+                    println("destructive")
+                }
+            }))
             
             self.presentViewController(alert, animated: true, completion: nil)
+            
             alert.addAction(UIAlertAction(title: "Next", style: .Default, handler: { action in
                 switch action.style{
                 case .Default:
@@ -177,14 +189,14 @@ class QuestionViewController: UIViewController {
                
                  //   for learn more view controller
                 case .Cancel:
-                    println("learn more")
+                    println("cancel")
                    
                 case .Destructive:
                     println("destructive")
                 }
             }))
         } else {
-            UIView.animateWithDuration(0.2, delay: 0.0, options: nil, animations: {
+            UIView.animateWithDuration(0.3, delay: 0.0, options: nil, animations: {
                 sender.backgroundColor = UIColor.redColor()
                 }, completion: { finished in
                     UIView .animateWithDuration(0.2, animations: {
@@ -197,5 +209,11 @@ class QuestionViewController: UIViewController {
             
         }
     }
-
+    
+    func learnMore() {
+        var viewController = self.storyboard?.instantiateViewControllerWithIdentifier("learnMore") as LearnMoreViewController
+        viewController.correctAnswer = correctAnswer
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 }
