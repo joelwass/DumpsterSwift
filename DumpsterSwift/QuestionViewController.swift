@@ -104,6 +104,10 @@ class QuestionViewController: UIViewController {
         
         answerArray.removeObjectAtIndex(randomKey)
         questionArray.removeObjectAtIndex(randomKey)
+        
+        if (questionArray.count == 0) {
+            self.buildQuestions()
+        }
     }
     
     func buildQuestions() {
@@ -184,7 +188,6 @@ class QuestionViewController: UIViewController {
                 switch action.style{
                 case .Default:
                     println("next")
-                    self.buildQuestions()
                     self.populateQuestions()
                
                  //   for learn more view controller
