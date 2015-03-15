@@ -12,12 +12,32 @@ import UIKit
 class LearnMoreViewController: UIViewController {
     
     var correctAnswer:NSString!
+    var answerURLString:NSString!
+    var answerURL:NSURL!
+    var urlRequest:NSURLRequest!
+    var incompleteURL:NSString = "https://en.wikipedia.org/wiki/"
+    
+    @IBOutlet weak var learnMoreWebView: UIWebView!
+    
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-
-        
+        self.removeSpaces()
+        self.convertToRequest(answerURLString)
+        learnMoreWebView.loadRequest(urlRequest)
+    }
+    
+    func removeSpaces() {
+        println("removeSpaces")
+        answerURLString = correctAnswer.stringByReplacingOccurrencesOfString(" ", withString: "")
+    }
+    
+    func convertToRequest(string: NSString) {
+        println("convertToRequest")
+        answerURLString = incompleteURL.stringByAppendingString(answerURLString)
+        answerURL = NSURL(string: answerURLString)
+        urlRequest = NSURLRequest(URL: answerURL)
+        println(urlRequest)
     }
     
     override func didReceiveMemoryWarning() {

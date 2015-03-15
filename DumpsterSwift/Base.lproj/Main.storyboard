@@ -234,22 +234,59 @@
             </objects>
             <point key="canvasLocation" x="2091" y="-280"/>
         </scene>
-        <!--learnMore-->
+        <!--Learn More-->
         <scene sceneID="qq1-57-tjF">
             <objects>
-                <viewController storyboardIdentifier="learnMore" title="learnMore" id="AeP-5t-Kbx" customClass="LearnMoreViewController" customModule="DumpsterSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="learnMore" title="Learn More" id="AeP-5t-Kbx" customClass="LearnMoreViewController" customModule="DumpsterSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5dt-W7-8hK"/>
                         <viewControllerLayoutGuide type="bottom" id="cIe-kJ-uUR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4Ls-fF-AB6">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Gp-W1-YcG">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9Gp-W1-YcG" firstAttribute="top" secondItem="5dt-W7-8hK" secondAttribute="bottom" id="KNA-yO-HkN"/>
+                            <constraint firstItem="cIe-kJ-uUR" firstAttribute="top" secondItem="9Gp-W1-YcG" secondAttribute="bottom" id="R89-To-Qz6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9Gp-W1-YcG" secondAttribute="trailing" id="i4E-2m-t0S"/>
+                            <constraint firstItem="9Gp-W1-YcG" firstAttribute="leading" secondItem="4Ls-fF-AB6" secondAttribute="leadingMargin" id="kf8-n5-Vqp"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="9Gp-W1-YcG"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="KNA-yO-HkN"/>
+                                <exclude reference="i4E-2m-t0S"/>
+                                <exclude reference="kf8-n5-Vqp"/>
+                                <exclude reference="R89-To-Qz6"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="9Gp-W1-YcG"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="KNA-yO-HkN"/>
+                                <include reference="i4E-2m-t0S"/>
+                                <include reference="kf8-n5-Vqp"/>
+                                <include reference="R89-To-Qz6"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="learnMoreWebView" destination="9Gp-W1-YcG" id="c2H-cH-Pfa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RH8-hC-kxE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2091" y="446"/>
+            <point key="canvasLocation" x="2052" y="466"/>
         </scene>
         <!--qVC-->
         <scene sceneID="kqN-Jb-nT0">
