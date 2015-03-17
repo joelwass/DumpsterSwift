@@ -35,8 +35,6 @@ class ViewController: UIViewController {
         gifView.loadData(gif, MIMEType:"image/gif", textEncodingName: nil, baseURL: nil)
         gifView.userInteractionEnabled = false;
         self.view .addSubview(gifView)
-            
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
