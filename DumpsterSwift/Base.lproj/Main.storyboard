@@ -241,18 +241,26 @@
                         <constraints>
                             <constraint firstItem="9Gp-W1-YcG" firstAttribute="top" secondItem="5dt-W7-8hK" secondAttribute="bottom" id="KNA-yO-HkN"/>
                             <constraint firstItem="cIe-kJ-uUR" firstAttribute="top" secondItem="9Gp-W1-YcG" secondAttribute="bottom" id="R89-To-Qz6"/>
+                            <constraint firstItem="9Gp-W1-YcG" firstAttribute="trailing" secondItem="4Ls-fF-AB6" secondAttribute="trailingMargin" id="WUI-ZF-NDx"/>
+                            <constraint firstItem="9Gp-W1-YcG" firstAttribute="top" secondItem="5dt-W7-8hK" secondAttribute="bottom" id="bwK-6f-gpA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9Gp-W1-YcG" secondAttribute="trailing" id="i4E-2m-t0S"/>
+                            <constraint firstItem="9Gp-W1-YcG" firstAttribute="leading" secondItem="4Ls-fF-AB6" secondAttribute="leadingMargin" id="jdH-YG-ojZ"/>
                             <constraint firstItem="9Gp-W1-YcG" firstAttribute="leading" secondItem="4Ls-fF-AB6" secondAttribute="leadingMargin" id="kf8-n5-Vqp"/>
+                            <constraint firstItem="cIe-kJ-uUR" firstAttribute="top" secondItem="9Gp-W1-YcG" secondAttribute="bottom" id="x7G-6n-0cE"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="9Gp-W1-YcG"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="R89-To-Qz6"/>
                                 <exclude reference="KNA-yO-HkN"/>
+                                <exclude reference="WUI-ZF-NDx"/>
+                                <exclude reference="bwK-6f-gpA"/>
                                 <exclude reference="i4E-2m-t0S"/>
+                                <exclude reference="jdH-YG-ojZ"/>
                                 <exclude reference="kf8-n5-Vqp"/>
+                                <exclude reference="R89-To-Qz6"/>
+                                <exclude reference="x7G-6n-0cE"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -260,10 +268,14 @@
                                 <include reference="9Gp-W1-YcG"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="R89-To-Qz6"/>
                                 <include reference="KNA-yO-HkN"/>
+                                <include reference="WUI-ZF-NDx"/>
+                                <include reference="bwK-6f-gpA"/>
                                 <include reference="i4E-2m-t0S"/>
+                                <include reference="jdH-YG-ojZ"/>
                                 <include reference="kf8-n5-Vqp"/>
+                                <include reference="R89-To-Qz6"/>
+                                <include reference="x7G-6n-0cE"/>
                             </mask>
                         </variation>
                     </view>
