@@ -41,6 +41,10 @@ class QuestionViewController: UIViewController {
         super.viewDidLoad()
         
         sleep(1)
+        self.answer1.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        self.answer2.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        self.answer3.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        self.answer4.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
         self.updateScore()
         self.populateQuestions()
     }
