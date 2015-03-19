@@ -19,7 +19,6 @@ class LearnMoreViewController: UIViewController {
     
     @IBOutlet weak var learnMoreWebView: UIWebView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.removeSpaces()

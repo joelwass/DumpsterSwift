@@ -32,11 +32,9 @@ class ViewController: UIViewController {
         //gif animation code
         let gifString = NSBundle.mainBundle().URLForResource("DumpLoopTrans2", withExtension: "gif")
         let gif = NSData(contentsOfURL: gifString!)
-        gifView .loadData(gif, MIMEType:"image/gif", textEncodingName: nil, baseURL: nil)
+        gifView.loadData(gif, MIMEType:"image/gif", textEncodingName: nil, baseURL: nil)
         gifView.userInteractionEnabled = false;
-        [self.view .addSubview(gifView)]
-            
-        // Do any additional setup after loading the view, typically from a nib.
+        self.view .addSubview(gifView)
     }
 
     override func didReceiveMemoryWarning() {
