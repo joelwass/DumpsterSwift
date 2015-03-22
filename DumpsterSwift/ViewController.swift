@@ -10,43 +10,44 @@ import UIKit
 
 
 class ViewController: UIViewController {
-    
+  
     @IBOutlet weak var homeLabel: UILabel!
-    @IBOutlet weak var gifView: UIWebView!
-    @IBOutlet weak var startButton: UIButton!
-    var questionArrayFirst:NSMutableArray = NSMutableArray()
-    var answerArrayFirst:NSMutableArray = NSMutableArray()
+  @IBOutlet weak var gifView: UIWebView!
+  @IBOutlet weak var startButton: UIButton!
+  var questionArrayFirst:NSMutableArray = NSMutableArray()
+  var answerArrayFirst:NSMutableArray = NSMutableArray()
     
 
   
 
-    override func viewDidLoad() {
+  override func viewDidLoad() {
+      
+    view.setTranslatesAutoresizingMaskIntoConstraints(false)
+    super.viewDidLoad()
+    startButton.hidden = true
+    buildQuestions()
         
-        super.viewDidLoad()
-        startButton.hidden = true
-        buildQuestions()
+    homeLabel.font = UIFont(name: "Chalkduster", size:18)
+    startButton.titleLabel!.font = UIFont(name: "Chalkduster", size: 18)
         
-        homeLabel.font = UIFont(name: "Chalkduster", size:18)
-        startButton.titleLabel!.font = UIFont(name: "Chalkduster", size: 18)
-        
-        //gif animation code
-        let gifString = NSBundle.mainBundle().URLForResource("DumpLoopTrans2", withExtension: "gif")
-        let gif = NSData(contentsOfURL: gifString!)
-        gifView.loadData(gif, MIMEType:"image/gif", textEncodingName: nil, baseURL: nil)
-        gifView.userInteractionEnabled = false;
-        self.view .addSubview(gifView)
-    }
+    //gif animation code
+    let gifString = NSBundle.mainBundle().URLForResource("DumpLoopTrans2", withExtension: "gif")
+    let gif = NSData(contentsOfURL: gifString!)
+    gifView.loadData(gif, MIMEType:"image/gif", textEncodingName: nil, baseURL: nil)
+    gifView.userInteractionEnabled = false;
+    self.view .addSubview(gifView)
+  }
 
-    override func didReceiveMemoryWarning() {
+  override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func buttonPressed(sender : AnyObject) {
+  @IBAction func buttonPressed(sender : AnyObject) {
         println("start button pressed")
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showQuestionSegue" {
             
             var viewController = self.storyboard?.instantiateViewControllerWithIdentifier("qVC") as QuestionViewController
@@ -55,18 +56,10 @@ class ViewController: UIViewController {
             viewController.answerArray = self.answerArrayFirst
             
             self.presentViewController(navController, animated: true, completion: nil)
-        /*
-            var VC1 = self.storyboard.instantiateViewControllerWithIdentifier("MyViewController") as ViewController
-            let navController = UINavigationController(rootViewController: VC1) // Creating a navigation controller with VC1 at the root of the navigation stack.
-            self.presentViewController(navController, animated:true, completion: nil)
-            
-        */
-            
-//            self.navigationController.pushViewController(viewController, animated: true)
         }
     }
-
-    func buildQuestions() {
+  
+  func buildQuestions() {
         
         let skipNum = Int(arc4random_uniform(200))
 
@@ -116,8 +109,8 @@ class ViewController: UIViewController {
 
         NSLog("Succesfully built Questions")
     }
-    
-    func makeButtonVisible() {
+  
+  func makeButtonVisible() {
         startButton.hidden = false
     }
 }
