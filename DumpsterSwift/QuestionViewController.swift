@@ -69,7 +69,6 @@ class QuestionViewController: UIViewController {
     
     @IBAction func skipPressed() {
         skipCount += 1
-        self.buildQuestions()
         self.populateQuestions()
     }
     
