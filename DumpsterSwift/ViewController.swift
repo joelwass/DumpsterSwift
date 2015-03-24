@@ -22,7 +22,7 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
       
-    view.setTranslatesAutoresizingMaskIntoConstraints(false)
+   view.setTranslatesAutoresizingMaskIntoConstraints(false)
     super.viewDidLoad()
     startButton.hidden = true
     buildQuestions()
@@ -54,8 +54,8 @@ class ViewController: UIViewController {
             let navController = UINavigationController(rootViewController: viewController)
             viewController.questionArray = self.questionArrayFirst
             viewController.answerArray = self.answerArrayFirst
-            
-            self.presentViewController(navController, animated: true, completion: nil)
+          
+            presentViewController(navController, animated: true, completion: nil)
         }
     }
   
