@@ -32,14 +32,16 @@ class QuestionViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        
-        var nav = self.navigationController?.navigationBar
-        
-        nav?.barStyle = UIBarStyle.Black
-        nav?.tintColor = UIColor.orangeColor()
+
         
         super.viewDidLoad()
-        
+      
+      
+      //view.setTranslatesAutoresizingMaskIntoConstraints(false)
+      var nav = self.navigationController?.navigationBar
+      
+      nav?.barStyle = UIBarStyle.Black
+      nav?.tintColor = UIColor.orangeColor()
         sleep(1)
         self.answer1.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
         self.answer2.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
@@ -67,7 +69,6 @@ class QuestionViewController: UIViewController {
     
     @IBAction func skipPressed() {
         skipCount += 1
-        self.buildQuestions()
         self.populateQuestions()
     }
     

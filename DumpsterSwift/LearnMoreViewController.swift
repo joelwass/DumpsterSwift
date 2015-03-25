@@ -27,12 +27,10 @@ class LearnMoreViewController: UIViewController {
     }
     
     func removeSpaces() {
-        println("removeSpaces")
         answerURLString = correctAnswer.stringByReplacingOccurrencesOfString(" ", withString: "")
     }
     
     func convertToRequest(string: NSString) {
-        println("convertToRequest")
         answerURLString = incompleteURL.stringByAppendingString(answerURLString)
         answerURL = NSURL(string: answerURLString)
         urlRequest = NSURLRequest(URL: answerURL)

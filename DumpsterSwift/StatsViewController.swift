@@ -23,14 +23,15 @@ class StatsViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        var nav = self.navigationController?.navigationBar
-
-        nav?.barStyle = UIBarStyle.Black
-        nav?.tintColor = UIColor.orangeColor()
-        
-        
+      
         super.viewDidLoad()
-       
+      
+      var nav = self.navigationController?.navigationBar
+      
+      nav?.barStyle = UIBarStyle.Black
+      nav?.tintColor = UIColor.orangeColor()
+      
+
         labelOne.text = NSString(format: "Score: %d", score)
         labelTwo.text = NSString(format: "Skip Count: %d", skipCount)
         labelThree.text = NSString(format: "Question Count: %d", questionCount)
