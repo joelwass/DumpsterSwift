@@ -10,7 +10,6 @@ import UIKit
 
 
 class LearnMoreViewController: UIViewController {
-    
     var correctAnswer:NSString!
     var answerURLString:NSString!
     var answerURL:NSURL!
@@ -34,7 +33,6 @@ class LearnMoreViewController: UIViewController {
         answerURLString = incompleteURL.stringByAppendingString(answerURLString)
         answerURL = NSURL(string: answerURLString)
         urlRequest = NSURLRequest(URL: answerURL)
-        println(urlRequest)
     }
     
     override func didReceiveMemoryWarning() {

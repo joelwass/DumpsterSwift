@@ -29,25 +29,19 @@ class QuestionViewController: UIViewController {
     var attemptCount:Int = 0
     var correctAnswerCount:Int = 0
     var incorrectAnswerCount:Int = 0
+    var tmpArray:Array<Int> = [12,13,14,15]
     
     
     override func viewDidLoad() {
-
-        
-        super.viewDidLoad()
+      super.viewDidLoad()
       
-      
-      //view.setTranslatesAutoresizingMaskIntoConstraints(false)
       var nav = self.navigationController?.navigationBar
-      
       nav?.barStyle = UIBarStyle.Black
       nav?.tintColor = UIColor.orangeColor()
-        sleep(1)
         self.answer1.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
         self.answer2.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
         self.answer3.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
         self.answer4.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        self.updateScore()
         self.populateQuestions()
     }
     
@@ -73,40 +67,31 @@ class QuestionViewController: UIViewController {
     }
     
     func populateQuestions() {
-        
         var randomKey = Int(arc4random_uniform(UInt32(questionArray.count)))
-    
         var buttonArray = [answer1, answer2, answer3, answer4]
-        
-        var answerLabelArray = [answerArray[randomKey].valueForKey("Answer"), answerArray[randomKey].valueForKey("IncAnswer2"), answerArray[randomKey].valueForKey("IncAnswer3"), answerArray[randomKey].valueForKey("incAnswer1"), nil]
+        var answerLabelArray = [answerArray[randomKey].valueForKey("Answer")
+            , answerArray[randomKey].valueForKey("IncAnswer2")
+            , answerArray[randomKey].valueForKey("IncAnswer3")
+            , answerArray[randomKey].valueForKey("incAnswer1")]
+        var arrayOfButtonNumbers = [5,6,7,8]
+        var i = 0
         
         questionLabel.text = questionArray[randomKey].valueForKey("Question") as NSString
         self.correctAnswer = answerArray[randomKey].valueForKey("Answer") as NSString
-  
-        var answerCount = 3
-        var k = 0
-        var tmp = [21, 22, 23, 24]
-        while (k < (answerCount+1)) {
-            var randomNumber = Int(arc4random() % UInt32(answerCount+1))
-            if (randomNumber == tmp[0] || randomNumber == tmp[1] || randomNumber == tmp[2] || randomNumber == tmp[3]) {
+        while (i < 4) {
+            var buttonNumber = Int(arc4random() % UInt32(4))
+            if (buttonNumber == arrayOfButtonNumbers[0] || buttonNumber == arrayOfButtonNumbers[1]
+                || buttonNumber == arrayOfButtonNumbers[2]
+                || buttonNumber == arrayOfButtonNumbers[3]) {
                 continue
             } else {
-                tmp[k] = randomNumber
-
-                if let answerTemp = answerLabelArray[randomNumber] as? NSString {
-                    buttonArray[k].setTitle(answerTemp, forState:UIControlState())
-
-                    k++
-                }
-                else {
-                    continue
+                arrayOfButtonNumbers[i] = buttonNumber
+                if let answerTemp = answerLabelArray[buttonNumber] as? NSString {
+                    buttonArray[i].setTitle(answerTemp, forState:UIControlState())
+                    i++
                 }
             }
         }
-        
-        k=0
-        answerCount = 4
-        
         answerArray.removeObjectAtIndex(randomKey)
         questionArray.removeObjectAtIndex(randomKey)
         
@@ -116,29 +101,21 @@ class QuestionViewController: UIViewController {
     }
     
     func buildQuestions() {
-        
         let skipNum = Int(arc4random_uniform(200))
-        
-        
         var findQuestions = PFQuery(className: "Questions")
         findQuestions.limit = 5
         findQuestions.skip = skipNum
         findQuestions.findObjectsInBackgroundWithBlock{
             (objects:[AnyObject]!, error:NSError!)->Void in
             if (error == nil) {
-                
                 if let objects = objects as? [PFObject!] {
-                    
                     self.questionArray.addObjectsFromArray(objects)
-                    
                 }
             }
             else {
-                // Log details of the failure
                 NSLog("Error: %@ %@", error, error.userInfo!)
             }
         }
-        
         
         var findAnswers = PFQuery(className: "Answers")
         findAnswers.limit = 5
@@ -146,18 +123,14 @@ class QuestionViewController: UIViewController {
         findAnswers.findObjectsInBackgroundWithBlock{
             (objects:[AnyObject]!, error:NSError!)->Void in
             if (error == nil && objects != nil) {
-                
-     
                 if let objects = objects as? [PFObject!] {
                     self.answerArray.addObjectsFromArray(objects)
-
                 }
             }
             else {
                 NSLog("error")
             }
         }
-        
         NSLog("Succesfully built Questions")
     }
     
@@ -170,18 +143,18 @@ class QuestionViewController: UIViewController {
         if (sender.currentTitle == self.correctAnswer) {
             correctAnswerCount += 1
             score += 2
-            self.updateScore()
+            updateScore()
             
-            var alert = UIAlertController(title: "Nice!", message: "Click Learn More to learn about the answer!", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Learn More", style: UIAlertActionStyle.Default, handler: { action in
+            var alert = UIAlertController(title: "Nice!",
+              message: "Click Learn More to learn about the answer!", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Learn More",
+              style: UIAlertActionStyle.Default, handler: { action in
                 switch action.style{
                 case .Default:
                     println("learn more")
                     self.learnMore()
-                    
                 case .Cancel:
                     println("cancel")
-                
                 case .Destructive:
                     println("destructive")
                 }
@@ -189,16 +162,14 @@ class QuestionViewController: UIViewController {
             
             self.presentViewController(alert, animated: true, completion: nil)
             
-            alert.addAction(UIAlertAction(title: "Next", style: .Default, handler: { action in
+            alert.addAction(UIAlertAction(title: "Next",
+              style: .Default, handler: { action in
                 switch action.style{
                 case .Default:
                     println("next")
                     self.populateQuestions()
-               
-                 //   for learn more view controller
                 case .Cancel:
                     println("cancel")
-                   
                 case .Destructive:
                     println("destructive")
                 }
@@ -214,14 +185,12 @@ class QuestionViewController: UIViewController {
             incorrectAnswerCount += 1
             score -= 1
             self.updateScore()
-            
         }
     }
     
     func learnMore() {
         var viewController = self.storyboard?.instantiateViewControllerWithIdentifier("learnMore") as LearnMoreViewController
         viewController.correctAnswer = correctAnswer
-        
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
