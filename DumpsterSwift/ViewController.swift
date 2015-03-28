@@ -16,9 +16,6 @@ class ViewController: UIViewController {
   @IBOutlet weak var startButton: UIButton!
   var questionArrayFirst:NSMutableArray = NSMutableArray()
   var answerArrayFirst:NSMutableArray = NSMutableArray()
-    
-
-  
 
   override func viewDidLoad() {
       
@@ -54,13 +51,12 @@ class ViewController: UIViewController {
             let navController = UINavigationController(rootViewController: viewController)
             viewController.questionArray = self.questionArrayFirst
             viewController.answerArray = self.answerArrayFirst
-          
+
             presentViewController(navController, animated: true, completion: nil)
         }
     }
   
   func buildQuestions() {
-        
         let skipNum = Int(arc4random_uniform(200))
 
         var findQuestions = PFQuery(className: "Questions")
@@ -69,13 +65,9 @@ class ViewController: UIViewController {
         findQuestions.findObjectsInBackgroundWithBlock{
             (objects:[AnyObject]!, error:NSError!)->Void in
             if (error == nil) {
-                
                 println("Succesfully retreived \(objects.count) objects")
-                    
                 if let objects = objects as? [PFObject!] {
-                    
                     self.questionArrayFirst.addObjectsFromArray(objects)
-
                 }
             }
             else {
@@ -83,30 +75,23 @@ class ViewController: UIViewController {
                 NSLog("Error: %@ %@", error, error.userInfo!)
             }
         }
-        
-        
+    
         var findAnswers = PFQuery(className: "Answers")
         findAnswers.limit = 5
         findAnswers.skip = skipNum
         findAnswers.findObjectsInBackgroundWithBlock{
             (objects:[AnyObject]!, error:NSError!)->Void in
             if (error == nil && objects != nil) {
-                
                  println("Succesfully retreived \(objects.count) objects")
-
-                
                 if let objects = objects as? [PFObject!] {
                     self.answerArrayFirst.addObjectsFromArray(objects)
-                    
                     self.makeButtonVisible()
-                    
                 }
             }
             else {
                 NSLog("error")
             }
         }
-
         NSLog("Succesfully built Questions")
     }
   
