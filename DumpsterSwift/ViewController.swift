@@ -55,7 +55,6 @@ class ViewController: UIViewController {
             presentViewController(navController, animated: true, completion: nil)
         }
     }
-    
   
   func buildQuestions() {
         let skipNum = Int(arc4random_uniform(200))
