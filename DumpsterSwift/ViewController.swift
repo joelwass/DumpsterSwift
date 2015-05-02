@@ -47,7 +47,7 @@ class ViewController: UIViewController {
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showQuestionSegue" {
             
-            var viewController = self.storyboard?.instantiateViewControllerWithIdentifier("qVC") as QuestionViewController
+            var viewController = self.storyboard?.instantiateViewControllerWithIdentifier("qVC") as! QuestionViewController
             let navController = UINavigationController(rootViewController: viewController)
             viewController.questionArray = self.questionArrayFirst
             viewController.answerArray = self.answerArrayFirst
