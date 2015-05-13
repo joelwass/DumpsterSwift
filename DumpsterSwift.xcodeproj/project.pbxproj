@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE0B3A241B03C29F004B6FC4 /* DumpsterLaunch960.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0B3A191B03C29F004B6FC4 /* DumpsterLaunch960.png */; };
+		EE0B3A251B03C29F004B6FC4 /* DumpsterLaunch1136.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0B3A1A1B03C29F004B6FC4 /* DumpsterLaunch1136.png */; };
+		EE0B3A261B03C29F004B6FC4 /* DumpsterLogo29.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0B3A1B1B03C29F004B6FC4 /* DumpsterLogo29.png */; };
+		EE0B3A271B03C29F004B6FC4 /* DumpsterLogo58.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0B3A1C1B03C29F004B6FC4 /* DumpsterLogo58.png */; };
+		EE0B3A281B03C29F004B6FC4 /* DumpsterLogo76.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0B3A1D1B03C29F004B6FC4 /* DumpsterLogo76.png */; };
+		EE0B3A291B03C29F004B6FC4 /* DumpsterLogo80.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0B3A1E1B03C29F004B6FC4 /* DumpsterLogo80.png */; };
+		EE0B3A2A1B03C29F004B6FC4 /* DumpsterLogo87.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0B3A1F1B03C29F004B6FC4 /* DumpsterLogo87.png */; };
+		EE0B3A2B1B03C29F004B6FC4 /* DumpsterLogo120.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0B3A201B03C29F004B6FC4 /* DumpsterLogo120.png */; };
+		EE0B3A2C1B03C29F004B6FC4 /* DumpsterLogo152.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0B3A211B03C29F004B6FC4 /* DumpsterLogo152.png */; };
+		EE0B3A2D1B03C29F004B6FC4 /* DumpsterLogo180.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0B3A221B03C29F004B6FC4 /* DumpsterLogo180.png */; };
+		EE0B3A2E1B03C29F004B6FC4 /* DumpsterLogo1024.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0B3A231B03C29F004B6FC4 /* DumpsterLogo1024.png */; };
 		EE3DF3031AB4E18200F994FF /* LearnMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3DF3021AB4E18200F994FF /* LearnMoreViewController.swift */; };
 		EEB09F261AACB6320070BA38 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB09F251AACB6320070BA38 /* StatsViewController.swift */; };
 		EEC044FE1A93C74200D90ECA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC044FD1A93C74200D90ECA /* AppDelegate.swift */; };
@@ -47,6 +58,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EE0B3A191B03C29F004B6FC4 /* DumpsterLaunch960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DumpsterLaunch960.png; sourceTree = "<group>"; };
+		EE0B3A1A1B03C29F004B6FC4 /* DumpsterLaunch1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DumpsterLaunch1136.png; sourceTree = "<group>"; };
+		EE0B3A1B1B03C29F004B6FC4 /* DumpsterLogo29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DumpsterLogo29.png; sourceTree = "<group>"; };
+		EE0B3A1C1B03C29F004B6FC4 /* DumpsterLogo58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DumpsterLogo58.png; sourceTree = "<group>"; };
+		EE0B3A1D1B03C29F004B6FC4 /* DumpsterLogo76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DumpsterLogo76.png; sourceTree = "<group>"; };
+		EE0B3A1E1B03C29F004B6FC4 /* DumpsterLogo80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DumpsterLogo80.png; sourceTree = "<group>"; };
+		EE0B3A1F1B03C29F004B6FC4 /* DumpsterLogo87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DumpsterLogo87.png; sourceTree = "<group>"; };
+		EE0B3A201B03C29F004B6FC4 /* DumpsterLogo120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DumpsterLogo120.png; sourceTree = "<group>"; };
+		EE0B3A211B03C29F004B6FC4 /* DumpsterLogo152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DumpsterLogo152.png; sourceTree = "<group>"; };
+		EE0B3A221B03C29F004B6FC4 /* DumpsterLogo180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DumpsterLogo180.png; sourceTree = "<group>"; };
+		EE0B3A231B03C29F004B6FC4 /* DumpsterLogo1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DumpsterLogo1024.png; sourceTree = "<group>"; };
 		EE3DF2FD1AAEA23C00F994FF /* tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tests.swift; sourceTree = "<group>"; };
 		EE3DF3021AB4E18200F994FF /* LearnMoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnMoreViewController.swift; sourceTree = "<group>"; };
 		EEB09F251AACB6320070BA38 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +190,17 @@
 		EEC044FB1A93C74200D90ECA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EE0B3A191B03C29F004B6FC4 /* DumpsterLaunch960.png */,
+				EE0B3A1A1B03C29F004B6FC4 /* DumpsterLaunch1136.png */,
+				EE0B3A1B1B03C29F004B6FC4 /* DumpsterLogo29.png */,
+				EE0B3A1C1B03C29F004B6FC4 /* DumpsterLogo58.png */,
+				EE0B3A1D1B03C29F004B6FC4 /* DumpsterLogo76.png */,
+				EE0B3A1E1B03C29F004B6FC4 /* DumpsterLogo80.png */,
+				EE0B3A1F1B03C29F004B6FC4 /* DumpsterLogo87.png */,
+				EE0B3A201B03C29F004B6FC4 /* DumpsterLogo120.png */,
+				EE0B3A211B03C29F004B6FC4 /* DumpsterLogo152.png */,
+				EE0B3A221B03C29F004B6FC4 /* DumpsterLogo180.png */,
+				EE0B3A231B03C29F004B6FC4 /* DumpsterLogo1024.png */,
 				EEC044FC1A93C74200D90ECA /* Info.plist */,
 				EEC0451F1A93DA4E00D90ECA /* DumpLoopTrans2.gif */,
 			);
@@ -284,9 +317,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEC045201A93DA4E00D90ECA /* DumpLoopTrans2.gif in Resources */,
+				EE0B3A251B03C29F004B6FC4 /* DumpsterLaunch1136.png in Resources */,
+				EE0B3A2D1B03C29F004B6FC4 /* DumpsterLogo180.png in Resources */,
+				EE0B3A261B03C29F004B6FC4 /* DumpsterLogo29.png in Resources */,
 				EEC045031A93C74300D90ECA /* Main.storyboard in Resources */,
+				EE0B3A291B03C29F004B6FC4 /* DumpsterLogo80.png in Resources */,
+				EE0B3A281B03C29F004B6FC4 /* DumpsterLogo76.png in Resources */,
 				EEC045081A93C74300D90ECA /* LaunchScreen.xib in Resources */,
 				EEC045051A93C74300D90ECA /* Images.xcassets in Resources */,
+				EE0B3A2E1B03C29F004B6FC4 /* DumpsterLogo1024.png in Resources */,
+				EE0B3A241B03C29F004B6FC4 /* DumpsterLaunch960.png in Resources */,
+				EE0B3A271B03C29F004B6FC4 /* DumpsterLogo58.png in Resources */,
+				EE0B3A2B1B03C29F004B6FC4 /* DumpsterLogo120.png in Resources */,
+				EE0B3A2C1B03C29F004B6FC4 /* DumpsterLogo152.png in Resources */,
+				EE0B3A2A1B03C29F004B6FC4 /* DumpsterLogo87.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

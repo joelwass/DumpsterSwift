@@ -31,7 +31,7 @@ class StatsViewController: UIViewController {
         labelOne.text = NSString(format: "Score: %d", score) as String
         labelTwo.text = NSString(format: "Skip Count: %d", skipCount) as String
         labelThree.text = NSString(format: "Question Count: %d", questionCount) as String
-        labelFour.text = NSString(format: "Incorrect Guesses: %d", incorrectAn as StringswerCount)
+        labelFour.text = NSString(format: "Incorrect Guesses: %d", incorrectAnswerCount) as String
     }
     
     override func didReceiveMemoryWarning() {

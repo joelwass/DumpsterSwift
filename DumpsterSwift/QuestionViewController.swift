@@ -77,7 +77,7 @@ class QuestionViewController: UIViewController {
         var i = 0
         
         questionLabel.text = questionArray[randomKey].valueForKey("Question") as! NSString as String
-        self.correctAnswer = answerArray[randomKey].valueForKey("Answer") as NSString
+        self.correctAnswer = answerArray[randomKey].valueForKey("Answer") as! NSString
         while (i < 4) {
             var buttonNumber = Int(arc4random() % UInt32(4))
             if (buttonNumber == arrayOfButtonNumbers[0] || buttonNumber == arrayOfButtonNumbers[1]
@@ -189,7 +189,7 @@ class QuestionViewController: UIViewController {
     }
     
     func learnMore() {
-        var viewController = self.storyboard?.instantiateViewControllerWithIdentifier("learnMore") as LearnMoreViewController
+        var viewController = self.storyboard?.instantiateViewControllerWithIdentifier("learnMore") as! LearnMoreViewController
         viewController.correctAnswer = correctAnswer
         self.navigationController?.pushViewController(viewController, animated: true)
     }

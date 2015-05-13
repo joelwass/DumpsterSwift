@@ -10,8 +10,8 @@ import UIKit
 
 
 class LearnMoreViewController: UIViewController {
-    var correctAnswer:NSString
-    var answerURLString:NSString
+    var correctAnswer:NSString = ""
+    var answerURLString:NSString = ""
     var answerURL:NSURL!
     var urlRequest:NSURLRequest!
     var incompleteURL:NSString = "https://en.wikipedia.org/wiki/"
@@ -31,7 +31,7 @@ class LearnMoreViewController: UIViewController {
     
     func convertToRequest(string: NSString) {
         answerURLString = incompleteURL.stringByAppendingString(answerURLString as String)
-        answerURL = NSURL(string: answe as StringrURLString)
+        answerURL = NSURL(string: answerURLString as String)
         urlRequest = NSURLRequest(URL: answerURL)
     }
     
