@@ -46,7 +46,7 @@ class QuestionViewController: UIViewController {
     }
     
     @IBAction func statsPressed(sender: AnyObject) {
-        var viewController = self.storyboard?.instantiateViewControllerWithIdentifier("statsVC") as StatsViewController
+        var viewController = self.storyboard?.instantiateViewControllerWithIdentifier("statsVC") as! StatsViewController
         viewController.score = score
         viewController.skipCount = skipCount
         viewController.questionCount = questionCount
@@ -76,8 +76,8 @@ class QuestionViewController: UIViewController {
         var arrayOfButtonNumbers = [5,6,7,8]
         var i = 0
         
-        questionLabel.text = questionArray[randomKey].valueForKey("Question") as NSString
-        self.correctAnswer = answerArray[randomKey].valueForKey("Answer") as NSString
+        questionLabel.text = questionArray[randomKey].valueForKey("Question") as! NSString as String
+        self.correctAnswer = answerArray[randomKey].valueForKey("Answer") as! NSString
         while (i < 4) {
             var buttonNumber = Int(arc4random() % UInt32(4))
             if (buttonNumber == arrayOfButtonNumbers[0] || buttonNumber == arrayOfButtonNumbers[1]
@@ -87,7 +87,7 @@ class QuestionViewController: UIViewController {
             } else {
                 arrayOfButtonNumbers[i] = buttonNumber
                 if let answerTemp = answerLabelArray[buttonNumber] as? NSString {
-                    buttonArray[i].setTitle(answerTemp, forState:UIControlState())
+                    buttonArray[i].setTitle(answerTemp as String, forState:UIControlState())
                     i++
                 }
             }
@@ -135,7 +135,7 @@ class QuestionViewController: UIViewController {
     }
     
     func updateScore() {
-        scoreLabel.text = NSString(format: "Score: %d", score)
+        scoreLabel.text = NSString(format: "Score: %d", score) as String
     }
     
     @IBAction func guessPressed(sender: UIButton) {
@@ -189,7 +189,7 @@ class QuestionViewController: UIViewController {
     }
     
     func learnMore() {
-        var viewController = self.storyboard?.instantiateViewControllerWithIdentifier("learnMore") as LearnMoreViewController
+        var viewController = self.storyboard?.instantiateViewControllerWithIdentifier("learnMore") as! LearnMoreViewController
         viewController.correctAnswer = correctAnswer
         self.navigationController?.pushViewController(viewController, animated: true)
     }

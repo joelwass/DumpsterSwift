@@ -28,10 +28,10 @@ class StatsViewController: UIViewController {
         nav?.barStyle = UIBarStyle.Black
         nav?.tintColor = UIColor.orangeColor()
 
-        labelOne.text = NSString(format: "Score: %d", score)
-        labelTwo.text = NSString(format: "Skip Count: %d", skipCount)
-        labelThree.text = NSString(format: "Question Count: %d", questionCount)
-        labelFour.text = NSString(format: "Incorrect Guesses: %d", incorrectAnswerCount)
+        labelOne.text = NSString(format: "Score: %d", score) as String
+        labelTwo.text = NSString(format: "Skip Count: %d", skipCount) as String
+        labelThree.text = NSString(format: "Question Count: %d", questionCount) as String
+        labelFour.text = NSString(format: "Incorrect Guesses: %d", incorrectAnswerCount) as String
     }
     
     override func didReceiveMemoryWarning() {
