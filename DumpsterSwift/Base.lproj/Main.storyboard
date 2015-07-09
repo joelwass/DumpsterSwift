@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -45,7 +44,7 @@
                                 </connections>
                             </button>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUs-fC-Bbd">
-                                <rect key="frame" x="153" y="82" width="294" height="382"/>
+                                <rect key="frame" x="0.0" y="82" width="600" height="382"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="382" id="hNW-1C-lm7"/>
@@ -54,6 +53,7 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="ksP-yJ-jBO"/>
                                         <exclude reference="qvj-TW-wdy"/>
                                     </mask>
                                 </variation>
@@ -71,6 +71,8 @@
                             <constraint firstItem="JUs-fC-Bbd" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="Izv-jI-5Oj"/>
                             <constraint firstAttribute="centerX" secondItem="7l9-EK-euV" secondAttribute="centerX" id="KjC-rJ-uMO"/>
                             <constraint firstAttribute="centerX" secondItem="4dg-QN-BiC" secondAttribute="centerX" id="MC7-VF-Jvb"/>
+                            <constraint firstAttribute="trailing" secondItem="JUs-fC-Bbd" secondAttribute="trailing" id="T7J-wF-3pG"/>
+                            <constraint firstItem="JUs-fC-Bbd" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ZU6-EZ-CAF"/>
                             <constraint firstItem="JUs-fC-Bbd" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="82" id="ZzP-8W-Njl"/>
                             <constraint firstItem="JUs-fC-Bbd" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="24" id="bTs-Ne-R9V"/>
                             <constraint firstItem="7l9-EK-euV" firstAttribute="top" secondItem="JUs-fC-Bbd" secondAttribute="bottom" constant="2" id="fCG-zh-dyk"/>
@@ -253,7 +255,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Gp-W1-YcG">
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Gp-W1-YcG">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
@@ -262,11 +264,11 @@
                         <constraints>
                             <constraint firstItem="9Gp-W1-YcG" firstAttribute="top" secondItem="5dt-W7-8hK" secondAttribute="bottom" id="KNA-yO-HkN"/>
                             <constraint firstItem="cIe-kJ-uUR" firstAttribute="top" secondItem="9Gp-W1-YcG" secondAttribute="bottom" id="R89-To-Qz6"/>
-                            <constraint firstItem="9Gp-W1-YcG" firstAttribute="trailing" secondItem="4Ls-fF-AB6" secondAttribute="trailingMargin" id="WUI-ZF-NDx"/>
+                            <constraint firstItem="9Gp-W1-YcG" firstAttribute="trailing" secondItem="4Ls-fF-AB6" secondAttribute="trailing" id="WUI-ZF-NDx"/>
                             <constraint firstItem="9Gp-W1-YcG" firstAttribute="top" secondItem="5dt-W7-8hK" secondAttribute="bottom" id="bwK-6f-gpA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9Gp-W1-YcG" secondAttribute="trailing" id="i4E-2m-t0S"/>
-                            <constraint firstItem="9Gp-W1-YcG" firstAttribute="leading" secondItem="4Ls-fF-AB6" secondAttribute="leadingMargin" id="jdH-YG-ojZ"/>
-                            <constraint firstItem="9Gp-W1-YcG" firstAttribute="leading" secondItem="4Ls-fF-AB6" secondAttribute="leadingMargin" id="kf8-n5-Vqp"/>
+                            <constraint firstAttribute="trailing" secondItem="9Gp-W1-YcG" secondAttribute="trailing" id="i4E-2m-t0S"/>
+                            <constraint firstItem="9Gp-W1-YcG" firstAttribute="leading" secondItem="4Ls-fF-AB6" secondAttribute="leading" id="jdH-YG-ojZ"/>
+                            <constraint firstItem="9Gp-W1-YcG" firstAttribute="leading" secondItem="4Ls-fF-AB6" secondAttribute="leading" id="kf8-n5-Vqp"/>
                             <constraint firstItem="cIe-kJ-uUR" firstAttribute="top" secondItem="9Gp-W1-YcG" secondAttribute="bottom" id="x7G-6n-0cE"/>
                         </constraints>
                         <variation key="default">
@@ -455,10 +457,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvY-Q5-42B">
-                                <rect key="frame" x="489" y="544" width="95" height="36"/>
+                                <rect key="frame" x="489" y="551" width="95" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="95" id="S0I-OE-vGH"/>
-                                    <constraint firstAttribute="height" constant="36" id="Yfm-V0-YRW"/>
+                                    <constraint firstAttribute="height" constant="29" id="Yfm-V0-YRW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="SKIP">
