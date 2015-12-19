@@ -9,7 +9,7 @@
 import UIKit
 import XCTest
 
-class DumpsterSwiftTests: XCTestCase {
+class DumpsterTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

@@ -35,7 +35,7 @@ class QuestionViewController: UIViewController {
     override func viewDidLoad() {
       super.viewDidLoad()
       
-      var nav = self.navigationController?.navigationBar
+      let nav = self.navigationController?.navigationBar
       nav?.barStyle = UIBarStyle.Black
       nav?.tintColor = UIColor.orangeColor()
         self.answer1.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
@@ -46,7 +46,7 @@ class QuestionViewController: UIViewController {
     }
     
     @IBAction func statsPressed(sender: AnyObject) {
-        var viewController = self.storyboard?.instantiateViewControllerWithIdentifier("statsVC") as! StatsViewController
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("statsVC") as! StatsViewController
         viewController.score = score
         viewController.skipCount = skipCount
         viewController.questionCount = questionCount
@@ -67,7 +67,7 @@ class QuestionViewController: UIViewController {
     }
     
     func populateQuestions() {
-        var randomKey = Int(arc4random_uniform(UInt32(questionArray.count)))
+        let randomKey = Int(arc4random_uniform(UInt32(questionArray.count)))
         var buttonArray = [answer1, answer2, answer3, answer4]
         var answerLabelArray = [answerArray[randomKey].valueForKey("Answer")
             , answerArray[randomKey].valueForKey("IncAnswer2")
@@ -79,7 +79,7 @@ class QuestionViewController: UIViewController {
         questionLabel.text = questionArray[randomKey].valueForKey("Question") as! NSString as String
         self.correctAnswer = answerArray[randomKey].valueForKey("Answer") as! NSString
         while (i < 4) {
-            var buttonNumber = Int(arc4random() % UInt32(4))
+            let buttonNumber = Int(arc4random() % UInt32(4))
             if (buttonNumber == arrayOfButtonNumbers[0] || buttonNumber == arrayOfButtonNumbers[1]
                 || buttonNumber == arrayOfButtonNumbers[2]
                 || buttonNumber == arrayOfButtonNumbers[3]) {
@@ -113,7 +113,7 @@ class QuestionViewController: UIViewController {
                 }
             }
             else {
-                NSLog("Error: %@ %@", error, error.userInfo!)
+                NSLog("Error: %@ %@", error, error.userInfo)
             }
         }
         
@@ -145,18 +145,18 @@ class QuestionViewController: UIViewController {
             score += 2
             updateScore()
             
-            var alert = UIAlertController(title: "Nice!",
+            let alert = UIAlertController(title: "Nice!",
               message: "Click Learn More to learn about the answer!", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Learn More",
               style: UIAlertActionStyle.Default, handler: { action in
                 switch action.style{
                 case .Default:
-                    println("learn more")
+                    print("learn more")
                     self.learnMore()
                 case .Cancel:
-                    println("cancel")
+                    print("cancel")
                 case .Destructive:
-                    println("destructive")
+                    print("destructive")
                 }
             }))
             
@@ -166,16 +166,16 @@ class QuestionViewController: UIViewController {
               style: .Default, handler: { action in
                 switch action.style{
                 case .Default:
-                    println("next")
+                    print("next")
                     self.populateQuestions()
                 case .Cancel:
-                    println("cancel")
+                    print("cancel")
                 case .Destructive:
-                    println("destructive")
+                    print("destructive")
                 }
             }))
         } else {
-            UIView.animateWithDuration(0.3, delay: 0.0, options: nil, animations: {
+            UIView.animateWithDuration(0.3, delay: 0.0, options: [], animations: {
                 sender.backgroundColor = UIColor.redColor()
                 }, completion: { finished in
                     UIView .animateWithDuration(0.2, animations: {
@@ -189,7 +189,7 @@ class QuestionViewController: UIViewController {
     }
     
     func learnMore() {
-        var viewController = self.storyboard?.instantiateViewControllerWithIdentifier("learnMore") as! LearnMoreViewController
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("learnMore") as! LearnMoreViewController
         viewController.correctAnswer = correctAnswer
         self.navigationController?.pushViewController(viewController, animated: true)
     }

@@ -19,7 +19,7 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
       
-   view.setTranslatesAutoresizingMaskIntoConstraints(false)
+   view.translatesAutoresizingMaskIntoConstraints = false
     super.viewDidLoad()
     startButton.hidden = true
     buildQuestions()
@@ -30,7 +30,8 @@ class ViewController: UIViewController {
     //gif animation code
     let gifString = NSBundle.mainBundle().URLForResource("DumpLoopTrans2", withExtension: "gif")
     let gif = NSData(contentsOfURL: gifString!)
-    gifView.loadData(gif, MIMEType:"image/gif", textEncodingName: nil, baseURL: nil)
+
+    gifView.loadData(gif!, MIMEType:"image/gif", textEncodingName: "", baseURL: NSURL())
     gifView.userInteractionEnabled = false;
     self.view .addSubview(gifView)
   }
@@ -41,13 +42,13 @@ class ViewController: UIViewController {
     }
     
   @IBAction func buttonPressed(sender : AnyObject) {
-        println("start button pressed")
+        print("start button pressed")
     }
     
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showQuestionSegue" {
             
-            var viewController = self.storyboard?.instantiateViewControllerWithIdentifier("qVC") as! QuestionViewController
+            let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("qVC") as! QuestionViewController
             let navController = UINavigationController(rootViewController: viewController)
             viewController.questionArray = self.questionArrayFirst
             viewController.answerArray = self.answerArrayFirst
@@ -65,14 +66,14 @@ class ViewController: UIViewController {
         findQuestions.findObjectsInBackgroundWithBlock{
             (objects:[AnyObject]!, error:NSError!)->Void in
             if (error == nil) {
-                println("Succesfully retreived \(objects.count) objects")
+                print("Succesfully retreived \(objects.count) objects")
                 if let objects = objects as? [PFObject!] {
                     self.questionArrayFirst.addObjectsFromArray(objects)
                 }
             }
             else {
                 // Log details of the failure
-                NSLog("Error: %@ %@", error, error.userInfo!)
+                NSLog("Error: %@ %@", error, error.userInfo)
             }
         }
     
@@ -82,7 +83,7 @@ class ViewController: UIViewController {
         findAnswers.findObjectsInBackgroundWithBlock{
             (objects:[AnyObject]!, error:NSError!)->Void in
             if (error == nil && objects != nil) {
-                 println("Succesfully retreived \(objects.count) objects")
+                 print("Succesfully retreived \(objects.count) objects")
                 if let objects = objects as? [PFObject!] {
                     self.answerArrayFirst.addObjectsFromArray(objects)
                     self.makeButtonVisible()

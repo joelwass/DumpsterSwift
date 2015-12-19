@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>CB852B88-60ED-4C00-97A4-8FB0E20744E8</string>
+	<string>9DBDDD68-A9CB-4FD3-B84F-FAC5EB18DEC7</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Dumpster</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>A5B14CF06CD8108634DBB8D119A494FE172AB10F</key>
 		<string>github.com:joelwass/DumpsterSwift.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>DumpsterSwift.xcodeproj/project.xcworkspace</string>
+	<string>Dumpster.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>A5B14CF06CD8108634DBB8D119A494FE172AB10F</key>

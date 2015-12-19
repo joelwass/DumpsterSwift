@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:DumpsterSwift.xcodeproj">
+      location = "self:/Users/joelwasserman/Documents/Programming/xCode/DumpsterSwift/Dumpster.xcodeproj">
    </FileRef>
 </Workspace>
