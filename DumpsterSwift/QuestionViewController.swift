@@ -34,6 +34,8 @@ class QuestionViewController: UIViewController {
     
     override func viewDidLoad() {
       super.viewDidLoad()
+        
+        self.score = UserSettings.sharedInstance.userScore!
       
       let nav = self.navigationController?.navigationBar
       nav?.barStyle = UIBarStyle.Black
@@ -136,6 +138,11 @@ class QuestionViewController: UIViewController {
     
     func updateScore() {
         scoreLabel.text = NSString(format: "Score: %d", score) as String
+        UserSettings.sharedInstance.userScore = score
+        
+        let currentUser = PFUser.currentUser()
+        currentUser.setObject(score, forKey: "score")
+        currentUser.saveEventually()
     }
     
     @IBAction func guessPressed(sender: UIButton) {

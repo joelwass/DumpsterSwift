@@ -19,6 +19,8 @@ PFSignUpViewControllerDelegate {
     var questionArrayFirst:NSMutableArray = NSMutableArray()
     var answerArrayFirst:NSMutableArray = NSMutableArray()
     
+    let userService = UserService()
+    
     let signupViewController = PFSignUpViewController()
     let loginViewController = PFLogInViewController()
     
@@ -34,19 +36,7 @@ PFSignUpViewControllerDelegate {
         if user != nil {
             //move to new view controller
             print("user logged in")
-            
-            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-            
-            //let currentInstallation = PFInstallation.currentInstallation()
-            
-            
-            let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("qVC") as! QuestionViewController
-            let navController = UINavigationController(rootViewController: viewController)
-            viewController.questionArray = self.questionArrayFirst
-            viewController.answerArray = self.answerArrayFirst
-            
-            self.window!.rootViewController = navController
-            self.window!.makeKeyAndVisible()
+            userService.getUserScore(self)
             
         }
         else {
@@ -75,30 +65,20 @@ PFSignUpViewControllerDelegate {
         }
     }
     
-    func loadScore(user: PFUser) {
+    func loadQuestionView() {
         
-        let query = PFQuery(className: "User")
-        query.whereKey("username", equalTo: UserSettings.sharedInstance.Username!)
-        query.findObjectsInBackgroundWithBlock{(user: [AnyObject]?, error:NSError?) -> Void in
-            if error == nil {
-                print ("query for user score successful")
-                if let objects = objects as? [PFObject!] {
-                    
-                    self.userEventsFromParse = NSMutableArray()
-                    
-                    self.userEventsFromParse!.addObjectsFromArray(objects)
-                    
-                    self.createEventObjects(sender)
-                }
-                else {
-                    self.finish(sender)
-                }
-            }
-            else {
-                print("error in parse login controller \(error)")
-            }
-        }
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
+        //let currentInstallation = PFInstallation.currentInstallation()
+        
+        
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("qVC") as! QuestionViewController
+        let navController = UINavigationController(rootViewController: viewController)
+        viewController.questionArray = self.questionArrayFirst
+        viewController.answerArray = self.answerArrayFirst
+        
+        self.window!.rootViewController = navController
+        self.window!.makeKeyAndVisible()
     }
     
     //MARK: Parse Login
@@ -144,6 +124,8 @@ PFSignUpViewControllerDelegate {
     }
     
     func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
+        user.setObject(0, forKey: "score")
+        user.saveEventually()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

@@ -49,6 +49,7 @@
 		EEDAA1CF1A9E599400C5142B /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDAA1CA1A9E599400C5142B /* ParseFacebookUtils.framework */; };
 		EEDAA1D01A9E599400C5142B /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDAA1CB1A9E599400C5142B /* ParseUI.framework */; };
 		EEDAA1D51A9E5BF400C5142B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDAA1D41A9E5BF400C5142B /* libsqlite3.dylib */; };
+		EEF9C32D1C2DF848004DF096 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF9C32C1C2DF848004DF096 /* UserService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		EEDAA1D11A9E5A3C00C5142B /* DumpsterSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DumpsterSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		EEDAA1D21A9E5A3D00C5142B /* Bridging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bridging.m; sourceTree = "<group>"; };
 		EEDAA1D41A9E5BF400C5142B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		EEF9C32C1C2DF848004DF096 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,8 @@
 		EEC044FA1A93C74200D90ECA /* Dumpster */ = {
 			isa = PBXGroup;
 			children = (
+				EEF9C32B1C2DF839004DF096 /* Services */,
+				EEF9C32A1C2DF81A004DF096 /* Models */,
 				EEBB63AD1C2DE3CF00F72278 /* storyBoards */,
 				EEBB63AC1C2DE3BE00F72278 /* Controllers */,
 				EEC044FD1A93C74200D90ECA /* AppDelegate.swift */,
@@ -275,6 +279,21 @@
 				EEDAA1CB1A9E599400C5142B /* ParseUI.framework */,
 			);
 			path = "parse-library-1.6.3";
+			sourceTree = "<group>";
+		};
+		EEF9C32A1C2DF81A004DF096 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		EEF9C32B1C2DF839004DF096 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EEF9C32C1C2DF848004DF096 /* UserService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,6 +414,7 @@
 			files = (
 				EE1F7F2E1B4EEC5300148429 /* Bridging.m in Sources */,
 				EE1F7F2C1B4EEC3200148429 /* LearnMoreViewController.swift in Sources */,
+				EEF9C32D1C2DF848004DF096 /* UserService.swift in Sources */,
 				EE1F7F2B1B4EEC2D00148429 /* AppDelegate.swift in Sources */,
 				EE1F7F2A1B4EEC2900148429 /* StatsViewController.swift in Sources */,
 				EE1F7F291B4EEC2500148429 /* QuestionViewController.swift in Sources */,
