@@ -19,7 +19,8 @@ PFSignUpViewControllerDelegate {
     var questionArrayFirst:NSMutableArray = NSMutableArray()
     var answerArrayFirst:NSMutableArray = NSMutableArray()
     
-    
+    let signupViewController = PFSignUpViewController()
+    let loginViewController = PFLogInViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,22 +50,25 @@ PFSignUpViewControllerDelegate {
             
         }
         else {
+
             print("No Logged in user")
-            let loginViewController = PFLogInViewController()
-            loginViewController.fields = [PFLogInFields.UsernameAndPassword, PFLogInFields.LogInButton, PFLogInFields.SignUpButton, PFLogInFields.DismissButton, PFLogInFields.PasswordForgotten]
             
             let logInLogoTitle = UILabel()
             logInLogoTitle.text = "DUMPSTERSWIFT"
-            //logInLogoTitle.font = UIFont(name: "Chalkduster", size:18)
-            loginViewController.logInView.logo = logInLogoTitle
+            logInLogoTitle.font = UIFont(name: "Chalkduster", size:28)
             
             loginViewController.emailAsUsername = true
+            loginViewController.logInView.logo = logInLogoTitle
+            loginViewController.fields = [PFLogInFields.UsernameAndPassword, PFLogInFields.LogInButton, PFLogInFields.SignUpButton, PFLogInFields.PasswordForgotten]
             loginViewController.delegate = self
+
+            let signUpLogoTitle = UILabel()
+            signUpLogoTitle.text = "DUMPSTERSWIFT"
+            signUpLogoTitle.font = UIFont(name: "Chalkduster", size:28)
             
-            let signupViewController = PFSignUpViewController()
             signupViewController.emailAsUsername = true
             signupViewController.delegate = self
-            signupViewController.signUpView.logo = logInLogoTitle
+            signupViewController.signUpView.logo = signUpLogoTitle
             
             loginViewController.signUpController = signupViewController
             self.presentViewController(loginViewController, animated: true, completion: nil)
@@ -119,6 +123,7 @@ PFSignUpViewControllerDelegate {
     
     func signUpViewController(signUpController: PFSignUpViewController, didFailToSignUpWithError error: NSError?) {
         print("failed to sign up")
+        print("\(error)")
     }
     
     func signUpViewControllerDidCancelSignUp(signUpController: PFSignUpViewController) {
@@ -130,8 +135,6 @@ PFSignUpViewControllerDelegate {
     @IBAction func logoutUser(sender: UIButton) {
         PFUser.logOut()
     }
-    
-    
     
 }
 
