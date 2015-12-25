@@ -102,7 +102,7 @@ class QuestionViewController: UIViewController {
     
     func buildQuestions() {
         let skipNum = Int(arc4random_uniform(200))
-        var findQuestions = PFQuery(className: "Questions")
+        let findQuestions = PFQuery(className: "Questions")
         findQuestions.limit = 5
         findQuestions.skip = skipNum
         findQuestions.findObjectsInBackgroundWithBlock{
@@ -117,7 +117,7 @@ class QuestionViewController: UIViewController {
             }
         }
         
-        var findAnswers = PFQuery(className: "Answers")
+        let findAnswers = PFQuery(className: "Answers")
         findAnswers.limit = 5
         findAnswers.skip = skipNum
         findAnswers.findObjectsInBackgroundWithBlock{

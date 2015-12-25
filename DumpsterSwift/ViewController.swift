@@ -17,50 +17,42 @@ class ViewController: UIViewController {
   var questionArrayFirst:NSMutableArray = NSMutableArray()
   var answerArrayFirst:NSMutableArray = NSMutableArray()
 
-  override func viewDidLoad() {
+    override func viewDidLoad() {
       
-   view.translatesAutoresizingMaskIntoConstraints = false
-    super.viewDidLoad()
-    startButton.hidden = true
-    buildQuestions()
-        
-    homeLabel.font = UIFont(name: "Chalkduster", size:18)
-    startButton.titleLabel!.font = UIFont(name: "Chalkduster", size: 18)
-        
-    //gif animation code
-    let gifString = NSBundle.mainBundle().URLForResource("DumpLoopTrans2", withExtension: "gif")
-    let gif = NSData(contentsOfURL: gifString!)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        super.viewDidLoad()
+        startButton.hidden = true
+        buildQuestions()
+            
+        homeLabel.font = UIFont(name: "Chalkduster", size:18)
+        startButton.titleLabel!.font = UIFont(name: "Chalkduster", size: 18)
+            
+        //gif animation code
+        let gifString = NSBundle.mainBundle().URLForResource("DumpLoopTrans2", withExtension: "gif")
+        let gif = NSData(contentsOfURL: gifString!)
 
-    gifView.loadData(gif!, MIMEType:"image/gif", textEncodingName: "", baseURL: NSURL())
-    gifView.userInteractionEnabled = false;
-    self.view .addSubview(gifView)
-  }
+        gifView.loadData(gif!, MIMEType:"image/gif", textEncodingName: "", baseURL: NSURL())
+        gifView.userInteractionEnabled = false;
+        self.view .addSubview(gifView)
+    }
 
-  override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-  @IBAction func buttonPressed(sender : AnyObject) {
+    @IBAction func buttonPressed(sender : AnyObject) {
         print("start button pressed")
-    }
-    
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showQuestionSegue" {
-            
-            let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("qVC") as! QuestionViewController
-            let navController = UINavigationController(rootViewController: viewController)
-            viewController.questionArray = self.questionArrayFirst
-            viewController.answerArray = self.answerArrayFirst
-
-            presentViewController(navController, animated: true, completion: nil)
-        }
+        let VC = self.storyboard?.instantiateViewControllerWithIdentifier("parseViewController") as! ParseLoginController
+        VC.questionArrayFirst = self.questionArrayFirst
+        VC.answerArrayFirst = self.answerArrayFirst
+        self.presentViewController(VC, animated: true, completion: nil)
     }
   
-  func buildQuestions() {
+    func buildQuestions() {
         let skipNum = Int(arc4random_uniform(200))
 
-        var findQuestions = PFQuery(className: "Questions")
+        let findQuestions = PFQuery(className: "Questions")
         findQuestions.limit = 5
         findQuestions.skip = skipNum
         findQuestions.findObjectsInBackgroundWithBlock{
@@ -77,7 +69,7 @@ class ViewController: UIViewController {
             }
         }
     
-        var findAnswers = PFQuery(className: "Answers")
+        let findAnswers = PFQuery(className: "Answers")
         findAnswers.limit = 5
         findAnswers.skip = skipNum
         findAnswers.findObjectsInBackgroundWithBlock{
@@ -96,7 +88,7 @@ class ViewController: UIViewController {
         NSLog("Succesfully built Questions")
     }
   
-  func makeButtonVisible() {
+    func makeButtonVisible() {
         startButton.hidden = false
     }
 }

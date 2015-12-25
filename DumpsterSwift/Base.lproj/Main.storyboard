@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="DumpsterSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Dumpster" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -40,7 +41,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rRg-2u-riV"/>
-                                    <segue destination="qhF-oe-6qn" kind="presentation" identifier="showQuestionSegue" id="hTo-Ez-xpa"/>
                                 </connections>
                             </button>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUs-fC-Bbd">
@@ -113,12 +113,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-22.5" y="80"/>
+            <point key="canvasLocation" x="-514" y="76"/>
+        </scene>
+        <!--ParseViewController-->
+        <scene sceneID="y9g-Lb-ViM">
+            <objects>
+                <viewController storyboardIdentifier="parseViewController" title="ParseViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pEd-WT-mwN" customClass="ParseLoginController" customModule="Dumpster" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3no-hV-FUM"/>
+                        <viewControllerLayoutGuide type="bottom" id="0NG-dq-HHe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R8Y-hS-10l">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H6f-mW-Peg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="115" y="60"/>
         </scene>
         <!--statsVC-->
         <scene sceneID="k8q-Pc-QbC">
             <objects>
-                <viewController storyboardIdentifier="statsVC" title="statsVC" id="Cla-px-2W9" customClass="StatsViewController" customModule="DumpsterSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="statsVC" title="statsVC" id="Cla-px-2W9" customClass="StatsViewController" customModule="Dumpster" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6uv-CU-hLT"/>
                         <viewControllerLayoutGuide type="bottom" id="jJ7-5O-ld6"/>
@@ -246,7 +265,7 @@
         <!--Learn More-->
         <scene sceneID="qq1-57-tjF">
             <objects>
-                <viewController storyboardIdentifier="learnMore" title="Learn More" id="AeP-5t-Kbx" customClass="LearnMoreViewController" customModule="DumpsterSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="learnMore" title="Learn More" id="AeP-5t-Kbx" customClass="LearnMoreViewController" customModule="Dumpster" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5dt-W7-8hK"/>
                         <viewControllerLayoutGuide type="bottom" id="cIe-kJ-uUR"/>
@@ -313,7 +332,7 @@
         <!--qVC-->
         <scene sceneID="kqN-Jb-nT0">
             <objects>
-                <viewController storyboardIdentifier="qVC" title="qVC" id="ybq-7H-9Sl" customClass="QuestionViewController" customModule="DumpsterSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="qVC" title="qVC" id="ybq-7H-9Sl" customClass="QuestionViewController" customModule="Dumpster" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zjo-wz-8lm"/>
                         <viewControllerLayoutGuide type="bottom" id="MUM-3T-Q6I"/>
@@ -577,7 +596,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="VLq-Qb-1Mw"/>
                         <barButtonItem key="rightBarButtonItem" id="cGh-im-wLO">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7c1-lP-g8d">
-                                <rect key="frame" x="260" y="72" width="36" height="30"/>
+                                <rect key="frame" x="544" y="7" width="36" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Stats"/>
@@ -624,7 +643,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NOz-rj-ScC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="743" y="76.5"/>
+            <point key="canvasLocation" x="645" y="76"/>
         </scene>
     </scenes>
 </document>
