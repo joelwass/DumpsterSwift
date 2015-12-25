@@ -33,17 +33,23 @@ class QuestionViewController: UIViewController {
     
     
     override func viewDidLoad() {
-      super.viewDidLoad()
+        super.viewDidLoad()
         
         self.score = UserSettings.sharedInstance.userScore!
       
-      let nav = self.navigationController?.navigationBar
-      nav?.barStyle = UIBarStyle.Black
-      nav?.tintColor = UIColor.orangeColor()
+        let nav = self.navigationController?.navigationBar
+        nav?.barStyle = UIBarStyle.Black
+        nav?.tintColor = UIColor.orangeColor()
         self.answer1.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
         self.answer2.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
         self.answer3.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
         self.answer4.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        self.answer1.titleLabel?.text = ""
+        self.answer2.titleLabel?.text = ""
+        self.answer3.titleLabel?.text = ""
+        self.answer4.titleLabel?.text = ""
+        
+        scoreLabel.text = NSString(format: "Score: %d", score) as String
         self.populateQuestions()
     }
     
@@ -138,11 +144,7 @@ class QuestionViewController: UIViewController {
     
     func updateScore() {
         scoreLabel.text = NSString(format: "Score: %d", score) as String
-        UserSettings.sharedInstance.userScore = score
-        
-        let currentUser = PFUser.currentUser()
-        currentUser.setObject(score, forKey: "score")
-        currentUser.saveEventually()
+        UserService.sharedInstance.updateScore(score)
     }
     
     @IBAction func guessPressed(sender: UIButton) {

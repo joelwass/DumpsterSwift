@@ -19,8 +19,6 @@ PFSignUpViewControllerDelegate {
     var questionArrayFirst:NSMutableArray = NSMutableArray()
     var answerArrayFirst:NSMutableArray = NSMutableArray()
     
-    let userService = UserService()
-    
     let signupViewController = PFSignUpViewController()
     let loginViewController = PFLogInViewController()
     
@@ -36,7 +34,7 @@ PFSignUpViewControllerDelegate {
         if user != nil {
             //move to new view controller
             print("user logged in")
-            userService.getUserScore(self)
+            UserService.sharedInstance.queryUserScore(self)
             
         }
         else {
@@ -66,6 +64,8 @@ PFSignUpViewControllerDelegate {
     }
     
     func loadQuestionView() {
+        
+        print("attempting to laod question view")
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
@@ -126,6 +126,7 @@ PFSignUpViewControllerDelegate {
     func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
         user.setObject(0, forKey: "score")
         user.saveEventually()
+        UserSettings.sharedInstance.Username = user.username!
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

@@ -8,10 +8,16 @@
 
 import Foundation
 
+private let _UserService = UserService()
+
 public class UserService:NSObject {
     
     var userDetailsFromParse:NSMutableArray?
     var score:Int?
+    
+    public class var sharedInstance: UserService {
+        return _UserService
+    }
     
     func queryUserScore(sender: AnyObject) {
         
@@ -44,6 +50,7 @@ public class UserService:NSObject {
                 UserSettings.sharedInstance.userScore = self.score
             }
         }
+        self.finish(sender)
     }
     
     func finish(sender: AnyObject) {
@@ -51,5 +58,13 @@ public class UserService:NSObject {
             let mysender = sender as! ParseLoginController
             mysender.loadQuestionView()
         }
+    }
+    
+    func updateScore(score: Int) {
+        UserSettings.sharedInstance.userScore = score
+        
+        let currentUser = PFUser.currentUser()
+        currentUser.setObject(score, forKey: "score")
+        currentUser.saveEventually()
     }
 }
