@@ -13,20 +13,8 @@ private let _UserSettings = UserSettings()
 public class UserSettings {
     
     struct Constants {
-        static let RelayForLife = "RelayForLife"
-        static let ACappella = "ACappella"
-        static let DancePerformances = "DancePerformances"
-        static let BlackStudentMovement = "BlackStudentMovement"
-        static let CUAB = "CUAB"
-        static let FreeFood = "FreeFood"
-        static let StudentGovernment = "StudentGovernment"
-        static let ClubSports = "ClubSports"
-        static let BarEvents = "BarEvents"
-        static let CAA = "CAA"
+        static let Score = "Score"
         static let Username = "Username"
-        static let SyllabusArray = "SyllabusArray"
-        static let EventsArray = "EventsArray"
-        static let notificationsScheduled = "notificationsScheduled"
     }
     
     public class var sharedInstance: UserSettings {
@@ -39,6 +27,15 @@ public class UserSettings {
         }
         set (newUsername) {
             NSUserDefaults.standardUserDefaults().setObject(newUsername, forKey: Constants.Username)
+        }
+    }
+    
+    public var userScore:Int? {
+        get {
+            return NSUserDefaults.standardUserDefaults().integerForKey(Constants.Score)
+        }
+        set (newScore) {
+            NSUserDefaults.standardUserDefaults().setInteger(newScore!, forKey: Constants.Score)
         }
     }
     

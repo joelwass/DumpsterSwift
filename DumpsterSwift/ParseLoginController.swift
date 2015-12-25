@@ -35,7 +35,7 @@ PFSignUpViewControllerDelegate {
             //move to new view controller
             print("user logged in")
             
-            
+            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
             
             //let currentInstallation = PFInstallation.currentInstallation()
             
@@ -73,6 +73,32 @@ PFSignUpViewControllerDelegate {
             loginViewController.signUpController = signupViewController
             self.presentViewController(loginViewController, animated: true, completion: nil)
         }
+    }
+    
+    func loadScore(user: PFUser) {
+        
+        let query = PFQuery(className: "User")
+        query.whereKey("username", equalTo: UserSettings.sharedInstance.Username!)
+        query.findObjectsInBackgroundWithBlock{(user: [AnyObject]?, error:NSError?) -> Void in
+            if error == nil {
+                print ("query for user score successful")
+                if let objects = objects as? [PFObject!] {
+                    
+                    self.userEventsFromParse = NSMutableArray()
+                    
+                    self.userEventsFromParse!.addObjectsFromArray(objects)
+                    
+                    self.createEventObjects(sender)
+                }
+                else {
+                    self.finish(sender)
+                }
+            }
+            else {
+                print("error in parse login controller \(error)")
+            }
+        }
+        
     }
     
     //MARK: Parse Login
