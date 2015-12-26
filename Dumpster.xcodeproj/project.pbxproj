@@ -226,7 +226,6 @@
 				EEDAA1D21A9E5A3D00C5142B /* Bridging.m */,
 				EEDAA1D11A9E5A3C00C5142B /* DumpsterSwift-Bridging-Header.h */,
 				EE3DF2FD1AAEA23C00F994FF /* tests.swift */,
-				EEBB63A91C2DE2F000F72278 /* UserSettings.swift */,
 			);
 			name = Dumpster;
 			path = DumpsterSwift;
@@ -292,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				EEF9C32C1C2DF848004DF096 /* UserService.swift */,
+				EEBB63A91C2DE2F000F72278 /* UserSettings.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";

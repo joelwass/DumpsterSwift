@@ -67,4 +67,28 @@ public class UserService:NSObject {
         currentUser.setObject(score, forKey: "score")
         currentUser.saveEventually()
     }
+    
+    func updateSkips(skips: Int) {
+        UserSettings.sharedInstance.userSkips = skips
+        
+        let currentUser = PFUser.currentUser()
+        currentUser.setObject(skips, forKey: "skipCount")
+        currentUser.saveEventually()
+    }
+    
+    func updateQuestionCount(questionCount: Int) {
+        UserSettings.sharedInstance.userQuestions = questionCount
+
+        let currentUser = PFUser.currentUser()
+        currentUser.setObject(questionCount, forKey: "quesitonCount")
+        currentUser.saveEventually()
+    }
+    
+    func updateIncorrectGuesses(incorrectGuesses: Int) {
+        UserSettings.sharedInstance.userIncorrectGuesses = incorrectGuesses
+        
+        let currentUser = PFUser.currentUser()
+        currentUser.setObject(incorrectGuesses, forKey: "incorrectGuessesCount")
+        currentUser.saveEventually()
+    }
 }

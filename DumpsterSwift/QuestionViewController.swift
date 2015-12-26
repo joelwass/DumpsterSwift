@@ -72,6 +72,7 @@ class QuestionViewController: UIViewController {
     @IBAction func skipPressed() {
         skipCount += 1
         self.populateQuestions()
+        UserService.sharedInstance.updateSkips(skipCount)
     }
     
     func populateQuestions() {
@@ -149,6 +150,8 @@ class QuestionViewController: UIViewController {
     
     @IBAction func guessPressed(sender: UIButton) {
         questionCount += 1
+        
+        UserService.sharedInstance.updateQuestionCount(questionCount)
         if (sender.currentTitle == self.correctAnswer) {
             correctAnswerCount += 1
             score += 2
@@ -194,6 +197,7 @@ class QuestionViewController: UIViewController {
             incorrectAnswerCount += 1
             score -= 1
             self.updateScore()
+            UserService.sharedInstance.updateIncorrectGuesses(incorrectAnswerCount)
         }
     }
     
