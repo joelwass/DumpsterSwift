@@ -36,6 +36,9 @@ class QuestionViewController: UIViewController {
         super.viewDidLoad()
         
         self.score = UserSettings.sharedInstance.userScore!
+        self.skipCount = UserSettings.sharedInstance.userSkips!
+        self.questionCount = UserSettings.sharedInstance.userQuestions!
+        self.incorrectAnswerCount = UserSettings.sharedInstance.userIncorrectGuesses!
       
         let nav = self.navigationController?.navigationBar
         nav?.barStyle = UIBarStyle.Black
