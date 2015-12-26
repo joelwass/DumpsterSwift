@@ -14,6 +14,9 @@ public class UserService:NSObject {
     
     var userDetailsFromParse:NSMutableArray?
     var score:Int?
+    var skips:Int?
+    var incorrectGuesses:Int?
+    var questionCount:Int?
     
     public class var sharedInstance: UserService {
         return _UserService
@@ -48,6 +51,18 @@ public class UserService:NSObject {
             if let userScore:AnyObject = each["score"] {
                 self.score = (userScore as! NSNumber) as Int
                 UserSettings.sharedInstance.userScore = self.score
+            }
+            if let userSkips:AnyObject = each["skipCount"] {
+                self.skips = (userSkips as! NSNumber) as Int
+                UserSettings.sharedInstance.userSkips = self.skips
+            }
+            if let userQuestionCount:AnyObject = each["questionCount"] {
+                self.questionCount = (userQuestionCount as! NSNumber) as Int
+                UserSettings.sharedInstance.userQuestions = self.questionCount
+            }
+            if let userIncorrectGuesses:AnyObject = each["incorrectGuessesCount"] {
+                self.incorrectGuesses = (userIncorrectGuesses as! NSNumber) as Int
+                UserSettings.sharedInstance.userIncorrectGuesses = self.incorrectGuesses
             }
         }
         self.finish(sender)
