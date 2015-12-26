@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="DumpsterSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Dumpster" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -41,11 +41,10 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rRg-2u-riV"/>
-                                    <segue destination="qhF-oe-6qn" kind="presentation" identifier="showQuestionSegue" id="hTo-Ez-xpa"/>
                                 </connections>
                             </button>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUs-fC-Bbd">
-                                <rect key="frame" x="153" y="82" width="294" height="382"/>
+                                <rect key="frame" x="0.0" y="82" width="600" height="382"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="382" id="hNW-1C-lm7"/>
@@ -54,6 +53,7 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="ksP-yJ-jBO"/>
                                         <exclude reference="qvj-TW-wdy"/>
                                     </mask>
                                 </variation>
@@ -71,6 +71,8 @@
                             <constraint firstItem="JUs-fC-Bbd" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="Izv-jI-5Oj"/>
                             <constraint firstAttribute="centerX" secondItem="7l9-EK-euV" secondAttribute="centerX" id="KjC-rJ-uMO"/>
                             <constraint firstAttribute="centerX" secondItem="4dg-QN-BiC" secondAttribute="centerX" id="MC7-VF-Jvb"/>
+                            <constraint firstAttribute="trailing" secondItem="JUs-fC-Bbd" secondAttribute="trailing" id="T7J-wF-3pG"/>
+                            <constraint firstItem="JUs-fC-Bbd" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ZU6-EZ-CAF"/>
                             <constraint firstItem="JUs-fC-Bbd" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="82" id="ZzP-8W-Njl"/>
                             <constraint firstItem="JUs-fC-Bbd" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="24" id="bTs-Ne-R9V"/>
                             <constraint firstItem="7l9-EK-euV" firstAttribute="top" secondItem="JUs-fC-Bbd" secondAttribute="bottom" constant="2" id="fCG-zh-dyk"/>
@@ -111,12 +113,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-22.5" y="80"/>
+            <point key="canvasLocation" x="-514" y="76"/>
+        </scene>
+        <!--ParseViewController-->
+        <scene sceneID="y9g-Lb-ViM">
+            <objects>
+                <viewController storyboardIdentifier="parseViewController" title="ParseViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pEd-WT-mwN" customClass="ParseLoginController" customModule="Dumpster" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3no-hV-FUM"/>
+                        <viewControllerLayoutGuide type="bottom" id="0NG-dq-HHe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R8Y-hS-10l">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H6f-mW-Peg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="115" y="60"/>
         </scene>
         <!--statsVC-->
         <scene sceneID="k8q-Pc-QbC">
             <objects>
-                <viewController storyboardIdentifier="statsVC" title="statsVC" id="Cla-px-2W9" customClass="StatsViewController" customModule="DumpsterSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="statsVC" title="statsVC" id="Cla-px-2W9" customClass="StatsViewController" customModule="Dumpster" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6uv-CU-hLT"/>
                         <viewControllerLayoutGuide type="bottom" id="jJ7-5O-ld6"/>
@@ -244,7 +265,7 @@
         <!--Learn More-->
         <scene sceneID="qq1-57-tjF">
             <objects>
-                <viewController storyboardIdentifier="learnMore" title="Learn More" id="AeP-5t-Kbx" customClass="LearnMoreViewController" customModule="DumpsterSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="learnMore" title="Learn More" id="AeP-5t-Kbx" customClass="LearnMoreViewController" customModule="Dumpster" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5dt-W7-8hK"/>
                         <viewControllerLayoutGuide type="bottom" id="cIe-kJ-uUR"/>
@@ -253,7 +274,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Gp-W1-YcG">
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Gp-W1-YcG">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
@@ -262,11 +283,11 @@
                         <constraints>
                             <constraint firstItem="9Gp-W1-YcG" firstAttribute="top" secondItem="5dt-W7-8hK" secondAttribute="bottom" id="KNA-yO-HkN"/>
                             <constraint firstItem="cIe-kJ-uUR" firstAttribute="top" secondItem="9Gp-W1-YcG" secondAttribute="bottom" id="R89-To-Qz6"/>
-                            <constraint firstItem="9Gp-W1-YcG" firstAttribute="trailing" secondItem="4Ls-fF-AB6" secondAttribute="trailingMargin" id="WUI-ZF-NDx"/>
+                            <constraint firstItem="9Gp-W1-YcG" firstAttribute="trailing" secondItem="4Ls-fF-AB6" secondAttribute="trailing" id="WUI-ZF-NDx"/>
                             <constraint firstItem="9Gp-W1-YcG" firstAttribute="top" secondItem="5dt-W7-8hK" secondAttribute="bottom" id="bwK-6f-gpA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9Gp-W1-YcG" secondAttribute="trailing" id="i4E-2m-t0S"/>
-                            <constraint firstItem="9Gp-W1-YcG" firstAttribute="leading" secondItem="4Ls-fF-AB6" secondAttribute="leadingMargin" id="jdH-YG-ojZ"/>
-                            <constraint firstItem="9Gp-W1-YcG" firstAttribute="leading" secondItem="4Ls-fF-AB6" secondAttribute="leadingMargin" id="kf8-n5-Vqp"/>
+                            <constraint firstAttribute="trailing" secondItem="9Gp-W1-YcG" secondAttribute="trailing" id="i4E-2m-t0S"/>
+                            <constraint firstItem="9Gp-W1-YcG" firstAttribute="leading" secondItem="4Ls-fF-AB6" secondAttribute="leading" id="jdH-YG-ojZ"/>
+                            <constraint firstItem="9Gp-W1-YcG" firstAttribute="leading" secondItem="4Ls-fF-AB6" secondAttribute="leading" id="kf8-n5-Vqp"/>
                             <constraint firstItem="cIe-kJ-uUR" firstAttribute="top" secondItem="9Gp-W1-YcG" secondAttribute="bottom" id="x7G-6n-0cE"/>
                         </constraints>
                         <variation key="default">
@@ -311,7 +332,7 @@
         <!--qVC-->
         <scene sceneID="kqN-Jb-nT0">
             <objects>
-                <viewController storyboardIdentifier="qVC" title="qVC" id="ybq-7H-9Sl" customClass="QuestionViewController" customModule="DumpsterSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="qVC" title="qVC" id="ybq-7H-9Sl" customClass="QuestionViewController" customModule="Dumpster" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zjo-wz-8lm"/>
                         <viewControllerLayoutGuide type="bottom" id="MUM-3T-Q6I"/>
@@ -455,10 +476,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvY-Q5-42B">
-                                <rect key="frame" x="489" y="544" width="95" height="36"/>
+                                <rect key="frame" x="489" y="551" width="95" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="95" id="S0I-OE-vGH"/>
-                                    <constraint firstAttribute="height" constant="36" id="Yfm-V0-YRW"/>
+                                    <constraint firstAttribute="height" constant="29" id="Yfm-V0-YRW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="SKIP">
@@ -575,7 +596,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="VLq-Qb-1Mw"/>
                         <barButtonItem key="rightBarButtonItem" id="cGh-im-wLO">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7c1-lP-g8d">
-                                <rect key="frame" x="260" y="72" width="36" height="30"/>
+                                <rect key="frame" x="544" y="7" width="36" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Stats"/>
@@ -622,7 +643,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NOz-rj-ScC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="743" y="76.5"/>
+            <point key="canvasLocation" x="645" y="76"/>
         </scene>
     </scenes>
 </document>

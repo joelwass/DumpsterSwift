@@ -33,20 +33,28 @@ class QuestionViewController: UIViewController {
     
     
     override func viewDidLoad() {
-      super.viewDidLoad()
+        super.viewDidLoad()
+        
+        self.score = UserSettings.sharedInstance.userScore!
       
-      var nav = self.navigationController?.navigationBar
-      nav?.barStyle = UIBarStyle.Black
-      nav?.tintColor = UIColor.orangeColor()
+        let nav = self.navigationController?.navigationBar
+        nav?.barStyle = UIBarStyle.Black
+        nav?.tintColor = UIColor.orangeColor()
         self.answer1.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
         self.answer2.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
         self.answer3.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
         self.answer4.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        self.answer1.titleLabel?.text = ""
+        self.answer2.titleLabel?.text = ""
+        self.answer3.titleLabel?.text = ""
+        self.answer4.titleLabel?.text = ""
+        
+        scoreLabel.text = NSString(format: "Score: %d", score) as String
         self.populateQuestions()
     }
     
     @IBAction func statsPressed(sender: AnyObject) {
-        var viewController = self.storyboard?.instantiateViewControllerWithIdentifier("statsVC") as! StatsViewController
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("statsVC") as! StatsViewController
         viewController.score = score
         viewController.skipCount = skipCount
         viewController.questionCount = questionCount
@@ -64,10 +72,11 @@ class QuestionViewController: UIViewController {
     @IBAction func skipPressed() {
         skipCount += 1
         self.populateQuestions()
+        UserService.sharedInstance.updateSkips(skipCount)
     }
     
     func populateQuestions() {
-        var randomKey = Int(arc4random_uniform(UInt32(questionArray.count)))
+        let randomKey = Int(arc4random_uniform(UInt32(questionArray.count)))
         var buttonArray = [answer1, answer2, answer3, answer4]
         var answerLabelArray = [answerArray[randomKey].valueForKey("Answer")
             , answerArray[randomKey].valueForKey("IncAnswer2")
@@ -79,7 +88,7 @@ class QuestionViewController: UIViewController {
         questionLabel.text = questionArray[randomKey].valueForKey("Question") as! NSString as String
         self.correctAnswer = answerArray[randomKey].valueForKey("Answer") as! NSString
         while (i < 4) {
-            var buttonNumber = Int(arc4random() % UInt32(4))
+            let buttonNumber = Int(arc4random() % UInt32(4))
             if (buttonNumber == arrayOfButtonNumbers[0] || buttonNumber == arrayOfButtonNumbers[1]
                 || buttonNumber == arrayOfButtonNumbers[2]
                 || buttonNumber == arrayOfButtonNumbers[3]) {
@@ -102,7 +111,7 @@ class QuestionViewController: UIViewController {
     
     func buildQuestions() {
         let skipNum = Int(arc4random_uniform(200))
-        var findQuestions = PFQuery(className: "Questions")
+        let findQuestions = PFQuery(className: "Questions")
         findQuestions.limit = 5
         findQuestions.skip = skipNum
         findQuestions.findObjectsInBackgroundWithBlock{
@@ -113,11 +122,11 @@ class QuestionViewController: UIViewController {
                 }
             }
             else {
-                NSLog("Error: %@ %@", error, error.userInfo!)
+                NSLog("Error: %@ %@", error, error.userInfo)
             }
         }
         
-        var findAnswers = PFQuery(className: "Answers")
+        let findAnswers = PFQuery(className: "Answers")
         findAnswers.limit = 5
         findAnswers.skip = skipNum
         findAnswers.findObjectsInBackgroundWithBlock{
@@ -136,27 +145,30 @@ class QuestionViewController: UIViewController {
     
     func updateScore() {
         scoreLabel.text = NSString(format: "Score: %d", score) as String
+        UserService.sharedInstance.updateScore(score)
     }
     
     @IBAction func guessPressed(sender: UIButton) {
         questionCount += 1
+        
+        UserService.sharedInstance.updateQuestionCount(questionCount)
         if (sender.currentTitle == self.correctAnswer) {
             correctAnswerCount += 1
             score += 2
             updateScore()
             
-            var alert = UIAlertController(title: "Nice!",
+            let alert = UIAlertController(title: "Nice!",
               message: "Click Learn More to learn about the answer!", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Learn More",
               style: UIAlertActionStyle.Default, handler: { action in
                 switch action.style{
                 case .Default:
-                    println("learn more")
+                    print("learn more")
                     self.learnMore()
                 case .Cancel:
-                    println("cancel")
+                    print("cancel")
                 case .Destructive:
-                    println("destructive")
+                    print("destructive")
                 }
             }))
             
@@ -166,16 +178,16 @@ class QuestionViewController: UIViewController {
               style: .Default, handler: { action in
                 switch action.style{
                 case .Default:
-                    println("next")
+                    print("next")
                     self.populateQuestions()
                 case .Cancel:
-                    println("cancel")
+                    print("cancel")
                 case .Destructive:
-                    println("destructive")
+                    print("destructive")
                 }
             }))
         } else {
-            UIView.animateWithDuration(0.3, delay: 0.0, options: nil, animations: {
+            UIView.animateWithDuration(0.3, delay: 0.0, options: [], animations: {
                 sender.backgroundColor = UIColor.redColor()
                 }, completion: { finished in
                     UIView .animateWithDuration(0.2, animations: {
@@ -185,11 +197,12 @@ class QuestionViewController: UIViewController {
             incorrectAnswerCount += 1
             score -= 1
             self.updateScore()
+            UserService.sharedInstance.updateIncorrectGuesses(incorrectAnswerCount)
         }
     }
     
     func learnMore() {
-        var viewController = self.storyboard?.instantiateViewControllerWithIdentifier("learnMore") as! LearnMoreViewController
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("learnMore") as! LearnMoreViewController
         viewController.correctAnswer = correctAnswer
         self.navigationController?.pushViewController(viewController, animated: true)
     }

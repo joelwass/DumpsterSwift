@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0610"
+   LastUpgradeVersion = "0720"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EEC044F71A93C74200D90ECA"
-               BuildableName = "DumpsterSwift.app"
-               BlueprintName = "DumpsterSwift"
-               ReferencedContainer = "container:DumpsterSwift.xcodeproj">
+               BuildableName = "Dumpster.app"
+               BlueprintName = "Dumpster"
+               ReferencedContainer = "container:Dumpster.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,27 +29,27 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EEC0450C1A93C74300D90ECA"
-               BuildableName = "DumpsterSwiftTests.xctest"
-               BlueprintName = "DumpsterSwiftTests"
-               ReferencedContainer = "container:DumpsterSwift.xcodeproj">
+               BuildableName = "DumpsterTests.xctest"
+               BlueprintName = "DumpsterTests"
+               ReferencedContainer = "container:Dumpster.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Debug">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EEC0450C1A93C74300D90ECA"
-               BuildableName = "DumpsterSwiftTests.xctest"
-               BlueprintName = "DumpsterSwiftTests"
-               ReferencedContainer = "container:DumpsterSwift.xcodeproj">
+               BuildableName = "DumpsterTests.xctest"
+               BlueprintName = "DumpsterTests"
+               ReferencedContainer = "container:Dumpster.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,46 +57,51 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EEC044F71A93C74200D90ECA"
-            BuildableName = "DumpsterSwift.app"
-            BlueprintName = "DumpsterSwift"
-            ReferencedContainer = "container:DumpsterSwift.xcodeproj">
+            BuildableName = "Dumpster.app"
+            BlueprintName = "Dumpster"
+            ReferencedContainer = "container:Dumpster.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EEC044F71A93C74200D90ECA"
-            BuildableName = "DumpsterSwift.app"
-            BlueprintName = "DumpsterSwift"
-            ReferencedContainer = "container:DumpsterSwift.xcodeproj">
+            BuildableName = "Dumpster.app"
+            BlueprintName = "Dumpster"
+            ReferencedContainer = "container:Dumpster.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
+      buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EEC044F71A93C74200D90ECA"
-            BuildableName = "DumpsterSwift.app"
-            BlueprintName = "DumpsterSwift"
-            ReferencedContainer = "container:DumpsterSwift.xcodeproj">
+            BuildableName = "Dumpster.app"
+            BlueprintName = "Dumpster"
+            ReferencedContainer = "container:Dumpster.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

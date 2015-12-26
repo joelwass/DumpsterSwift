@@ -18,16 +18,21 @@
 		EE0B3A2C1B03C29F004B6FC4 /* DumpsterLogo152.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0B3A211B03C29F004B6FC4 /* DumpsterLogo152.png */; };
 		EE0B3A2D1B03C29F004B6FC4 /* DumpsterLogo180.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0B3A221B03C29F004B6FC4 /* DumpsterLogo180.png */; };
 		EE0B3A2E1B03C29F004B6FC4 /* DumpsterLogo1024.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0B3A231B03C29F004B6FC4 /* DumpsterLogo1024.png */; };
-		EE3DF3031AB4E18200F994FF /* LearnMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3DF3021AB4E18200F994FF /* LearnMoreViewController.swift */; };
-		EEB09F261AACB6320070BA38 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB09F251AACB6320070BA38 /* StatsViewController.swift */; };
-		EEC044FE1A93C74200D90ECA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC044FD1A93C74200D90ECA /* AppDelegate.swift */; };
-		EEC045001A93C74300D90ECA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC044FF1A93C74200D90ECA /* ViewController.swift */; };
+		EE1F7F271B4EE9B200148429 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE1F7F261B4EE9B200148429 /* Default-568h@2x.png */; };
+		EE1F7F281B4EEC0300148429 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC044FF1A93C74200D90ECA /* ViewController.swift */; };
+		EE1F7F291B4EEC2500148429 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC045211A942AB000D90ECA /* QuestionViewController.swift */; };
+		EE1F7F2A1B4EEC2900148429 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB09F251AACB6320070BA38 /* StatsViewController.swift */; };
+		EE1F7F2B1B4EEC2D00148429 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC044FD1A93C74200D90ECA /* AppDelegate.swift */; };
+		EE1F7F2C1B4EEC3200148429 /* LearnMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3DF3021AB4E18200F994FF /* LearnMoreViewController.swift */; };
+		EE1F7F2E1B4EEC5300148429 /* Bridging.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDAA1D21A9E5A3D00C5142B /* Bridging.m */; };
+		EEBB63A81C2DE1FF00F72278 /* ParseLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBB63A71C2DE1FF00F72278 /* ParseLoginController.swift */; };
+		EEBB63AA1C2DE2F000F72278 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBB63A91C2DE2F000F72278 /* UserSettings.swift */; };
+		EEBB63AF1C2DE51700F72278 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBB63AE1C2DE51700F72278 /* Social.framework */; };
+		EEBB63B11C2DE54D00F72278 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBB63B01C2DE54D00F72278 /* Accounts.framework */; };
 		EEC045031A93C74300D90ECA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEC045011A93C74300D90ECA /* Main.storyboard */; };
 		EEC045051A93C74300D90ECA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEC045041A93C74300D90ECA /* Images.xcassets */; };
 		EEC045081A93C74300D90ECA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC045061A93C74300D90ECA /* LaunchScreen.xib */; };
-		EEC045141A93C74300D90ECA /* DumpsterSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC045131A93C74300D90ECA /* DumpsterSwiftTests.swift */; };
 		EEC045201A93DA4E00D90ECA /* DumpLoopTrans2.gif in Resources */ = {isa = PBXBuildFile; fileRef = EEC0451F1A93DA4E00D90ECA /* DumpLoopTrans2.gif */; };
-		EEC045221A942AB000D90ECA /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC045211A942AB000D90ECA /* QuestionViewController.swift */; };
 		EEDAA1B31A9E591C00C5142B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDAA1B21A9E591C00C5142B /* AudioToolbox.framework */; };
 		EEDAA1B51A9E592200C5142B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDAA1B41A9E592200C5142B /* Foundation.framework */; };
 		EEDAA1B71A9E592A00C5142B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDAA1B61A9E592A00C5142B /* CoreGraphics.framework */; };
@@ -43,8 +48,8 @@
 		EEDAA1CE1A9E599400C5142B /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDAA1C91A9E599400C5142B /* ParseCrashReporting.framework */; };
 		EEDAA1CF1A9E599400C5142B /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDAA1CA1A9E599400C5142B /* ParseFacebookUtils.framework */; };
 		EEDAA1D01A9E599400C5142B /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDAA1CB1A9E599400C5142B /* ParseUI.framework */; };
-		EEDAA1D31A9E5A3D00C5142B /* Bridging.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDAA1D21A9E5A3D00C5142B /* Bridging.m */; };
 		EEDAA1D51A9E5BF400C5142B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDAA1D41A9E5BF400C5142B /* libsqlite3.dylib */; };
+		EEF9C32D1C2DF848004DF096 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF9C32C1C2DF848004DF096 /* UserService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,19 +74,24 @@
 		EE0B3A211B03C29F004B6FC4 /* DumpsterLogo152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DumpsterLogo152.png; sourceTree = "<group>"; };
 		EE0B3A221B03C29F004B6FC4 /* DumpsterLogo180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DumpsterLogo180.png; sourceTree = "<group>"; };
 		EE0B3A231B03C29F004B6FC4 /* DumpsterLogo1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DumpsterLogo1024.png; sourceTree = "<group>"; };
+		EE1F7F261B4EE9B200148429 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		EE1F7F321B4F1D6200148429 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE3DF2FD1AAEA23C00F994FF /* tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tests.swift; sourceTree = "<group>"; };
 		EE3DF3021AB4E18200F994FF /* LearnMoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnMoreViewController.swift; sourceTree = "<group>"; };
 		EEB09F251AACB6320070BA38 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
-		EEC044F81A93C74200D90ECA /* DumpsterSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DumpsterSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEBB63A71C2DE1FF00F72278 /* ParseLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseLoginController.swift; sourceTree = "<group>"; };
+		EEBB63A91C2DE2F000F72278 /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		EEBB63AE1C2DE51700F72278 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		EEBB63B01C2DE54D00F72278 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		EEC044F81A93C74200D90ECA /* Dumpster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dumpster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEC044FC1A93C74200D90ECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEC044FD1A93C74200D90ECA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEC044FF1A93C74200D90ECA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EEC045021A93C74300D90ECA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EEC045041A93C74300D90ECA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EEC045071A93C74300D90ECA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		EEC0450D1A93C74300D90ECA /* DumpsterSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DumpsterSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EEC045121A93C74300D90ECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EEC045131A93C74300D90ECA /* DumpsterSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DumpsterSwiftTests.swift; sourceTree = "<group>"; };
+		EEC0450D1A93C74300D90ECA /* DumpsterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DumpsterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEC045131A93C74300D90ECA /* DumpsterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DumpsterTests.swift; sourceTree = "<group>"; };
 		EEC0451F1A93DA4E00D90ECA /* DumpLoopTrans2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = DumpLoopTrans2.gif; sourceTree = "<group>"; };
 		EEC045211A942AB000D90ECA /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		EEDAA1B21A9E591C00C5142B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -102,6 +112,7 @@
 		EEDAA1D11A9E5A3C00C5142B /* DumpsterSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DumpsterSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		EEDAA1D21A9E5A3D00C5142B /* Bridging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bridging.m; sourceTree = "<group>"; };
 		EEDAA1D41A9E5BF400C5142B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		EEF9C32C1C2DF848004DF096 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +120,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEBB63B11C2DE54D00F72278 /* Accounts.framework in Frameworks */,
+				EEBB63AF1C2DE51700F72278 /* Social.framework in Frameworks */,
 				EEDAA1D51A9E5BF400C5142B /* libsqlite3.dylib in Frameworks */,
 				EEDAA1CF1A9E599400C5142B /* ParseFacebookUtils.framework in Frameworks */,
 				EEDAA1C51A9E596800C5142B /* SystemConfiguration.framework in Frameworks */,
@@ -138,13 +151,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EEC044EF1A93C74200D90ECA = {
+		EEBB63AB1C2DE3AA00F72278 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EEDAA1D41A9E5BF400C5142B /* libsqlite3.dylib */,
-				EEDAA1C61A9E599400C5142B /* parse-library-1.6.3 */,
-				EEDAA1C41A9E596800C5142B /* SystemConfiguration.framework */,
-				EEDAA1C21A9E596200C5142B /* StoreKit.framework */,
+				EEBB63B01C2DE54D00F72278 /* Accounts.framework */,
+				EEBB63AE1C2DE51700F72278 /* Social.framework */,
 				EEDAA1C01A9E595C00C5142B /* Security.framework */,
 				EEDAA1BE1A9E595600C5142B /* QuartzCore.framework */,
 				EEDAA1BC1A9E595000C5142B /* MobileCoreServices.framework */,
@@ -153,8 +164,42 @@
 				EEDAA1B61A9E592A00C5142B /* CoreGraphics.framework */,
 				EEDAA1B41A9E592200C5142B /* Foundation.framework */,
 				EEDAA1B21A9E591C00C5142B /* AudioToolbox.framework */,
-				EEC044FA1A93C74200D90ECA /* DumpsterSwift */,
-				EEC045101A93C74300D90ECA /* DumpsterSwiftTests */,
+				EEDAA1C21A9E596200C5142B /* StoreKit.framework */,
+				EEDAA1D41A9E5BF400C5142B /* libsqlite3.dylib */,
+				EEDAA1C61A9E599400C5142B /* parse-library-1.6.3 */,
+				EEDAA1C41A9E596800C5142B /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EEBB63AC1C2DE3BE00F72278 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EEBB63A71C2DE1FF00F72278 /* ParseLoginController.swift */,
+				EEC044FF1A93C74200D90ECA /* ViewController.swift */,
+				EEC045211A942AB000D90ECA /* QuestionViewController.swift */,
+				EEB09F251AACB6320070BA38 /* StatsViewController.swift */,
+				EE3DF3021AB4E18200F994FF /* LearnMoreViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		EEBB63AD1C2DE3CF00F72278 /* storyBoards */ = {
+			isa = PBXGroup;
+			children = (
+				EEC045011A93C74300D90ECA /* Main.storyboard */,
+				EEC045061A93C74300D90ECA /* LaunchScreen.xib */,
+			);
+			name = storyBoards;
+			sourceTree = "<group>";
+		};
+		EEC044EF1A93C74200D90ECA = {
+			isa = PBXGroup;
+			children = (
+				EEBB63AB1C2DE3AA00F72278 /* Frameworks */,
+				EE1F7F261B4EE9B200148429 /* Default-568h@2x.png */,
+				EEC044FA1A93C74200D90ECA /* Dumpster */,
+				EEC045101A93C74300D90ECA /* DumpsterTests */,
 				EEC044F91A93C74200D90ECA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -162,28 +207,27 @@
 		EEC044F91A93C74200D90ECA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EEC044F81A93C74200D90ECA /* DumpsterSwift.app */,
-				EEC0450D1A93C74300D90ECA /* DumpsterSwiftTests.xctest */,
+				EEC044F81A93C74200D90ECA /* Dumpster.app */,
+				EEC0450D1A93C74300D90ECA /* DumpsterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EEC044FA1A93C74200D90ECA /* DumpsterSwift */ = {
+		EEC044FA1A93C74200D90ECA /* Dumpster */ = {
 			isa = PBXGroup;
 			children = (
+				EEF9C32B1C2DF839004DF096 /* Services */,
+				EEF9C32A1C2DF81A004DF096 /* Models */,
+				EEBB63AD1C2DE3CF00F72278 /* storyBoards */,
+				EEBB63AC1C2DE3BE00F72278 /* Controllers */,
 				EEC044FD1A93C74200D90ECA /* AppDelegate.swift */,
-				EEC044FF1A93C74200D90ECA /* ViewController.swift */,
-				EEC045211A942AB000D90ECA /* QuestionViewController.swift */,
-				EEB09F251AACB6320070BA38 /* StatsViewController.swift */,
-				EE3DF3021AB4E18200F994FF /* LearnMoreViewController.swift */,
-				EEC045011A93C74300D90ECA /* Main.storyboard */,
 				EEC045041A93C74300D90ECA /* Images.xcassets */,
-				EEC045061A93C74300D90ECA /* LaunchScreen.xib */,
 				EEC044FB1A93C74200D90ECA /* Supporting Files */,
 				EEDAA1D21A9E5A3D00C5142B /* Bridging.m */,
 				EEDAA1D11A9E5A3C00C5142B /* DumpsterSwift-Bridging-Header.h */,
 				EE3DF2FD1AAEA23C00F994FF /* tests.swift */,
 			);
+			name = Dumpster;
 			path = DumpsterSwift;
 			sourceTree = "<group>";
 		};
@@ -207,19 +251,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		EEC045101A93C74300D90ECA /* DumpsterSwiftTests */ = {
+		EEC045101A93C74300D90ECA /* DumpsterTests */ = {
 			isa = PBXGroup;
 			children = (
-				EEC045131A93C74300D90ECA /* DumpsterSwiftTests.swift */,
+				EEC045131A93C74300D90ECA /* DumpsterTests.swift */,
+				EE1F7F321B4F1D6200148429 /* Info.plist */,
 				EEC045111A93C74300D90ECA /* Supporting Files */,
 			);
-			path = DumpsterSwiftTests;
+			path = DumpsterTests;
 			sourceTree = "<group>";
 		};
 		EEC045111A93C74300D90ECA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				EEC045121A93C74300D90ECA /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -236,12 +280,28 @@
 			path = "parse-library-1.6.3";
 			sourceTree = "<group>";
 		};
+		EEF9C32A1C2DF81A004DF096 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		EEF9C32B1C2DF839004DF096 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EEF9C32C1C2DF848004DF096 /* UserService.swift */,
+				EEBB63A91C2DE2F000F72278 /* UserSettings.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EEC044F71A93C74200D90ECA /* DumpsterSwift */ = {
+		EEC044F71A93C74200D90ECA /* Dumpster */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EEC045171A93C74300D90ECA /* Build configuration list for PBXNativeTarget "DumpsterSwift" */;
+			buildConfigurationList = EEC045171A93C74300D90ECA /* Build configuration list for PBXNativeTarget "Dumpster" */;
 			buildPhases = (
 				EEC044F41A93C74200D90ECA /* Sources */,
 				EEC044F51A93C74200D90ECA /* Frameworks */,
@@ -251,14 +311,14 @@
 			);
 			dependencies = (
 			);
-			name = DumpsterSwift;
+			name = Dumpster;
 			productName = DumpsterSwift;
-			productReference = EEC044F81A93C74200D90ECA /* DumpsterSwift.app */;
+			productReference = EEC044F81A93C74200D90ECA /* Dumpster.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EEC0450C1A93C74300D90ECA /* DumpsterSwiftTests */ = {
+		EEC0450C1A93C74300D90ECA /* DumpsterTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EEC0451A1A93C74300D90ECA /* Build configuration list for PBXNativeTarget "DumpsterSwiftTests" */;
+			buildConfigurationList = EEC0451A1A93C74300D90ECA /* Build configuration list for PBXNativeTarget "DumpsterTests" */;
 			buildPhases = (
 				EEC045091A93C74300D90ECA /* Sources */,
 				EEC0450A1A93C74300D90ECA /* Frameworks */,
@@ -269,9 +329,9 @@
 			dependencies = (
 				EEC0450F1A93C74300D90ECA /* PBXTargetDependency */,
 			);
-			name = DumpsterSwiftTests;
+			name = DumpsterTests;
 			productName = DumpsterSwiftTests;
-			productReference = EEC0450D1A93C74300D90ECA /* DumpsterSwiftTests.xctest */;
+			productReference = EEC0450D1A93C74300D90ECA /* DumpsterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -280,11 +340,14 @@
 		EEC044F01A93C74200D90ECA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = IVET;
 				TargetAttributes = {
 					EEC044F71A93C74200D90ECA = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 23NT8R7X24;
 					};
 					EEC0450C1A93C74300D90ECA = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -292,7 +355,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EEC044F31A93C74200D90ECA /* Build configuration list for PBXProject "DumpsterSwift" */;
+			buildConfigurationList = EEC044F31A93C74200D90ECA /* Build configuration list for PBXProject "Dumpster" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -305,8 +368,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EEC044F71A93C74200D90ECA /* DumpsterSwift */,
-				EEC0450C1A93C74300D90ECA /* DumpsterSwiftTests */,
+				EEC044F71A93C74200D90ECA /* Dumpster */,
+				EEC0450C1A93C74300D90ECA /* DumpsterTests */,
 			);
 		};
 /* End PBXProject section */
@@ -329,6 +392,7 @@
 				EE0B3A241B03C29F004B6FC4 /* DumpsterLaunch960.png in Resources */,
 				EE0B3A271B03C29F004B6FC4 /* DumpsterLogo58.png in Resources */,
 				EE0B3A2B1B03C29F004B6FC4 /* DumpsterLogo120.png in Resources */,
+				EE1F7F271B4EE9B200148429 /* Default-568h@2x.png in Resources */,
 				EE0B3A2C1B03C29F004B6FC4 /* DumpsterLogo152.png in Resources */,
 				EE0B3A2A1B03C29F004B6FC4 /* DumpsterLogo87.png in Resources */,
 			);
@@ -348,12 +412,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEC045001A93C74300D90ECA /* ViewController.swift in Sources */,
-				EEC044FE1A93C74200D90ECA /* AppDelegate.swift in Sources */,
-				EEC045221A942AB000D90ECA /* QuestionViewController.swift in Sources */,
-				EEB09F261AACB6320070BA38 /* StatsViewController.swift in Sources */,
-				EE3DF3031AB4E18200F994FF /* LearnMoreViewController.swift in Sources */,
-				EEDAA1D31A9E5A3D00C5142B /* Bridging.m in Sources */,
+				EE1F7F2E1B4EEC5300148429 /* Bridging.m in Sources */,
+				EE1F7F2C1B4EEC3200148429 /* LearnMoreViewController.swift in Sources */,
+				EEF9C32D1C2DF848004DF096 /* UserService.swift in Sources */,
+				EE1F7F2B1B4EEC2D00148429 /* AppDelegate.swift in Sources */,
+				EE1F7F2A1B4EEC2900148429 /* StatsViewController.swift in Sources */,
+				EE1F7F291B4EEC2500148429 /* QuestionViewController.swift in Sources */,
+				EEBB63AA1C2DE2F000F72278 /* UserSettings.swift in Sources */,
+				EE1F7F281B4EEC0300148429 /* ViewController.swift in Sources */,
+				EEBB63A81C2DE1FF00F72278 /* ParseLoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,7 +428,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEC045141A93C74300D90ECA /* DumpsterSwiftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +436,7 @@
 /* Begin PBXTargetDependency section */
 		EEC0450F1A93C74300D90ECA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EEC044F71A93C74200D90ECA /* DumpsterSwift */;
+			target = EEC044F71A93C74200D90ECA /* Dumpster */;
 			targetProxy = EEC0450E1A93C74300D90ECA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -412,9 +478,11 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -454,6 +522,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -477,13 +546,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-library-1.6.3",
 				);
-				INFOPLIST_FILE = DumpsterSwift/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/DumpsterTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ivet.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = Dumpster;
 				SWIFT_OBJC_BRIDGING_HEADER = "DumpsterSwift/DumpsterSwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -494,13 +565,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-library-1.6.3",
 				);
-				INFOPLIST_FILE = DumpsterSwift/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/DumpsterTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ivet.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = Dumpster;
 				SWIFT_OBJC_BRIDGING_HEADER = "DumpsterSwift/DumpsterSwift-Bridging-Header.h";
 			};
 			name = Release;
@@ -517,9 +590,10 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = DumpsterSwiftTests/Info.plist;
+				INFOPLIST_FILE = DumpsterTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ivet.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = DumpsterTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DumpsterSwift.app/DumpsterSwift";
 			};
 			name = Debug;
@@ -532,9 +606,10 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = DumpsterSwiftTests/Info.plist;
+				INFOPLIST_FILE = DumpsterTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ivet.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = DumpsterTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DumpsterSwift.app/DumpsterSwift";
 			};
 			name = Release;
@@ -542,7 +617,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EEC044F31A93C74200D90ECA /* Build configuration list for PBXProject "DumpsterSwift" */ = {
+		EEC044F31A93C74200D90ECA /* Build configuration list for PBXProject "Dumpster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EEC045151A93C74300D90ECA /* Debug */,
@@ -551,7 +626,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EEC045171A93C74300D90ECA /* Build configuration list for PBXNativeTarget "DumpsterSwift" */ = {
+		EEC045171A93C74300D90ECA /* Build configuration list for PBXNativeTarget "Dumpster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EEC045181A93C74300D90ECA /* Debug */,
@@ -560,7 +635,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EEC0451A1A93C74300D90ECA /* Build configuration list for PBXNativeTarget "DumpsterSwiftTests" */ = {
+		EEC0451A1A93C74300D90ECA /* Build configuration list for PBXNativeTarget "DumpsterTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EEC0451B1A93C74300D90ECA /* Debug */,
