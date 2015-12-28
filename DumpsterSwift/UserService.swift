@@ -71,7 +71,7 @@ public class UserService:NSObject {
     func finish(sender: AnyObject) {
         if sender is ParseLoginController {
             let mysender = sender as! ParseLoginController
-            mysender.loadQuestionView()
+            mysender.loadHomeView()
         }
     }
     

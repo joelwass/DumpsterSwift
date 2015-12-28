@@ -68,6 +68,16 @@ PFSignUpViewControllerDelegate {
         }
     }
     
+    func loadHomeView() {
+        print("attempting to load home view once user has been logged in")
+        
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("StartScreen") as! ViewController
+        self.window!.rootViewController = viewController
+        self.window!.makeKeyAndVisible()
+    }
+    
     func loadQuestionView() {
         
         print("attempting to laod question view")
@@ -160,10 +170,18 @@ PFSignUpViewControllerDelegate {
             if let user = user {
                 if user.isNew {
                     print("User signed up and logged in through Facebook!")
+                    
+                    user.setObject(0, forKey: "score")
+                    user.setObject(0, forKey: "skipCount")
+                    user.setObject(0, forKey: "questionCount")
+                    user.setObject(0, forKey: "incorrectGuessesCount")
+                    user.saveEventually()
+        
                 } else {
                     print("User logged in through Facebook!")
                 }
                 self.returnUserData()
+                UserSettings.sharedInstance.Username = user.username!
                 self.dismissViewControllerAnimated(true, completion: nil)
             } else {
                 print("Uh oh. The user cancelled the Facebook login.")

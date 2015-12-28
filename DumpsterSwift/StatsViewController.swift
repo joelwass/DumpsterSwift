@@ -42,7 +42,6 @@ class StatsViewController: UIViewController {
     @IBAction func logout(sender: AnyObject) {
         PFUser.logOut()
 //       
-        self.navigationController
-        self.performSegueWithIdentifier("popToRootView", sender: self)
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
 }

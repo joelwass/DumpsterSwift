@@ -10,6 +10,8 @@ import UIKit
 
 
 class ViewController: UIViewController {
+    
+    var window: UIWindow?
   
     @IBOutlet weak var homeLabel: UILabel!
     @IBOutlet weak var gifView: UIWebView!
@@ -42,11 +44,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonPressed(sender : AnyObject) {
-        print("start button pressed")
-        let VC = self.storyboard?.instantiateViewControllerWithIdentifier("parseViewController") as! ParseLoginController
-        VC.questionArrayFirst = self.questionArrayFirst
-        VC.answerArrayFirst = self.answerArrayFirst
-        self.presentViewController(VC, animated: true, completion: nil)
+        print("single player start button pressed")
+        
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("qVC") as! QuestionViewController
+        let navController = UINavigationController(rootViewController: viewController)
+        viewController.questionArray = self.questionArrayFirst
+        viewController.answerArray = self.answerArrayFirst
+        
+        self.presentViewController(navController, animated: true, completion: nil)
     }
   
     func buildQuestions() {
