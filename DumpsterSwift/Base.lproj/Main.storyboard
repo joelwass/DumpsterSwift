@@ -293,7 +293,7 @@
                         <outlet property="labelOne" destination="acw-Ab-IhA" id="bzS-pl-dc4"/>
                         <outlet property="labelThree" destination="OOc-X6-Ecq" id="2hr-Bm-k1o"/>
                         <outlet property="labelTwo" destination="qed-8Z-Gx3" id="ReH-ej-XyY"/>
-                        <segue destination="vXZ-lx-hvc" kind="show" identifier="popToRootView" id="c74-7O-tXB"/>
+                        <segue destination="vXZ-lx-hvc" kind="showDetail" identifier="popToRootView" action="showViewController:sender:" id="c74-7O-tXB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MED-mV-U1b" userLabel="First Responder" sceneMemberID="firstResponder"/>

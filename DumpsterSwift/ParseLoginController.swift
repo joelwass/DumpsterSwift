@@ -130,6 +130,9 @@ PFSignUpViewControllerDelegate {
     
     func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
         user.setObject(0, forKey: "score")
+        user.setObject(0, forKey: "skipCount")
+        user.setObject(0, forKey: "questionCount")
+        user.setObject(0, forKey: "incorrectGuessesCount")
         user.saveEventually()
         UserSettings.sharedInstance.Username = user.username!
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -160,6 +163,8 @@ PFSignUpViewControllerDelegate {
                 } else {
                     print("User logged in through Facebook!")
                 }
+                self.returnUserData()
+                self.dismissViewControllerAnimated(true, completion: nil)
             } else {
                 print("Uh oh. The user cancelled the Facebook login.")
             }
@@ -181,8 +186,9 @@ PFSignUpViewControllerDelegate {
                 print("fetched user: \(result)")
                 let userName : NSString = result.valueForKey("name") as! NSString
                 print("User Name is: \(userName)")
-                let userEmail : NSString = result.valueForKey("email") as! NSString
-                print("User Email is: \(userEmail)")
+                if let userEmail : NSString = result.valueForKey("email") as? NSString {
+                    print("User Email is: \(userEmail)")
+                }
             }
         })
     }

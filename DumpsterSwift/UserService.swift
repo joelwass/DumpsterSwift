@@ -95,7 +95,7 @@ public class UserService:NSObject {
         UserSettings.sharedInstance.userQuestions = questionCount
 
         let currentUser = PFUser.currentUser()
-        currentUser!.setObject(questionCount, forKey: "quesitonCount")
+        currentUser!.setObject(questionCount, forKey: "questionCount")
         currentUser!.saveEventually()
     }
     
