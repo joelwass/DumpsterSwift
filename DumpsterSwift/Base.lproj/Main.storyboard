@@ -245,6 +245,8 @@
                                 <exclude reference="rnf-QG-pqj"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="5wu-Uj-UPG"/>
+                                <exclude reference="qGe-wM-bPa"/>
                                 <exclude reference="38B-dV-K95"/>
                                 <exclude reference="TVv-mN-fdj"/>
                                 <exclude reference="XRi-Q3-fMD"/>
@@ -260,8 +262,6 @@
                                 <exclude reference="VPW-8J-GJW"/>
                                 <exclude reference="dUA-28-Gwi"/>
                                 <exclude reference="o8c-im-AE3"/>
-                                <exclude reference="5wu-Uj-UPG"/>
-                                <exclude reference="qGe-wM-bPa"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -269,6 +269,8 @@
                                 <include reference="rnf-QG-pqj"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="5wu-Uj-UPG"/>
+                                <include reference="qGe-wM-bPa"/>
                                 <include reference="TVv-mN-fdj"/>
                                 <include reference="XRi-Q3-fMD"/>
                                 <include reference="9Go-3c-5Hb"/>
@@ -280,8 +282,6 @@
                                 <include reference="Axw-L7-dUX"/>
                                 <include reference="VPW-8J-GJW"/>
                                 <include reference="o8c-im-AE3"/>
-                                <include reference="5wu-Uj-UPG"/>
-                                <include reference="qGe-wM-bPa"/>
                             </mask>
                         </variation>
                     </view>
@@ -293,6 +293,7 @@
                         <outlet property="labelOne" destination="acw-Ab-IhA" id="bzS-pl-dc4"/>
                         <outlet property="labelThree" destination="OOc-X6-Ecq" id="2hr-Bm-k1o"/>
                         <outlet property="labelTwo" destination="qed-8Z-Gx3" id="ReH-ej-XyY"/>
+                        <segue destination="vXZ-lx-hvc" kind="show" identifier="popToRootView" id="c74-7O-tXB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MED-mV-U1b" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -45,8 +45,15 @@ PFSignUpViewControllerDelegate {
             
             loginViewController.emailAsUsername = true
             loginViewController.logInView!.logo = logInLogoTitle
+            
+            let permissions = [ "public_profile", "email", "user_friends" ]
+            loginViewController.facebookPermissions = permissions
+            
             loginViewController.fields = [PFLogInFields.UsernameAndPassword, PFLogInFields.LogInButton, PFLogInFields.PasswordForgotten, PFLogInFields.SignUpButton, PFLogInFields.Facebook]
             loginViewController.delegate = self
+            loginViewController.logInView?.facebookButton?.addTarget(self, action: "didTapFacebookConnect:", forControlEvents: .TouchUpInside)
+            
+            self.presentViewController(loginViewController, animated: true, completion: nil)
 
             let signUpLogoTitle = UILabel()
             signUpLogoTitle.text = "DUMPSTERSWIFT"
@@ -57,7 +64,7 @@ PFSignUpViewControllerDelegate {
             signupViewController.signUpView!.logo = signUpLogoTitle
             
             loginViewController.signUpController = signupViewController
-            self.presentViewController(loginViewController, animated: true, completion: nil)
+            
         }
     }
     
@@ -141,6 +148,43 @@ PFSignUpViewControllerDelegate {
     
     @IBAction func logoutUser(sender: UIButton) {
         PFUser.logOut()
+    }
+    
+    func didTapFacebookConnect(sender: AnyObject) {
+        let permissions = [ "public_profile", "email", "user_friends" ]
+        
+        PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions,  block: {  (user: PFUser?, error: NSError?) -> Void in
+            if let user = user {
+                if user.isNew {
+                    print("User signed up and logged in through Facebook!")
+                } else {
+                    print("User logged in through Facebook!")
+                }
+            } else {
+                print("Uh oh. The user cancelled the Facebook login.")
+            }
+        })
+        
+    }
+    
+    func returnUserData() {
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
+        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+            
+            if ((error) != nil)
+            {
+                // Process error
+                print("Error: \(error)")
+            }
+            else
+            {
+                print("fetched user: \(result)")
+                let userName : NSString = result.valueForKey("name") as! NSString
+                print("User Name is: \(userName)")
+                let userEmail : NSString = result.valueForKey("email") as! NSString
+                print("User Email is: \(userEmail)")
+            }
+        })
     }
     
 }
