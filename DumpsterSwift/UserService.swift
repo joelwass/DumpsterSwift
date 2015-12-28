@@ -26,10 +26,10 @@ public class UserService:NSObject {
         
         let query = PFQuery(className: "User")
         query.whereKey("username", equalTo: UserSettings.sharedInstance.Username!)
-        query.findObjectsInBackgroundWithBlock{(user: [AnyObject]?, error:NSError?) -> Void in
+        query.findObjectsInBackgroundWithBlock{(user: [PFObject]?, error:NSError?) -> Void in
             if error == nil {
                 print ("query for user score successful")
-                if let objects = user as? [AnyObject!] {
+                if let objects = user {
                     
                     self.userDetailsFromParse = NSMutableArray()
                     self.userDetailsFromParse!.addObjectsFromArray(objects)
@@ -79,31 +79,31 @@ public class UserService:NSObject {
         UserSettings.sharedInstance.userScore = score
         
         let currentUser = PFUser.currentUser()
-        currentUser.setObject(score, forKey: "score")
-        currentUser.saveEventually()
+        currentUser!.setObject(score, forKey: "score")
+        currentUser!.saveEventually()
     }
     
     func updateSkips(skips: Int) {
         UserSettings.sharedInstance.userSkips = skips
         
         let currentUser = PFUser.currentUser()
-        currentUser.setObject(skips, forKey: "skipCount")
-        currentUser.saveEventually()
+        currentUser!.setObject(skips, forKey: "skipCount")
+        currentUser!.saveEventually()
     }
     
     func updateQuestionCount(questionCount: Int) {
         UserSettings.sharedInstance.userQuestions = questionCount
 
         let currentUser = PFUser.currentUser()
-        currentUser.setObject(questionCount, forKey: "quesitonCount")
-        currentUser.saveEventually()
+        currentUser!.setObject(questionCount, forKey: "quesitonCount")
+        currentUser!.saveEventually()
     }
     
     func updateIncorrectGuesses(incorrectGuesses: Int) {
         UserSettings.sharedInstance.userIncorrectGuesses = incorrectGuesses
         
         let currentUser = PFUser.currentUser()
-        currentUser.setObject(incorrectGuesses, forKey: "incorrectGuessesCount")
-        currentUser.saveEventually()
+        currentUser!.setObject(incorrectGuesses, forKey: "incorrectGuessesCount")
+        currentUser!.saveEventually()
     }
 }

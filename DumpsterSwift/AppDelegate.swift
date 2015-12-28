@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FBSDKCoreKit
 
 
 @UIApplicationMain
@@ -20,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
         Parse.setApplicationId("BPYhaQES2x2riyAwbcmZVxtygMcefbVK3KjxSvzV", clientKey: "gsmozRPrRfbs35YwKkKCVUv7uhuRbeS95kB6Z3Qi")
         
-        // Override point for customization after application launch.
-        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
+        return true
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool
@@ -44,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
+        FBSDKAppEvents.activateApp()
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 

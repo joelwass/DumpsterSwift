@@ -118,14 +118,14 @@ class QuestionViewController: UIViewController {
         findQuestions.limit = 5
         findQuestions.skip = skipNum
         findQuestions.findObjectsInBackgroundWithBlock{
-            (objects:[AnyObject]!, error:NSError!)->Void in
+            (objects:[PFObject]?, error:NSError?)->Void in
             if (error == nil) {
-                if let objects = objects as? [PFObject!] {
+                if let objects = objects {
                     self.questionArray.addObjectsFromArray(objects)
                 }
             }
             else {
-                NSLog("Error: %@ %@", error, error.userInfo)
+                NSLog("Error: %@ %@", error!, error!.userInfo)
             }
         }
         
@@ -133,9 +133,9 @@ class QuestionViewController: UIViewController {
         findAnswers.limit = 5
         findAnswers.skip = skipNum
         findAnswers.findObjectsInBackgroundWithBlock{
-            (objects:[AnyObject]!, error:NSError!)->Void in
+            (objects:[PFObject]?, error:NSError?)->Void in
             if (error == nil && objects != nil) {
-                if let objects = objects as? [PFObject!] {
+                if let objects = objects  {
                     self.answerArray.addObjectsFromArray(objects)
                 }
             }
