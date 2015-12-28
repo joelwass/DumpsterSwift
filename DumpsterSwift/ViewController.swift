@@ -53,7 +53,7 @@ class ViewController: UIViewController {
         let skipNum = Int(arc4random_uniform(200))
 
         let findQuestions = PFQuery(className: "Questions")
-        findQuestions.limit = 5
+        findQuestions.limit = 1
         findQuestions.skip = skipNum
         findQuestions.findObjectsInBackgroundWithBlock({
             (objects:[PFObject]?, error:NSError?) -> Void in
@@ -70,7 +70,7 @@ class ViewController: UIViewController {
         })
     
         let findAnswers = PFQuery(className: "Answers")
-        findAnswers.limit = 5
+        findAnswers.limit = 1
         findAnswers.skip = skipNum
         findAnswers.findObjectsInBackgroundWithBlock({
             (objects:[PFObject]?, error:NSError?)->Void in
