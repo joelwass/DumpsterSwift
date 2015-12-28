@@ -49,58 +49,60 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="382" id="hNW-1C-lm7"/>
                                     <constraint firstAttribute="width" constant="294" id="ksP-yJ-jBO"/>
-                                    <constraint firstAttribute="height" constant="394" id="qvj-TW-wdy"/>
+                                    <constraint firstAttribute="height" constant="394" id="nUE-UO-2xq"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="ksP-yJ-jBO"/>
-                                        <exclude reference="qvj-TW-wdy"/>
+                                        <exclude reference="nUE-UO-2xq"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="qvj-TW-wdy"/>
+                                        <exclude reference="hNW-1C-lm7"/>
+                                        <include reference="nUE-UO-2xq"/>
                                     </mask>
                                 </variation>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="7l9-EK-euV" firstAttribute="top" secondItem="JUs-fC-Bbd" secondAttribute="bottom" constant="2" id="6Hl-WK-uWh"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="7l9-EK-euV" secondAttribute="bottom" constant="59" id="Atu-vi-ufD"/>
                             <constraint firstAttribute="centerX" secondItem="JUs-fC-Bbd" secondAttribute="centerX" id="F1R-3z-Hip"/>
-                            <constraint firstItem="JUs-fC-Bbd" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="Izv-jI-5Oj"/>
+                            <constraint firstItem="JUs-fC-Bbd" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="JCK-D6-yB3"/>
                             <constraint firstAttribute="centerX" secondItem="7l9-EK-euV" secondAttribute="centerX" id="KjC-rJ-uMO"/>
                             <constraint firstAttribute="centerX" secondItem="4dg-QN-BiC" secondAttribute="centerX" id="MC7-VF-Jvb"/>
                             <constraint firstAttribute="trailing" secondItem="JUs-fC-Bbd" secondAttribute="trailing" id="T7J-wF-3pG"/>
                             <constraint firstItem="JUs-fC-Bbd" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ZU6-EZ-CAF"/>
                             <constraint firstItem="JUs-fC-Bbd" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="82" id="ZzP-8W-Njl"/>
-                            <constraint firstItem="JUs-fC-Bbd" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="24" id="bTs-Ne-R9V"/>
-                            <constraint firstItem="7l9-EK-euV" firstAttribute="top" secondItem="JUs-fC-Bbd" secondAttribute="bottom" constant="2" id="fCG-zh-dyk"/>
-                            <constraint firstItem="JUs-fC-Bbd" firstAttribute="top" secondItem="4dg-QN-BiC" secondAttribute="bottom" constant="24" id="gyx-cG-QVp"/>
+                            <constraint firstItem="JUs-fC-Bbd" firstAttribute="top" secondItem="4dg-QN-BiC" secondAttribute="bottom" constant="24" id="csB-2c-5FJ"/>
                             <constraint firstAttribute="centerX" secondItem="7l9-EK-euV" secondAttribute="centerX" id="khR-jp-3LJ"/>
                             <constraint firstItem="4dg-QN-BiC" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="40" id="nAS-kI-z9J"/>
                             <constraint firstItem="4dg-QN-BiC" firstAttribute="centerX" secondItem="7l9-EK-euV" secondAttribute="centerX" id="ne1-hh-t7V"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="JUs-fC-Bbd" secondAttribute="trailing" constant="33" id="vGu-Dc-KC2"/>
+                            <constraint firstItem="JUs-fC-Bbd" firstAttribute="centerX" secondItem="4dg-QN-BiC" secondAttribute="centerX" id="oJK-iV-L2s"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="Izv-jI-5Oj"/>
-                                <exclude reference="bTs-Ne-R9V"/>
-                                <exclude reference="gyx-cG-QVp"/>
-                                <exclude reference="vGu-Dc-KC2"/>
+                                <exclude reference="JCK-D6-yB3"/>
+                                <exclude reference="csB-2c-5FJ"/>
+                                <exclude reference="oJK-iV-L2s"/>
                                 <exclude reference="ne1-hh-t7V"/>
-                                <exclude reference="fCG-zh-dyk"/>
+                                <exclude reference="6Hl-WK-uWh"/>
                                 <exclude reference="khR-jp-3LJ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="constraints">
-                                <include reference="Izv-jI-5Oj"/>
-                                <include reference="bTs-Ne-R9V"/>
-                                <include reference="gyx-cG-QVp"/>
-                                <include reference="vGu-Dc-KC2"/>
+                                <exclude reference="F1R-3z-Hip"/>
+                                <include reference="JCK-D6-yB3"/>
+                                <exclude reference="T7J-wF-3pG"/>
+                                <exclude reference="ZU6-EZ-CAF"/>
+                                <exclude reference="ZzP-8W-Njl"/>
+                                <include reference="csB-2c-5FJ"/>
+                                <include reference="oJK-iV-L2s"/>
                                 <include reference="ne1-hh-t7V"/>
-                                <include reference="fCG-zh-dyk"/>
+                                <include reference="6Hl-WK-uWh"/>
                                 <include reference="khR-jp-3LJ"/>
                             </mask>
                         </variation>

@@ -12,10 +12,10 @@ import UIKit
 class ViewController: UIViewController {
   
     @IBOutlet weak var homeLabel: UILabel!
-  @IBOutlet weak var gifView: UIWebView!
-  @IBOutlet weak var startButton: UIButton!
-  var questionArrayFirst:NSMutableArray = NSMutableArray()
-  var answerArrayFirst:NSMutableArray = NSMutableArray()
+    @IBOutlet weak var gifView: UIWebView!
+    @IBOutlet weak var startButton: UIButton!
+    var questionArrayFirst:NSMutableArray = NSMutableArray()
+    var answerArrayFirst:NSMutableArray = NSMutableArray()
 
     override func viewDidLoad() {
       
