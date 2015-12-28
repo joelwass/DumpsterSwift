@@ -12,10 +12,10 @@ import UIKit
 class ViewController: UIViewController {
   
     @IBOutlet weak var homeLabel: UILabel!
-  @IBOutlet weak var gifView: UIWebView!
-  @IBOutlet weak var startButton: UIButton!
-  var questionArrayFirst:NSMutableArray = NSMutableArray()
-  var answerArrayFirst:NSMutableArray = NSMutableArray()
+    @IBOutlet weak var gifView: UIWebView!
+    @IBOutlet weak var startButton: UIButton!
+    var questionArrayFirst:NSMutableArray = NSMutableArray()
+    var answerArrayFirst:NSMutableArray = NSMutableArray()
 
     override func viewDidLoad() {
       
@@ -55,36 +55,36 @@ class ViewController: UIViewController {
         let findQuestions = PFQuery(className: "Questions")
         findQuestions.limit = 5
         findQuestions.skip = skipNum
-        findQuestions.findObjectsInBackgroundWithBlock{
-            (objects:[AnyObject]!, error:NSError!)->Void in
+        findQuestions.findObjectsInBackgroundWithBlock({
+            (objects:[PFObject]?, error:NSError?) -> Void in
             if (error == nil) {
-                print("Succesfully retreived \(objects.count) objects")
-                if let objects = objects as? [PFObject!] {
+                print("Succesfully retreived \(objects!.count) objects")
+                if let objects = objects  {
                     self.questionArrayFirst.addObjectsFromArray(objects)
                 }
             }
             else {
                 // Log details of the failure
-                NSLog("Error: %@ %@", error, error.userInfo)
+                NSLog("Error querying for question first time view controller: %@ %@", error!, error!.userInfo)
             }
-        }
+        })
     
         let findAnswers = PFQuery(className: "Answers")
         findAnswers.limit = 5
         findAnswers.skip = skipNum
-        findAnswers.findObjectsInBackgroundWithBlock{
-            (objects:[AnyObject]!, error:NSError!)->Void in
+        findAnswers.findObjectsInBackgroundWithBlock({
+            (objects:[PFObject]?, error:NSError?)->Void in
             if (error == nil && objects != nil) {
-                 print("Succesfully retreived \(objects.count) objects")
-                if let objects = objects as? [PFObject!] {
+                 print("Succesfully retreived \(objects!.count) objects")
+                if let objects = objects {
                     self.answerArrayFirst.addObjectsFromArray(objects)
                     self.makeButtonVisible()
                 }
             }
             else {
-                NSLog("error")
+                NSLog("error in querying for answers first time view controller")
             }
-        }
+        })
         NSLog("Succesfully built Questions")
     }
   

@@ -43,13 +43,10 @@
 		EEDAA1C11A9E595C00C5142B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDAA1C01A9E595C00C5142B /* Security.framework */; };
 		EEDAA1C31A9E596200C5142B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDAA1C21A9E596200C5142B /* StoreKit.framework */; };
 		EEDAA1C51A9E596800C5142B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDAA1C41A9E596800C5142B /* SystemConfiguration.framework */; };
-		EEDAA1CC1A9E599400C5142B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDAA1C71A9E599400C5142B /* Bolts.framework */; };
-		EEDAA1CD1A9E599400C5142B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDAA1C81A9E599400C5142B /* Parse.framework */; };
-		EEDAA1CE1A9E599400C5142B /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDAA1C91A9E599400C5142B /* ParseCrashReporting.framework */; };
-		EEDAA1CF1A9E599400C5142B /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDAA1CA1A9E599400C5142B /* ParseFacebookUtils.framework */; };
-		EEDAA1D01A9E599400C5142B /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDAA1CB1A9E599400C5142B /* ParseUI.framework */; };
 		EEDAA1D51A9E5BF400C5142B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDAA1D41A9E5BF400C5142B /* libsqlite3.dylib */; };
 		EEF9C32D1C2DF848004DF096 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF9C32C1C2DF848004DF096 /* UserService.swift */; };
+		EEF9C5301C31231D004DF096 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = EEF9C52F1C31231D004DF096 /* Podfile */; };
+		F21441BCF394E5193D16570C /* libPods-Dumpster.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0096EE2114D7748E60DDFF /* libPods-Dumpster.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A0096EE2114D7748E60DDFF /* libPods-Dumpster.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Dumpster.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		90391549B541B5EC136C66A2 /* Pods-Dumpster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dumpster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dumpster/Pods-Dumpster.debug.xcconfig"; sourceTree = "<group>"; };
 		EE0B3A191B03C29F004B6FC4 /* DumpsterLaunch960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DumpsterLaunch960.png; sourceTree = "<group>"; };
 		EE0B3A1A1B03C29F004B6FC4 /* DumpsterLaunch1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DumpsterLaunch1136.png; sourceTree = "<group>"; };
 		EE0B3A1B1B03C29F004B6FC4 /* DumpsterLogo29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DumpsterLogo29.png; sourceTree = "<group>"; };
@@ -104,15 +103,12 @@
 		EEDAA1C01A9E595C00C5142B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		EEDAA1C21A9E596200C5142B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		EEDAA1C41A9E596800C5142B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		EEDAA1C71A9E599400C5142B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		EEDAA1C81A9E599400C5142B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		EEDAA1C91A9E599400C5142B /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
-		EEDAA1CA1A9E599400C5142B /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
-		EEDAA1CB1A9E599400C5142B /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		EEDAA1D11A9E5A3C00C5142B /* DumpsterSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DumpsterSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		EEDAA1D21A9E5A3D00C5142B /* Bridging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bridging.m; sourceTree = "<group>"; };
 		EEDAA1D41A9E5BF400C5142B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		EEF9C32C1C2DF848004DF096 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		EEF9C52F1C31231D004DF096 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		F62BBAA0FC2E9C7329A85DDA /* Pods-Dumpster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dumpster.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dumpster/Pods-Dumpster.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +119,6 @@
 				EEBB63B11C2DE54D00F72278 /* Accounts.framework in Frameworks */,
 				EEBB63AF1C2DE51700F72278 /* Social.framework in Frameworks */,
 				EEDAA1D51A9E5BF400C5142B /* libsqlite3.dylib in Frameworks */,
-				EEDAA1CF1A9E599400C5142B /* ParseFacebookUtils.framework in Frameworks */,
 				EEDAA1C51A9E596800C5142B /* SystemConfiguration.framework in Frameworks */,
 				EEDAA1C31A9E596200C5142B /* StoreKit.framework in Frameworks */,
 				EEDAA1C11A9E595C00C5142B /* Security.framework in Frameworks */,
@@ -132,12 +127,9 @@
 				EEDAA1BB1A9E594B00C5142B /* libz.dylib in Frameworks */,
 				EEDAA1B91A9E594200C5142B /* CoreLocation.framework in Frameworks */,
 				EEDAA1B71A9E592A00C5142B /* CoreGraphics.framework in Frameworks */,
-				EEDAA1CC1A9E599400C5142B /* Bolts.framework in Frameworks */,
 				EEDAA1B51A9E592200C5142B /* Foundation.framework in Frameworks */,
-				EEDAA1CD1A9E599400C5142B /* Parse.framework in Frameworks */,
-				EEDAA1D01A9E599400C5142B /* ParseUI.framework in Frameworks */,
 				EEDAA1B31A9E591C00C5142B /* AudioToolbox.framework in Frameworks */,
-				EEDAA1CE1A9E599400C5142B /* ParseCrashReporting.framework in Frameworks */,
+				F21441BCF394E5193D16570C /* libPods-Dumpster.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +143,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34EC5D64BE7B0B0C15C1B9DE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				90391549B541B5EC136C66A2 /* Pods-Dumpster.debug.xcconfig */,
+				F62BBAA0FC2E9C7329A85DDA /* Pods-Dumpster.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		EEBB63AB1C2DE3AA00F72278 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,8 +167,8 @@
 				EEDAA1B21A9E591C00C5142B /* AudioToolbox.framework */,
 				EEDAA1C21A9E596200C5142B /* StoreKit.framework */,
 				EEDAA1D41A9E5BF400C5142B /* libsqlite3.dylib */,
-				EEDAA1C61A9E599400C5142B /* parse-library-1.6.3 */,
 				EEDAA1C41A9E596800C5142B /* SystemConfiguration.framework */,
+				4A0096EE2114D7748E60DDFF /* libPods-Dumpster.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -196,11 +197,13 @@
 		EEC044EF1A93C74200D90ECA = {
 			isa = PBXGroup;
 			children = (
+				EEF9C52F1C31231D004DF096 /* Podfile */,
 				EEBB63AB1C2DE3AA00F72278 /* Frameworks */,
 				EE1F7F261B4EE9B200148429 /* Default-568h@2x.png */,
 				EEC044FA1A93C74200D90ECA /* Dumpster */,
 				EEC045101A93C74300D90ECA /* DumpsterTests */,
 				EEC044F91A93C74200D90ECA /* Products */,
+				34EC5D64BE7B0B0C15C1B9DE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -268,18 +271,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		EEDAA1C61A9E599400C5142B /* parse-library-1.6.3 */ = {
-			isa = PBXGroup;
-			children = (
-				EEDAA1C71A9E599400C5142B /* Bolts.framework */,
-				EEDAA1C81A9E599400C5142B /* Parse.framework */,
-				EEDAA1C91A9E599400C5142B /* ParseCrashReporting.framework */,
-				EEDAA1CA1A9E599400C5142B /* ParseFacebookUtils.framework */,
-				EEDAA1CB1A9E599400C5142B /* ParseUI.framework */,
-			);
-			path = "parse-library-1.6.3";
-			sourceTree = "<group>";
-		};
 		EEF9C32A1C2DF81A004DF096 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,9 +294,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EEC045171A93C74300D90ECA /* Build configuration list for PBXNativeTarget "Dumpster" */;
 			buildPhases = (
+				EB160F869D9CD4BEC81D2F00 /* Check Pods Manifest.lock */,
 				EEC044F41A93C74200D90ECA /* Sources */,
 				EEC044F51A93C74200D90ECA /* Frameworks */,
 				EEC044F61A93C74200D90ECA /* Resources */,
+				46DF6AD8493C41635A891474 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -379,6 +372,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEF9C5301C31231D004DF096 /* Podfile in Resources */,
 				EEC045201A93DA4E00D90ECA /* DumpLoopTrans2.gif in Resources */,
 				EE0B3A251B03C29F004B6FC4 /* DumpsterLaunch1136.png in Resources */,
 				EE0B3A2D1B03C29F004B6FC4 /* DumpsterLogo180.png in Resources */,
@@ -406,6 +400,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		46DF6AD8493C41635A891474 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dumpster/Pods-Dumpster-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB160F869D9CD4BEC81D2F00 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EEC044F41A93C74200D90ECA /* Sources */ = {
@@ -543,12 +570,15 @@
 		};
 		EEC045181A93C74300D90ECA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90391549B541B5EC136C66A2 /* Pods-Dumpster.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					/Users/joelwasserman/Documents/FacebookSDK,
 					"$(PROJECT_DIR)/parse-library-1.6.3",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/DumpsterTests/Info.plist";
@@ -562,12 +592,15 @@
 		};
 		EEC045191A93C74300D90ECA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F62BBAA0FC2E9C7329A85DDA /* Pods-Dumpster.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					/Users/joelwasserman/Documents/FacebookSDK,
 					"$(PROJECT_DIR)/parse-library-1.6.3",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/DumpsterTests/Info.plist";

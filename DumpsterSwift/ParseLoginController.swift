@@ -8,8 +8,6 @@
 
 
 import UIKit
-import Parse
-import ParseUI
 
 class ParseLoginController: UIViewController, PFLogInViewControllerDelegate,
 PFSignUpViewControllerDelegate {
@@ -46,8 +44,8 @@ PFSignUpViewControllerDelegate {
             logInLogoTitle.font = UIFont(name: "Chalkduster", size:28)
             
             loginViewController.emailAsUsername = true
-            loginViewController.logInView.logo = logInLogoTitle
-            loginViewController.fields = [PFLogInFields.UsernameAndPassword, PFLogInFields.LogInButton, PFLogInFields.SignUpButton, PFLogInFields.PasswordForgotten]
+            loginViewController.logInView!.logo = logInLogoTitle
+            loginViewController.fields = [PFLogInFields.UsernameAndPassword, PFLogInFields.LogInButton, PFLogInFields.PasswordForgotten, PFLogInFields.SignUpButton, PFLogInFields.Facebook]
             loginViewController.delegate = self
 
             let signUpLogoTitle = UILabel()
@@ -56,7 +54,7 @@ PFSignUpViewControllerDelegate {
             
             signupViewController.emailAsUsername = true
             signupViewController.delegate = self
-            signupViewController.signUpView.logo = signUpLogoTitle
+            signupViewController.signUpView!.logo = signUpLogoTitle
             
             loginViewController.signUpController = signupViewController
             self.presentViewController(loginViewController, animated: true, completion: nil)

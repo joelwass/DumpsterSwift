@@ -38,4 +38,16 @@ class StatsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func logout(sender: AnyObject) {
+        PFUser.logOut()
+//        
+//        if let navController = self.navigationController {
+//            navController.popToRootViewControllerAnimated(true)
+//        }
+        
+        let loginStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+        let loginVC = loginStoryBoard.instantiateViewControllerWithIdentifier("StartScreen") as! ViewController
+        self.presentViewController(loginVC, animated: true, completion: nil)
+    }
 }
