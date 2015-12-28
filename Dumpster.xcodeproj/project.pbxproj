@@ -50,6 +50,9 @@
 		EEDAA1D01A9E599400C5142B /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDAA1CB1A9E599400C5142B /* ParseUI.framework */; };
 		EEDAA1D51A9E5BF400C5142B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDAA1D41A9E5BF400C5142B /* libsqlite3.dylib */; };
 		EEF9C32D1C2DF848004DF096 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF9C32C1C2DF848004DF096 /* UserService.swift */; };
+		EEF9C3491C311456004DF096 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF9C3461C311456004DF096 /* FBSDKCoreKit.framework */; };
+		EEF9C34A1C311456004DF096 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF9C3471C311456004DF096 /* FBSDKLoginKit.framework */; };
+		EEF9C34B1C311456004DF096 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF9C3481C311456004DF096 /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +116,9 @@
 		EEDAA1D21A9E5A3D00C5142B /* Bridging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bridging.m; sourceTree = "<group>"; };
 		EEDAA1D41A9E5BF400C5142B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		EEF9C32C1C2DF848004DF096 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		EEF9C3461C311456004DF096 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		EEF9C3471C311456004DF096 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		EEF9C3481C311456004DF096 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,12 +128,14 @@
 			files = (
 				EEBB63B11C2DE54D00F72278 /* Accounts.framework in Frameworks */,
 				EEBB63AF1C2DE51700F72278 /* Social.framework in Frameworks */,
+				EEF9C34A1C311456004DF096 /* FBSDKLoginKit.framework in Frameworks */,
 				EEDAA1D51A9E5BF400C5142B /* libsqlite3.dylib in Frameworks */,
 				EEDAA1CF1A9E599400C5142B /* ParseFacebookUtils.framework in Frameworks */,
 				EEDAA1C51A9E596800C5142B /* SystemConfiguration.framework in Frameworks */,
 				EEDAA1C31A9E596200C5142B /* StoreKit.framework in Frameworks */,
 				EEDAA1C11A9E595C00C5142B /* Security.framework in Frameworks */,
 				EEDAA1BF1A9E595600C5142B /* QuartzCore.framework in Frameworks */,
+				EEF9C3491C311456004DF096 /* FBSDKCoreKit.framework in Frameworks */,
 				EEDAA1BD1A9E595000C5142B /* MobileCoreServices.framework in Frameworks */,
 				EEDAA1BB1A9E594B00C5142B /* libz.dylib in Frameworks */,
 				EEDAA1B91A9E594200C5142B /* CoreLocation.framework in Frameworks */,
@@ -135,6 +143,7 @@
 				EEDAA1CC1A9E599400C5142B /* Bolts.framework in Frameworks */,
 				EEDAA1B51A9E592200C5142B /* Foundation.framework in Frameworks */,
 				EEDAA1CD1A9E599400C5142B /* Parse.framework in Frameworks */,
+				EEF9C34B1C311456004DF096 /* FBSDKShareKit.framework in Frameworks */,
 				EEDAA1D01A9E599400C5142B /* ParseUI.framework in Frameworks */,
 				EEDAA1B31A9E591C00C5142B /* AudioToolbox.framework in Frameworks */,
 				EEDAA1CE1A9E599400C5142B /* ParseCrashReporting.framework in Frameworks */,
@@ -154,6 +163,9 @@
 		EEBB63AB1C2DE3AA00F72278 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EEF9C3461C311456004DF096 /* FBSDKCoreKit.framework */,
+				EEF9C3471C311456004DF096 /* FBSDKLoginKit.framework */,
+				EEF9C3481C311456004DF096 /* FBSDKShareKit.framework */,
 				EEBB63B01C2DE54D00F72278 /* Accounts.framework */,
 				EEBB63AE1C2DE51700F72278 /* Social.framework */,
 				EEDAA1C01A9E595C00C5142B /* Security.framework */,
@@ -545,11 +557,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-library-1.6.3",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/DumpsterTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -564,11 +578,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-library-1.6.3",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/DumpsterTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
