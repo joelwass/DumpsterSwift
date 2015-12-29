@@ -137,6 +137,7 @@ class QuestionViewController: UIViewController {
             if (error == nil && objects != nil) {
                 if let objects = objects  {
                     self.answerArray.addObjectsFromArray(objects)
+                    self.skipButton.enabled=true
                 }
             }
             else {
@@ -156,6 +157,7 @@ class QuestionViewController: UIViewController {
         
         UserService.sharedInstance.updateQuestionCount(questionCount)
         if (sender.currentTitle == self.correctAnswer) {
+            skipButton.enabled = false
             correctAnswerCount += 1
             score += 2
             updateScore()

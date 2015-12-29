@@ -21,13 +21,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
       
-        view.translatesAutoresizingMaskIntoConstraints = false
+        //view.translatesAutoresizingMaskIntoConstraints = false
         super.viewDidLoad()
         startButton.hidden = true
         buildQuestions()
             
         homeLabel.font = UIFont(name: "Chalkduster", size:18)
-        startButton.titleLabel!.font = UIFont(name: "Chalkduster", size: 18)
             
         //gif animation code
         let gifString = NSBundle.mainBundle().URLForResource("DumpLoopTrans2", withExtension: "gif")
@@ -43,7 +42,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func buttonPressed(sender : AnyObject) {
+    @IBAction func multiPlayerPressed(sender: AnyObject) {
+        print("multi-player start button pressed")
+        
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("MultiPlayerController") as! MultiPlayerController
+        self.presentViewController(viewController, animated: true, completion: nil)
+    }
+    
+    @IBAction func singlePlayerPressed(sender : AnyObject) {
         print("single player start button pressed")
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)

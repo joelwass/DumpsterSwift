@@ -46,6 +46,7 @@
 		EEDAA1D51A9E5BF400C5142B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDAA1D41A9E5BF400C5142B /* libsqlite3.dylib */; };
 		EEF9C32D1C2DF848004DF096 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF9C32C1C2DF848004DF096 /* UserService.swift */; };
 		EEF9C5301C31231D004DF096 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = EEF9C52F1C31231D004DF096 /* Podfile */; };
+		EEF9C5341C31F9F4004DF096 /* MultiPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF9C5331C31F9F4004DF096 /* MultiPlayerController.swift */; };
 		F21441BCF394E5193D16570C /* libPods-Dumpster.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0096EE2114D7748E60DDFF /* libPods-Dumpster.a */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +109,7 @@
 		EEDAA1D41A9E5BF400C5142B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		EEF9C32C1C2DF848004DF096 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		EEF9C52F1C31231D004DF096 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		EEF9C5331C31F9F4004DF096 /* MultiPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiPlayerController.swift; sourceTree = "<group>"; };
 		F62BBAA0FC2E9C7329A85DDA /* Pods-Dumpster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dumpster.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dumpster/Pods-Dumpster.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,6 +183,7 @@
 				EEC045211A942AB000D90ECA /* QuestionViewController.swift */,
 				EEB09F251AACB6320070BA38 /* StatsViewController.swift */,
 				EE3DF3021AB4E18200F994FF /* LearnMoreViewController.swift */,
+				EEF9C5331C31F9F4004DF096 /* MultiPlayerController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				EE1F7F291B4EEC2500148429 /* QuestionViewController.swift in Sources */,
 				EEBB63AA1C2DE2F000F72278 /* UserSettings.swift in Sources */,
 				EE1F7F281B4EEC0300148429 /* ViewController.swift in Sources */,
+				EEF9C5341C31F9F4004DF096 /* MultiPlayerController.swift in Sources */,
 				EEBB63A81C2DE1FF00F72278 /* ParseLoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

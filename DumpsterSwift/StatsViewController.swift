@@ -42,6 +42,6 @@ class StatsViewController: UIViewController {
     @IBAction func logout(sender: AnyObject) {
         PFUser.logOut()
 //       
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        self.navigationController?.popViewControllerAnimated(true)
     }
 }
