@@ -115,7 +115,7 @@ class QuestionViewController: UIViewController {
     func buildQuestions() {
         let skipNum = Int(arc4random_uniform(200))
         let findQuestions = PFQuery(className: "Questions")
-        findQuestions.limit = 5
+        findQuestions.limit = 1
         findQuestions.skip = skipNum
         findQuestions.findObjectsInBackgroundWithBlock{
             (objects:[PFObject]?, error:NSError?)->Void in
@@ -130,13 +130,14 @@ class QuestionViewController: UIViewController {
         }
         
         let findAnswers = PFQuery(className: "Answers")
-        findAnswers.limit = 5
+        findAnswers.limit = 1
         findAnswers.skip = skipNum
         findAnswers.findObjectsInBackgroundWithBlock{
             (objects:[PFObject]?, error:NSError?)->Void in
             if (error == nil && objects != nil) {
                 if let objects = objects  {
                     self.answerArray.addObjectsFromArray(objects)
+                    self.skipButton.enabled=true
                 }
             }
             else {
@@ -156,6 +157,7 @@ class QuestionViewController: UIViewController {
         
         UserService.sharedInstance.updateQuestionCount(questionCount)
         if (sender.currentTitle == self.correctAnswer) {
+            skipButton.enabled = false
             correctAnswerCount += 1
             score += 2
             updateScore()

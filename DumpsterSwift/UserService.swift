@@ -71,7 +71,7 @@ public class UserService:NSObject {
     func finish(sender: AnyObject) {
         if sender is ParseLoginController {
             let mysender = sender as! ParseLoginController
-            mysender.loadQuestionView()
+            mysender.loadHomeView()
         }
     }
     
@@ -95,7 +95,7 @@ public class UserService:NSObject {
         UserSettings.sharedInstance.userQuestions = questionCount
 
         let currentUser = PFUser.currentUser()
-        currentUser!.setObject(questionCount, forKey: "quesitonCount")
+        currentUser!.setObject(questionCount, forKey: "questionCount")
         currentUser!.saveEventually()
     }
     

@@ -10,6 +10,8 @@ import UIKit
 
 
 class ViewController: UIViewController {
+    
+    var window: UIWindow?
   
     @IBOutlet weak var homeLabel: UILabel!
     @IBOutlet weak var gifView: UIWebView!
@@ -19,13 +21,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
       
-        view.translatesAutoresizingMaskIntoConstraints = false
+        //view.translatesAutoresizingMaskIntoConstraints = false
         super.viewDidLoad()
         startButton.hidden = true
         buildQuestions()
             
         homeLabel.font = UIFont(name: "Chalkduster", size:18)
-        startButton.titleLabel!.font = UIFont(name: "Chalkduster", size: 18)
             
         //gif animation code
         let gifString = NSBundle.mainBundle().URLForResource("DumpLoopTrans2", withExtension: "gif")
@@ -41,19 +42,31 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func buttonPressed(sender : AnyObject) {
-        print("start button pressed")
-        let VC = self.storyboard?.instantiateViewControllerWithIdentifier("parseViewController") as! ParseLoginController
-        VC.questionArrayFirst = self.questionArrayFirst
-        VC.answerArrayFirst = self.answerArrayFirst
-        self.presentViewController(VC, animated: true, completion: nil)
+    @IBAction func multiPlayerPressed(sender: AnyObject) {
+        print("multi-player start button pressed")
+        
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("MultiPlayerController") as! MultiPlayerController
+        self.presentViewController(viewController, animated: true, completion: nil)
+    }
+    
+    @IBAction func singlePlayerPressed(sender : AnyObject) {
+        print("single player start button pressed")
+        
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("qVC") as! QuestionViewController
+        let navController = UINavigationController(rootViewController: viewController)
+        viewController.questionArray = self.questionArrayFirst
+        viewController.answerArray = self.answerArrayFirst
+        
+        self.presentViewController(navController, animated: true, completion: nil)
     }
   
     func buildQuestions() {
         let skipNum = Int(arc4random_uniform(200))
 
         let findQuestions = PFQuery(className: "Questions")
-        findQuestions.limit = 5
+        findQuestions.limit = 1
         findQuestions.skip = skipNum
         findQuestions.findObjectsInBackgroundWithBlock({
             (objects:[PFObject]?, error:NSError?) -> Void in
@@ -70,7 +83,7 @@ class ViewController: UIViewController {
         })
     
         let findAnswers = PFQuery(className: "Answers")
-        findAnswers.limit = 5
+        findAnswers.limit = 1
         findAnswers.skip = skipNum
         findAnswers.findObjectsInBackgroundWithBlock({
             (objects:[PFObject]?, error:NSError?)->Void in

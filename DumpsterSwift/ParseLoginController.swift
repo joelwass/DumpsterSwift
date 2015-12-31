@@ -45,8 +45,15 @@ PFSignUpViewControllerDelegate {
             
             loginViewController.emailAsUsername = true
             loginViewController.logInView!.logo = logInLogoTitle
+            
+            let permissions = [ "public_profile", "email", "user_friends" ]
+            loginViewController.facebookPermissions = permissions
+            
             loginViewController.fields = [PFLogInFields.UsernameAndPassword, PFLogInFields.LogInButton, PFLogInFields.PasswordForgotten, PFLogInFields.SignUpButton, PFLogInFields.Facebook]
             loginViewController.delegate = self
+            loginViewController.logInView?.facebookButton?.addTarget(self, action: "didTapFacebookConnect:", forControlEvents: .TouchUpInside)
+            
+            self.presentViewController(loginViewController, animated: true, completion: nil)
 
             let signUpLogoTitle = UILabel()
             signUpLogoTitle.text = "DUMPSTERSWIFT"
@@ -57,8 +64,18 @@ PFSignUpViewControllerDelegate {
             signupViewController.signUpView!.logo = signUpLogoTitle
             
             loginViewController.signUpController = signupViewController
-            self.presentViewController(loginViewController, animated: true, completion: nil)
+            
         }
+    }
+    
+    func loadHomeView() {
+        print("attempting to load home view once user has been logged in")
+        
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("StartScreen") as! ViewController
+        self.window!.rootViewController = viewController
+        self.window!.makeKeyAndVisible()
     }
     
     func loadQuestionView() {
@@ -123,6 +140,9 @@ PFSignUpViewControllerDelegate {
     
     func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
         user.setObject(0, forKey: "score")
+        user.setObject(0, forKey: "skipCount")
+        user.setObject(0, forKey: "questionCount")
+        user.setObject(0, forKey: "incorrectGuessesCount")
         user.saveEventually()
         UserSettings.sharedInstance.Username = user.username!
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -141,6 +161,54 @@ PFSignUpViewControllerDelegate {
     
     @IBAction func logoutUser(sender: UIButton) {
         PFUser.logOut()
+    }
+    
+    func didTapFacebookConnect(sender: AnyObject) {
+        let permissions = [ "public_profile", "email", "user_friends" ]
+        
+        PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions,  block: {  (user: PFUser?, error: NSError?) -> Void in
+            if let user = user {
+                if user.isNew {
+                    print("User signed up and logged in through Facebook!")
+                    
+                    user.setObject(0, forKey: "score")
+                    user.setObject(0, forKey: "skipCount")
+                    user.setObject(0, forKey: "questionCount")
+                    user.setObject(0, forKey: "incorrectGuessesCount")
+                    user.saveEventually()
+        
+                } else {
+                    print("User logged in through Facebook!")
+                }
+                self.returnUserData()
+                UserSettings.sharedInstance.Username = user.username!
+                self.dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                print("Uh oh. The user cancelled the Facebook login.")
+            }
+        })
+        
+    }
+    
+    func returnUserData() {
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
+        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+            
+            if ((error) != nil)
+            {
+                // Process error
+                print("Error: \(error)")
+            }
+            else
+            {
+                print("fetched user: \(result)")
+                let userName : NSString = result.valueForKey("name") as! NSString
+                print("User Name is: \(userName)")
+                if let userEmail : NSString = result.valueForKey("email") as? NSString {
+                    print("User Email is: \(userEmail)")
+                }
+            }
+        })
     }
     
 }
