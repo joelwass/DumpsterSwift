@@ -74,7 +74,8 @@ PFSignUpViewControllerDelegate {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("StartScreen") as! ViewController
-        self.window!.rootViewController = viewController
+        let navController = UINavigationController(rootViewController: viewController)
+        self.window!.rootViewController = navController
         self.window!.makeKeyAndVisible()
     }
     
@@ -84,16 +85,7 @@ PFSignUpViewControllerDelegate {
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        //let currentInstallation = PFInstallation.currentInstallation()
-        
-        
-        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("qVC") as! QuestionViewController
-        let navController = UINavigationController(rootViewController: viewController)
-        viewController.questionArray = self.questionArrayFirst
-        viewController.answerArray = self.answerArrayFirst
-        
-        self.window!.rootViewController = navController
-        self.window!.makeKeyAndVisible()
+
     }
     
     //MARK: Parse Login

@@ -46,7 +46,8 @@ class ViewController: UIViewController {
         print("multi-player start button pressed")
         
         let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("MultiPlayerController") as! MultiPlayerController
-        self.presentViewController(viewController, animated: true, completion: nil)
+        let navController = self.navigationController
+        navController?.pushViewController(viewController, animated: true)
     }
     
     @IBAction func singlePlayerPressed(sender : AnyObject) {
@@ -55,11 +56,11 @@ class ViewController: UIViewController {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("qVC") as! QuestionViewController
-        let navController = UINavigationController(rootViewController: viewController)
+        let navController = self.navigationController
         viewController.questionArray = self.questionArrayFirst
         viewController.answerArray = self.answerArrayFirst
         
-        self.presentViewController(navController, animated: true, completion: nil)
+        navController?.pushViewController(viewController, animated: true)
     }
   
     func buildQuestions() {
